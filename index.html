@@ -82,12 +82,8 @@
             animation: fadeIn 0.25s ease;
         }
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         .focus-timer {
             font-size: 4.8rem;
@@ -108,9 +104,7 @@
             justify-content: center;
             font-family: var(--font-sans);
         }
-        .focus-info span {
-            font-weight: 500;
-        }
+        .focus-info span { font-weight: 500; }
         .focus-info .overtime {
             color: var(--overtime-color);
             font-weight: 600;
@@ -190,18 +184,10 @@
             animation: slideUpMenu 0.2s ease;
             font-family: var(--font-sans);
         }
-        .menu-popup.active {
-            display: flex;
-        }
+        .menu-popup.active { display: flex; }
         @keyframes slideUpMenu {
-            from {
-                opacity: 0;
-                transform: translateY(12px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         .menu-popup-item {
             padding: 12px 22px;
@@ -226,9 +212,7 @@
             z-index: 905;
             display: none;
         }
-        .menu-backdrop.active {
-            display: block;
-        }
+        .menu-backdrop.active { display: block; }
 
         .header-section {
             text-align: center;
@@ -356,14 +340,8 @@
             flex-wrap: wrap;
             font-family: var(--font-sans);
         }
-        .stats-bar span {
-            font-weight: 500;
-            color: var(--text-secondary);
-        }
-        .stats-bar strong {
-            font-weight: 600;
-            color: var(--text);
-        }
+        .stats-bar span { font-weight: 500; color: var(--text-secondary); }
+        .stats-bar strong { font-weight: 600; color: var(--text); }
 
         .create-section {
             background: var(--card-bg);
@@ -403,18 +381,10 @@
             margin-top: 18px;
             animation: fadeSlideIn 0.2s ease;
         }
-        .create-form.active {
-            display: flex;
-        }
+        .create-form.active { display: flex; }
         @keyframes fadeSlideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-6px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-6px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         .sentence-form {
             display: flex;
@@ -489,9 +459,7 @@
             display: inline-flex;
             align-items: center;
         }
-        .inline-input.with-dropdown {
-            padding-right: 22px;
-        }
+        .inline-input.with-dropdown { padding-right: 22px; }
         .dropdown-btn {
             position: absolute;
             right: 2px;
@@ -506,9 +474,7 @@
             line-height: 1;
             transition: color var(--transition);
         }
-        .dropdown-btn:hover {
-            color: var(--accent-green);
-        }
+        .dropdown-btn:hover { color: var(--accent-green); }
         .dropdown-options {
             position: absolute;
             top: 100%;
@@ -524,9 +490,7 @@
             display: none;
             padding: 4px 0;
         }
-        .dropdown-options.active {
-            display: block;
-        }
+        .dropdown-options.active { display: block; }
         .dropdown-option-item {
             padding: 8px 14px;
             font-size: 0.85rem;
@@ -585,18 +549,10 @@
             animation: breathe 2.5s ease-in-out infinite;
             background: #f9fdfb;
         }
-        .task-content {
-            flex: 1;
-            min-width: 0;
-        }
+        .task-content { flex: 1; min-width: 0; }
         @keyframes breathe {
-            0%,
-            100% {
-                box-shadow: 0 0 6px var(--breathe-color-1);
-            }
-            50% {
-                box-shadow: 0 0 16px var(--breathe-color-2);
-            }
+            0%, 100% { box-shadow: 0 0 6px var(--breathe-color-1); }
+            50% { box-shadow: 0 0 16px var(--breathe-color-2); }
         }
         .task-narrative {
             font-size: 0.98rem;
@@ -630,16 +586,9 @@
             font-weight: 600;
             font-family: var(--font-mono);
         }
-        .narr-place {
-            color: var(--text-secondary);
-        }
-        .narr-people {
-            color: var(--accent-green);
-            font-weight: 500;
-        }
-        .narr-title {
-            font-weight: 600;
-        }
+        .narr-place { color: var(--text-secondary); }
+        .narr-people { color: var(--accent-green); font-weight: 500; }
+        .narr-title { font-weight: 600; }
         .task-meta {
             display: flex;
             align-items: center;
@@ -691,9 +640,7 @@
             color: #fff;
             border-color: var(--accent-green);
         }
-        .btn-task.btn-start:hover {
-            background: var(--accent-green-light);
-        }
+        .btn-task.btn-start:hover { background: var(--accent-green-light); }
         .btn-task.btn-end {
             background: #c44d34;
             color: #fff;
@@ -808,19 +755,9 @@
             font-size: 0.88rem;
             font-family: var(--font-sans);
         }
-        .score-detail-row:last-child {
-            border-bottom: none;
-        }
-        .score-detail-label {
-            color: var(--text-secondary);
-            flex: 1;
-        }
-        .score-detail-value {
-            font-weight: 600;
-            color: var(--text);
-            min-width: 50px;
-            text-align: right;
-        }
+        .score-detail-row:last-child { border-bottom: none; }
+        .score-detail-label { color: var(--text-secondary); flex: 1; }
+        .score-detail-value { font-weight: 600; color: var(--text); min-width: 50px; text-align: right; }
         .score-detail-bar {
             width: 60px;
             height: 6px;
@@ -835,15 +772,9 @@
             border-radius: 3px;
             transition: width 0.3s;
         }
-        .score-detail-fill.high {
-            background: var(--accent-green);
-        }
-        .score-detail-fill.mid {
-            background: #e0a840;
-        }
-        .score-detail-fill.low {
-            background: #c44d34;
-        }
+        .score-detail-fill.high { background: var(--accent-green); }
+        .score-detail-fill.mid { background: #e0a840; }
+        .score-detail-fill.low { background: #c44d34; }
 
         .modal-overlay {
             position: fixed;
@@ -871,14 +802,8 @@
             font-size: 0.95rem;
         }
         @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(16px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         .modal-dialog h3 {
             font-size: 1.15rem;
@@ -936,9 +861,7 @@
             transition: all var(--transition);
             font-family: var(--font-sans);
         }
-        .btn-modal-primary:hover {
-            background: var(--accent-green-light);
-        }
+        .btn-modal-primary:hover { background: var(--accent-green-light); }
         .btn-modal-secondary {
             padding: 11px 22px;
             border-radius: 22px;
@@ -961,9 +884,7 @@
             font-family: var(--font-sans);
             font-size: 0.95rem;
         }
-        .btn-modal-danger:hover {
-            background: #fdf2f2;
-        }
+        .btn-modal-danger:hover { background: #fdf2f2; }
         .modal-close-x {
             position: absolute;
             top: 16px;
@@ -1012,23 +933,12 @@
             font-family: var(--font-sans);
         }
         @keyframes toastIn {
-            from {
-                opacity: 0;
-                transform: translateX(-50%) translateY(12px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(-50%) translateY(0);
-            }
+            from { opacity: 0; transform: translateX(-50%) translateY(12px); }
+            to { opacity: 1; transform: translateX(-50%) translateY(0); }
         }
         @keyframes toastOut {
-            from {
-                opacity: 1;
-            }
-            to {
-                opacity: 0;
-                transform: translateX(-50%) translateY(-8px);
-            }
+            from { opacity: 1; }
+            to { opacity: 0; transform: translateX(-50%) translateY(-8px); }
         }
         .behavior-summary-table {
             width: 100%;
@@ -1246,708 +1156,149 @@
             let isFutureView = false;
 
             function getTodayKey() { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; }
-            function getTomorrowKey() { const d = new Date();
-                d.setDate(d.getDate() + 1); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; }
-            function getWeekdayCN(dateStr) { const [y, m, d] = dateStr.split('-').map(Number); const date = new Date(y, m - 1, d); const w = ['星期日',
-                    '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'
-                ]; return w[date.getDay()]; }
-            function getRelativeDateText(dateStr) { const today = new Date();
-                today.setHours(0, 0, 0, 0); const target = new Date(dateStr + 'T00:00:00'); const diffTime = target - today; const diffDays = Math
-                    .round(diffTime / (1000 * 60 * 60 * 24)); if (diffDays === 0) return '今天'; if (diffDays === -1) return '昨天'; if (diffDays ===
-                    1) return '明天'; if (diffDays < -1) return `${Math.abs(diffDays)}天前`; return `${diffDays}天后`; }
-            function uuid() { return crypto.randomUUID?.() ?? 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => (c === 'x' ? Math
-                    .random() * 16 | 0 : (Math.random() * 16 | 0) & 0x3 | 0x8).toString(16)); }
-            function formatDuration(s) { s = Math.max(0, s | 0); const h = Math.floor(s / 3600),
-                    m = Math.floor((s % 3600) / 60),
-                    sec = s % 60; return h > 0 ?
-                    `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}` :
-                    `${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`; }
-            function formatDurationFull(s) { s = Math.max(0, s | 0); const h = Math.floor(s / 3600),
-                m = Math.floor((s % 3600) / 60),
-                sec = s % 60; let p = []; if (h) p.push(`${h}小时`); if (m) p.push(`${m}分钟`); if (sec || !p.length) p.push(`${sec}秒`); return p.join(
-                    ''); }
+            function getTomorrowKey() { const d = new Date(); d.setDate(d.getDate() + 1); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; }
+            function getWeekdayCN(dateStr) { const [y, m, d] = dateStr.split('-').map(Number); const date = new Date(y, m - 1, d); const w = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六']; return w[date.getDay()]; }
+            function getRelativeDateText(dateStr) { const today = new Date(); today.setHours(0, 0, 0, 0); const target = new Date(dateStr + 'T00:00:00'); const diffTime = target - today; const diffDays = Math.round(diffTime / (1000 * 60 * 60 * 24)); if (diffDays === 0) return '今天'; if (diffDays === -1) return '昨天'; if (diffDays === 1) return '明天'; if (diffDays < -1) return `${Math.abs(diffDays)}天前`; return `${diffDays}天后`; }
+            function uuid() { return crypto.randomUUID?.() ?? 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => (c === 'x' ? Math.random() * 16 | 0 : (Math.random() * 16 | 0) & 0x3 | 0x8).toString(16)); }
+            function formatDuration(s) { s = Math.max(0, s | 0); const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), sec = s % 60; return h > 0 ? `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}` : `${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`; }
+            function formatDurationFull(s) { s = Math.max(0, s | 0); const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), sec = s % 60; let p = []; if (h) p.push(`${h}小时`); if (m) p.push(`${m}分钟`); if (sec || !p.length) p.push(`${sec}秒`); return p.join(''); }
             function formatTimeFromISO(isoStr) { if (!isoStr) return '--:--'; const d = new Date(isoStr); return `${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}:${String(d.getSeconds()).padStart(2,'0')}`; }
-            function showToast(msg) { const c = document.getElementById('toastContainer'); const t = document.createElement('div');
-                t.className = 'toast';
-                t.textContent = msg;
-                c.appendChild(t);
-                setTimeout(() => t.remove(), 2500); }
+            function showToast(msg) { const c = document.getElementById('toastContainer'); const t = document.createElement('div'); t.className = 'toast'; t.textContent = msg; c.appendChild(t); setTimeout(() => t.remove(), 2500); }
             function loadAll() { try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch { return {}; } }
             function saveAll(d) { localStorage.setItem(STORAGE_KEY, JSON.stringify(d)); }
-            function getDayData(dateKey) { const all = loadAll(); if (!all[dateKey]) all[dateKey] = { intentionThrough: '',
-                    intentionBecome: '',
-                    tasks: [],
-                    deletedTasks: [],
-                    stats: { createdCount: 0, deletedCount: 0, modificationCount: 0 },
-                    dailyReflection: null }; return all[dateKey]; }
-            function saveDayData(dateKey, data) { const all = loadAll();
-                all[dateKey] = data;
-                saveAll(all); }
+            function getDayData(dateKey) { const all = loadAll(); if (!all[dateKey]) all[dateKey] = { intentionThrough: '', intentionBecome: '', tasks: [], deletedTasks: [], stats: { createdCount: 0, deletedCount: 0, modificationCount: 0 }, dailyReflection: null }; return all[dateKey]; }
+            function saveDayData(dateKey, data) { const all = loadAll(); all[dateKey] = data; saveAll(all); }
             function loadDrafts() { try { return JSON.parse(localStorage.getItem(DRAFT_KEY)) || []; } catch { return []; } }
             function saveDrafts(drafts) { localStorage.setItem(DRAFT_KEY, JSON.stringify(drafts)); }
 
-            let currentTimingId = null,
-                timingInterval = null,
-                timingStart = null,
-                focusInterval = null;
+            let currentTimingId = null, timingInterval = null, timingStart = null, focusInterval = null;
 
             const intentionDateText = document.getElementById('intentionDateText');
-            const dateWeekdayEl = document.getElementById('dateWeekday'),
-                throughEl = document.getElementById('intentionThrough'),
-                becomeEl = document.getElementById('intentionBecome');
-            const dailyBadge = document.getElementById('dailyReviewBadge'),
-                btnToggle = document.getElementById('btnToggleForm'),
-                createForm = document.getElementById('createForm');
-            const inputStartTime = document.getElementById('inputStartTime'),
-                inputEndTime = document.getElementById('inputEndTime'),
-                inputPlace = document.getElementById('inputPlace');
-            const inputPeople = document.getElementById('inputPeople'),
-                inputCategory = document.getElementById('inputCategory'),
-                inputTool = document.getElementById('inputTool'),
-                inputTitle = document.getElementById('inputTitle');
-            const btnSave = document.getElementById('btnSaveTask'),
-                tasksSection = document.getElementById('tasksSection'),
-                btnDailyReview = document.getElementById('btnDailyReview');
+            const dateWeekdayEl = document.getElementById('dateWeekday'), throughEl = document.getElementById('intentionThrough'), becomeEl = document.getElementById('intentionBecome');
+            const dailyBadge = document.getElementById('dailyReviewBadge'), btnToggle = document.getElementById('btnToggleForm'), createForm = document.getElementById('createForm');
+            const inputStartTime = document.getElementById('inputStartTime'), inputEndTime = document.getElementById('inputEndTime'), inputPlace = document.getElementById('inputPlace');
+            const inputPeople = document.getElementById('inputPeople'), inputCategory = document.getElementById('inputCategory'), inputTool = document.getElementById('inputTool'), inputTitle = document.getElementById('inputTitle');
+            const btnSave = document.getElementById('btnSaveTask'), tasksSection = document.getElementById('tasksSection'), btnDailyReview = document.getElementById('btnDailyReview');
             const modalOverlay = document.getElementById('modalOverlay');
-            const dateNavInput = document.getElementById('dateNavInput');
-            const dateRelativeText = document.getElementById('dateRelativeText');
-            const btnBackToday = document.getElementById('btnBackToday');
-            const menuFab = document.getElementById('menuFab'),
-                menuPopup = document.getElementById('menuPopup'),
-                menuBackdrop = document.getElementById('menuBackdrop');
+            const dateNavInput = document.getElementById('dateNavInput'), dateRelativeText = document.getElementById('dateRelativeText'), btnBackToday = document.getElementById('btnBackToday');
+            const menuFab = document.getElementById('menuFab'), menuPopup = document.getElementById('menuPopup'), menuBackdrop = document.getElementById('menuBackdrop');
             const dropdownOptionsMenu = document.getElementById('dropdownOptionsMenu');
 
             const presetOptions = {
-                inputPlace: ['家中', '办公室', '图书馆', '咖啡厅', '公园', '健身房', '教室', '线上'],
-                inputPeople: ['独自', '伴侣', '家人', '朋友', '同事', '客户', '陌生人', '团队'],
-                inputTool: ['电脑', '手机', '纸笔', '书籍', '乐器', '运动器材', '相机', '软件'],
-                inputCategory: ['学习', '工作', '健身', '阅读', '写作', '社交', '创作', '休息', '家务', '冥想']
+                inputPlace: ['家中','办公室','图书馆','咖啡厅','公园','健身房','教室','线上'],
+                inputPeople: ['独自','伴侣','家人','朋友','同事','客户','陌生人','团队'],
+                inputTool: ['电脑','手机','纸笔','书籍','乐器','运动器材','相机','软件'],
+                inputCategory: ['学习','工作','健身','阅读','写作','社交','创作','休息','家务','冥想']
             };
 
-            function autoWidth(input) { if (input.readOnly || input.type === 'time') return; const mirror = document.createElement(
-                    'span');
-                mirror.style.position = 'absolute';
-                mirror.style.visibility = 'hidden';
-                mirror.style.whiteSpace = 'pre';
-                mirror.style.font = window.getComputedStyle(input).font;
-                mirror.style.padding = window.getComputedStyle(input).padding;
-                mirror.textContent = input.value || input.placeholder || '';
-                document.body.appendChild(mirror); const spanWidth = mirror.offsetWidth;
-                document.body.removeChild(mirror);
-                input.style.width = Math.max(10, spanWidth) + 'px'; }
-            function adjustAllInlineInputs() { document.querySelectorAll('.inline-input:not([type="time"])').forEach(el => autoWidth(
-                    el)); }
-            [throughEl, becomeEl].forEach(el => { el.addEventListener('input', () => autoWidth(el));
-                el.addEventListener('blur', () => autoWidth(el)); });
-            document.querySelectorAll('.inline-input:not([type="time"])').forEach(el => { el.addEventListener('input', () => autoWidth(
-                    el));
-                el.addEventListener('blur', () => autoWidth(el)); });
+            function autoWidth(input) { if (input.readOnly || input.type === 'time') return; const mirror = document.createElement('span'); mirror.style.position = 'absolute'; mirror.style.visibility = 'hidden'; mirror.style.whiteSpace = 'pre'; mirror.style.font = window.getComputedStyle(input).font; mirror.style.padding = window.getComputedStyle(input).padding; mirror.textContent = input.value || input.placeholder || ''; document.body.appendChild(mirror); const spanWidth = mirror.offsetWidth; document.body.removeChild(mirror); input.style.width = Math.max(10, spanWidth) + 'px'; }
+            function adjustAllInlineInputs() { document.querySelectorAll('.inline-input:not([type="time"])').forEach(el => autoWidth(el)); }
+            [throughEl, becomeEl].forEach(el => { el.addEventListener('input', () => autoWidth(el)); el.addEventListener('blur', () => autoWidth(el)); });
+            document.querySelectorAll('.inline-input:not([type="time"])').forEach(el => { el.addEventListener('input', () => autoWidth(el)); el.addEventListener('blur', () => autoWidth(el)); });
 
-            function updateUIMode() { const todayKey = getTodayKey();
-                isTodayView = (currentViewDate === todayKey);
-                isFutureView = (currentViewDate > todayKey); const today = isTodayView; const future = isFutureView;
-                document.getElementById('createSection').style.display = (today || future) ? '' : 'none';
-                document.getElementById('dailyReviewSection').style.display = today ? '' : 'none';
-                throughEl.readOnly = !(today || future);
-                becomeEl.readOnly = !(today || future); if (!(today || future)) { throughEl.style.pointerEvents = 'none';
-                    becomeEl.style.pointerEvents = 'none'; } else { throughEl.style.pointerEvents = '';
-                    becomeEl.style.pointerEvents = ''; }
-                dateNavInput.value = currentViewDate;
-                dateNavInput.max = getTomorrowKey();
-                dateWeekdayEl.textContent = getWeekdayCN(currentViewDate); const relText = getRelativeDateText(currentViewDate);
-                dateRelativeText.textContent = relText;
-                intentionDateText.textContent = relText; if (isTodayView) { btnBackToday.style.display = 'none'; } else {
-                    btnBackToday.style.display = ''; }
-                loadAndRenderDay(); }
+            function updateUIMode() { const todayKey = getTodayKey(); isTodayView = (currentViewDate === todayKey); isFutureView = (currentViewDate > todayKey); const today = isTodayView; const future = isFutureView; document.getElementById('createSection').style.display = (today || future) ? '' : 'none'; document.getElementById('dailyReviewSection').style.display = today ? '' : 'none'; throughEl.readOnly = !(today || future); becomeEl.readOnly = !(today || future); if (!(today || future)) { throughEl.style.pointerEvents = 'none'; becomeEl.style.pointerEvents = 'none'; } else { throughEl.style.pointerEvents = ''; becomeEl.style.pointerEvents = ''; } dateNavInput.value = currentViewDate; dateNavInput.max = getTomorrowKey(); dateWeekdayEl.textContent = getWeekdayCN(currentViewDate); const relText = getRelativeDateText(currentViewDate); dateRelativeText.textContent = relText; intentionDateText.textContent = relText; if (isTodayView) { btnBackToday.style.display = 'none'; } else { btnBackToday.style.display = ''; } loadAndRenderDay(); }
 
-            function loadAndRenderDay() { const dayData = getDayData(currentViewDate);
-                updateIntentionDisplay(dayData);
-                updateStatsDisplay(dayData);
-                updateDailyBadge(dayData);
-                renderTasks(dayData.tasks);
-                updateTotalDurationDisplay(); }
-            function updateIntentionDisplay(dayData) { throughEl.value = dayData.intentionThrough || '';
-                becomeEl.value = dayData.intentionBecome || '';
-                autoWidth(throughEl);
-                autoWidth(becomeEl); }
-            function updateStatsDisplay(dayData) { const s = (dayData && dayData.stats) ? dayData.stats : { createdCount: 0,
-                    deletedCount: 0,
-                    modificationCount: 0 };
-                document.getElementById('statCreated').textContent = s.createdCount || 0;
-                document.getElementById('statDeleted').textContent = s.deletedCount || 0;
-                document.getElementById('statModified').textContent = s.modificationCount || 0; }
-            function updateTotalDurationDisplay() { const dayData = getDayData(currentViewDate); let totalSec = 0; if (dayData.tasks) {
-                    dayData.tasks.forEach(t => { if (t.records) { totalSec += t.records.reduce((s, r) => s + (r.duration || 0),
-                            0); } if (
-                            t.activeTimingStart && isTodayView && t.id === currentTimingId) { totalSec += Math.max(0, Math
-                            .floor((Date.now() - new Date(t.activeTimingStart).getTime()) / 1000)); } }); }
-                document.getElementById('statTotalDuration').textContent = formatDurationFull(totalSec) || '0秒'; }
-            function updateDailyBadge(dayData) { if (dayData.dailyReflection?.completedAt) { dailyBadge.style.display =
-                    'inline-block';
-                    dailyBadge.textContent = '当日复盘已完成';
-                    btnDailyReview.classList.add('is-done');
-                    btnDailyReview.textContent = '查看/修改今日复盘'; } else { dailyBadge.style.display = 'none';
-                    btnDailyReview.classList.remove('is-done');
-                    btnDailyReview.textContent = '结束今天，记录成长'; } }
-            function saveCurrentIntention() { if (!isTodayView && !isFutureView) return; const dayData = getDayData(
-                    currentViewDate);
-                dayData.intentionThrough = throughEl.value.trim();
-                dayData.intentionBecome = becomeEl.value.trim();
-                dayData.intention =
-                    `今天，我想通过${dayData.intentionThrough||'______'}，成为更${dayData.intentionBecome||'______'}的人。`;
-                saveDayData(currentViewDate, dayData); }
-            function addVersion(task, stage, saveAndUpdate = false) { if (!task.versions) task.versions = [];
-                task.versions.push({ stage, time: new Date().toISOString(), data: { startTime: task.startTime,
-                        endTime: task.endTime,
-                        place: task.place,
-                        people: task.people,
-                        category: task.category,
-                        tool: task.tool,
-                        title: task.title } }); if (stage !== 'created') { const dayData = getDayData(currentViewDate); if (!dayData
-                        .stats) dayData.stats = { createdCount: 0, deletedCount: 0, modificationCount: 0 };
-                    dayData.stats.modificationCount = (dayData.stats.modificationCount || 0) + 1; if (saveAndUpdate) {
-                        saveDayData(currentViewDate, dayData);
-                        updateStatsDisplay(dayData); } } }
+            function loadAndRenderDay() { const dayData = getDayData(currentViewDate); updateIntentionDisplay(dayData); updateStatsDisplay(dayData); updateDailyBadge(dayData); renderTasks(dayData.tasks); updateTotalDurationDisplay(); }
+            function updateIntentionDisplay(dayData) { throughEl.value = dayData.intentionThrough || ''; becomeEl.value = dayData.intentionBecome || ''; autoWidth(throughEl); autoWidth(becomeEl); }
+            function updateStatsDisplay(dayData) { const s = (dayData && dayData.stats) ? dayData.stats : { createdCount: 0, deletedCount: 0, modificationCount: 0 }; document.getElementById('statCreated').textContent = s.createdCount || 0; document.getElementById('statDeleted').textContent = s.deletedCount || 0; document.getElementById('statModified').textContent = s.modificationCount || 0; }
+            function updateTotalDurationDisplay() { const dayData = getDayData(currentViewDate); let totalSec = 0; if (dayData.tasks) { dayData.tasks.forEach(t => { if (t.records) { totalSec += t.records.reduce((s, r) => s + (r.duration || 0), 0); } if (t.activeTimingStart && isTodayView && t.id === currentTimingId) { totalSec += Math.max(0, Math.floor((Date.now() - new Date(t.activeTimingStart).getTime()) / 1000)); } }); } document.getElementById('statTotalDuration').textContent = formatDurationFull(totalSec) || '0秒'; }
+            function updateDailyBadge(dayData) { if (dayData.dailyReflection?.completedAt) { dailyBadge.style.display = 'inline-block'; dailyBadge.textContent = '当日复盘已完成'; btnDailyReview.classList.add('is-done'); btnDailyReview.textContent = '查看/修改今日复盘'; } else { dailyBadge.style.display = 'none'; btnDailyReview.classList.remove('is-done'); btnDailyReview.textContent = '结束今天，记录成长'; } }
+            function saveCurrentIntention() { if (!isTodayView && !isFutureView) return; const dayData = getDayData(currentViewDate); dayData.intentionThrough = throughEl.value.trim(); dayData.intentionBecome = becomeEl.value.trim(); dayData.intention = `今天，我想通过${dayData.intentionThrough||'______'}，成为更${dayData.intentionBecome||'______'}的人。`; saveDayData(currentViewDate, dayData); }
+            function addVersion(task, stage, saveAndUpdate = false) { if (!task.versions) task.versions = []; task.versions.push({ stage, time: new Date().toISOString(), data: { startTime: task.startTime, endTime: task.endTime, place: task.place, people: task.people, category: task.category, tool: task.tool, title: task.title } }); if (stage !== 'created') { const dayData = getDayData(currentViewDate); if (!dayData.stats) dayData.stats = { createdCount: 0, deletedCount: 0, modificationCount: 0 }; dayData.stats.modificationCount = (dayData.stats.modificationCount || 0) + 1; if (saveAndUpdate) { saveDayData(currentViewDate, dayData); updateStatsDisplay(dayData); } } }
 
-            function restoreTiming() { if (!isTodayView) return; const dayData = getDayData(currentViewDate); for (const t of dayData
-                    .tasks) { if (t.activeTimingStart && Date.now() - new Date(t.activeTimingStart).getTime() < 86400000) {
+            function restoreTiming() {
+                if (!isTodayView) return;
+                const dayData = getDayData(currentViewDate);
+                for (const t of dayData.tasks) {
+                    if (t.activeTimingStart && Date.now() - new Date(t.activeTimingStart).getTime() < 86400000) {
                         currentTimingId = t.id;
                         timingStart = t.activeTimingStart;
-                        startInterval(t.id); break; } else if (t.activeTimingStart) { t.activeTimingStart = null;
-                        saveDayData(currentViewDate, dayData); } } }
-            function startInterval(id) { if (timingInterval) clearInterval(timingInterval);
-                timingInterval = setInterval(() => { updateTimingDisplay(id);
-                    updateTotalDurationDisplay(); }, 500); }
-            function updateTimingDisplay(id) { const card = document.querySelector(`.task-card[data-task-id="${id}"]`); if (!card)
-                return; const disp = card.querySelector('.timer-display'); const dayData = getDayData(currentViewDate); const task =
-                    dayData.tasks.find(t => t.id === id); if (!task?.activeTimingStart) return; const elapsed = Math.floor((Date.now() -
-                    new Date(task.activeTimingStart).getTime()) / 1000); if (disp) disp.textContent = formatDuration(Math.max(0,
-                    elapsed)); }
-            function buildNarrativeHTML(task) { const cat = escapeHTML(task.category || '未分类'); const tool = task.tool ?
-                    `<span class="narr-tool">${escapeHTML(task.tool)}</span>` : ''; const timeStr =
-                    `${escapeHTML(task.startTime || '--:--')} - ${escapeHTML(task.endTime || '--:--')}`; const place = escapeHTML(task
-                    .place || '未知'); const people = escapeHTML(task.people || '独自'); const title = escapeHTML(task.title || '未命名');
-                return `<span class="narr-category">${cat}</span>${tool} <span class="narr-time">${timeStr}</span>，在<span class="narr-place">${place}</span>与<span class="narr-people">${people}</span>，进行<span class="narr-title">${title}</span>`; }
-            function escapeHTML(s) { const d = document.createElement('div');
-                d.textContent = s; return d.innerHTML; }
-            function sortTasks(tasks) { if (!tasks || tasks.length === 0) return []; const incomplete = tasks.filter(t => !t.completed)
-                    .sort((a, b) => (a.startTime || '').localeCompare(b.startTime || '')); const completed = tasks.filter(t => t
-                        .completed).sort((a, b) => (a.startTime || '').localeCompare(b.startTime || '')); return [...incomplete, ...
-                    completed
-                ]; }
-            function renderTasks(tasks) { tasksSection.innerHTML = ''; const sorted = sortTasks(tasks); if (sorted.length === 0) {
-                    tasksSection.innerHTML =
-                        `<div class="no-tasks-hint">${isTodayView ? '暂未添加任务 · 从「添加任务」开始记录今日行动' : (isFutureView ? '暂无任务，可为明天添加计划' : '该日无任务记录')}</div>`;
-                    return; }
-                sorted.forEach(task => tasksSection.appendChild(buildCard(task))); if (currentTimingId && timingInterval)
-                    updateTimingDisplay(currentTimingId);
-                updateTotalDurationDisplay(); }
-            function buildCard(task) { const card = document.createElement('div');
-                card.className = 'task-card';
-                card.dataset.taskId = task.id; if (task.completed) card.classList.add('completed'); if (task.id === currentTimingId && isTodayView)
-                    card.classList.add('timing-active'); const contentDiv = document.createElement('div');
-                contentDiv.className = 'task-content'; const narr = document.createElement('div');
-                narr.className = 'task-narrative';
-                narr.innerHTML = buildNarrativeHTML(task);
-                contentDiv.appendChild(narr); const meta = document.createElement('div');
-                meta.className = 'task-meta'; const recordCount = (task.records || []).length; const totalDuration = (task.records || [])
-                    .reduce((s, r) => s + (r.duration || 0), 0); if (recordCount > 0) { meta.innerHTML =
-                        `<span class="accumulated-time">${recordCount}次 累计 ${formatDurationFull(totalDuration)}</span>`; } if (task.id ===
-                    currentTimingId && task.activeTimingStart && isTodayView) { const nowElapsed = Math.floor((Date.now() - new Date(task
-                        .activeTimingStart).getTime()) / 1000);
-                    meta.innerHTML = `<span class="timer-display">${formatDuration(Math.max(0, nowElapsed))}</span>` + meta.innerHTML; } if (
-                    task.completed) meta.innerHTML += '<span class="completed-check">已完成</span>';
-                contentDiv.appendChild(meta); const actions = document.createElement('div');
-                actions.className = 'task-actions'; if (task.completed && task.reflection) { const btn = document.createElement(
-                    'button');
-                    btn.className = 'btn-task btn-view';
-                    btn.textContent = '查看复盘';
-                    btn.onclick = (e) => { e.stopPropagation();
-                        showViewReflection(task); };
-                    actions.appendChild(btn); } else if (isTodayView && task.id === currentTimingId) { const btn = document.createElement(
-                    'button');
-                    btn.className = 'btn-task btn-end';
-                    btn.textContent = '结束计时';
-                    btn.onclick = (e) => { e.stopPropagation();
-                        endTiming(task.id); };
-                    actions.appendChild(btn); } else if (isTodayView && !task.completed) { const btn = document.createElement('button');
-                    btn.className = 'btn-task btn-start';
-                    btn.textContent = '开始计时';
-                    btn.onclick = (e) => { e.stopPropagation();
-                        showStartModal(task); };
-                    actions.appendChild(btn); } else if (isFutureView && !task.completed) { const btn = document.createElement('button');
-                    btn.className = 'btn-task btn-edit';
-                    btn.textContent = '编辑';
-                    btn.onclick = (e) => { e.stopPropagation();
-                        showEditModal(task); };
-                    actions.appendChild(btn); } if (task.completed && (isTodayView || isFutureView)) { const btnUncomplete = document
-                    .createElement('button');
-                    btnUncomplete.className = 'btn-task btn-uncomplete';
-                    btnUncomplete.textContent = '取消完成';
-                    btnUncomplete.onclick = (e) => { e.stopPropagation();
-                        uncompleteTask(task.id); };
-                    actions.appendChild(btnUncomplete); } if ((isTodayView || isFutureView) && task.completed) { const btnDel = document
-                    .createElement('button');
-                    btnDel.className = 'btn-task';
-                    btnDel.style.color = '#c44d34';
-                    btnDel.style.borderColor = '#c44d34';
-                    btnDel.textContent = '删除';
-                    btnDel.onclick = (e) => { e.stopPropagation(); if (confirm('确认删除该已完成任务吗？此操作不可撤销。')) { deleteTaskById(task
-                                .id); } };
-                    actions.appendChild(btnDel); }
-                contentDiv.appendChild(actions);
-                card.appendChild(contentDiv); return card; }
+                        startInterval(t.id);
+                        // 如果专注浮层没有显示，则自动打开
+                        const overlay = document.getElementById('focusOverlay');
+                        if (overlay && overlay.style.display !== 'flex') {
+                            showFocusMode(t);
+                        }
+                        break;
+                    } else if (t.activeTimingStart) {
+                        t.activeTimingStart = null;
+                        saveDayData(currentViewDate, dayData);
+                    }
+                }
+            }
+            function startInterval(id) { if (timingInterval) clearInterval(timingInterval); timingInterval = setInterval(() => { updateTimingDisplay(id); updateTotalDurationDisplay(); }, 500); }
+            function updateTimingDisplay(id) { const card = document.querySelector(`.task-card[data-task-id="${id}"]`); if (!card) return; const disp = card.querySelector('.timer-display'); const dayData = getDayData(currentViewDate); const task = dayData.tasks.find(t => t.id === id); if (!task?.activeTimingStart) return; const elapsed = Math.floor((Date.now() - new Date(task.activeTimingStart).getTime()) / 1000); if (disp) disp.textContent = formatDuration(Math.max(0, elapsed)); }
+            function buildNarrativeHTML(task) { const cat = escapeHTML(task.category || '未分类'); const tool = task.tool ? `<span class="narr-tool">${escapeHTML(task.tool)}</span>` : ''; const timeStr = `${escapeHTML(task.startTime || '--:--')} - ${escapeHTML(task.endTime || '--:--')}`; const place = escapeHTML(task.place || '未知'); const people = escapeHTML(task.people || '独自'); const title = escapeHTML(task.title || '未命名'); return `<span class="narr-category">${cat}</span>${tool} <span class="narr-time">${timeStr}</span>，在<span class="narr-place">${place}</span>与<span class="narr-people">${people}</span>，进行<span class="narr-title">${title}</span>`; }
+            function escapeHTML(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+            function sortTasks(tasks) { if (!tasks || tasks.length === 0) return []; const incomplete = tasks.filter(t => !t.completed).sort((a, b) => (a.startTime || '').localeCompare(b.startTime || '')); const completed = tasks.filter(t => t.completed).sort((a, b) => (a.startTime || '').localeCompare(b.startTime || '')); return [...incomplete, ...completed]; }
+            function renderTasks(tasks) { tasksSection.innerHTML = ''; const sorted = sortTasks(tasks); if (sorted.length === 0) { tasksSection.innerHTML = `<div class="no-tasks-hint">${isTodayView ? '暂未添加任务 · 从「添加任务」开始记录今日行动' : (isFutureView ? '暂无任务，可为明天添加计划' : '该日无任务记录')}</div>`; return; } sorted.forEach(task => tasksSection.appendChild(buildCard(task))); if (currentTimingId && timingInterval) updateTimingDisplay(currentTimingId); updateTotalDurationDisplay(); }
+            function buildCard(task) { const card = document.createElement('div'); card.className = 'task-card'; card.dataset.taskId = task.id; if (task.completed) card.classList.add('completed'); if (task.id === currentTimingId && isTodayView) card.classList.add('timing-active'); const contentDiv = document.createElement('div'); contentDiv.className = 'task-content'; const narr = document.createElement('div'); narr.className = 'task-narrative'; narr.innerHTML = buildNarrativeHTML(task); contentDiv.appendChild(narr); const meta = document.createElement('div'); meta.className = 'task-meta'; const recordCount = (task.records || []).length; const totalDuration = (task.records || []).reduce((s, r) => s + (r.duration || 0), 0); if (recordCount > 0) { meta.innerHTML = `<span class="accumulated-time">${recordCount}次 累计 ${formatDurationFull(totalDuration)}</span>`; } if (task.id === currentTimingId && task.activeTimingStart && isTodayView) { const nowElapsed = Math.floor((Date.now() - new Date(task.activeTimingStart).getTime()) / 1000); meta.innerHTML = `<span class="timer-display">${formatDuration(Math.max(0, nowElapsed))}</span>` + meta.innerHTML; } if (task.completed) meta.innerHTML += '<span class="completed-check">已完成</span>'; contentDiv.appendChild(meta); const actions = document.createElement('div'); actions.className = 'task-actions'; if (task.completed && task.reflection) { const btn = document.createElement('button'); btn.className = 'btn-task btn-view'; btn.textContent = '查看复盘'; btn.onclick = (e) => { e.stopPropagation(); showViewReflection(task); }; actions.appendChild(btn); } else if (isTodayView && task.id === currentTimingId) { const btn = document.createElement('button'); btn.className = 'btn-task btn-end'; btn.textContent = '结束计时'; btn.onclick = (e) => { e.stopPropagation(); endTiming(task.id); }; actions.appendChild(btn); } else if (isTodayView && !task.completed) { const btn = document.createElement('button'); btn.className = 'btn-task btn-start'; btn.textContent = '开始计时'; btn.onclick = (e) => { e.stopPropagation(); showStartModal(task); }; actions.appendChild(btn); } else if (isFutureView && !task.completed) { const btn = document.createElement('button'); btn.className = 'btn-task btn-edit'; btn.textContent = '编辑'; btn.onclick = (e) => { e.stopPropagation(); showEditModal(task); }; actions.appendChild(btn); } if (task.completed && (isTodayView || isFutureView)) { const btnUncomplete = document.createElement('button'); btnUncomplete.className = 'btn-task btn-uncomplete'; btnUncomplete.textContent = '取消完成'; btnUncomplete.onclick = (e) => { e.stopPropagation(); uncompleteTask(task.id); }; actions.appendChild(btnUncomplete); } if ((isTodayView || isFutureView) && task.completed) { const btnDel = document.createElement('button'); btnDel.className = 'btn-task'; btnDel.style.color = '#c44d34'; btnDel.style.borderColor = '#c44d34'; btnDel.textContent = '删除'; btnDel.onclick = (e) => { e.stopPropagation(); if (confirm('确认删除该已完成任务吗？此操作不可撤销。')) { deleteTaskById(task.id); } }; actions.appendChild(btnDel); } contentDiv.appendChild(actions); card.appendChild(contentDiv); return card; }
 
-            function uncompleteTask(id) { if (!isTodayView && !isFutureView) return; if (!confirm(
-                    '确认将此任务标记为未完成吗？之前的复盘记录将被清除，但计时记录会保留。')) return; const dayData = getDayData(currentViewDate); const task = dayData.tasks
-                    .find(t => t.id === id); if (!task) return;
-                task.completed = false;
-                task.reflection = null;
-                task.activeTimingStart = null; if (task.id === currentTimingId) { if (timingInterval) { clearInterval(timingInterval);
-                        timingInterval = null; }
-                    currentTimingId = null;
-                    timingStart = null; }
-                addVersion(task, 'uncompleted', false);
-                dayData.stats.modificationCount = (dayData.stats.modificationCount || 0) + 1;
-                saveDayData(currentViewDate, dayData);
-                renderTasks(dayData.tasks);
-                updateStatsDisplay(dayData);
-                updateDailyBadge(dayData);
-                updateTotalDurationDisplay();
-                showToast('任务已取消完成'); }
-            function deleteTaskById(id) { const dayData = getDayData(currentViewDate); const task = dayData.tasks.find(t => t.id ===
-                    id); if (!task) return;
-                dayData.tasks = dayData.tasks.filter(t => t.id !== id); if (currentTimingId === id) { if (timingInterval) {
-                        clearInterval(timingInterval);
-                        timingInterval = null; }
-                    currentTimingId = null;
-                    timingStart = null; }
-                dayData.stats.deletedCount = (dayData.stats.deletedCount || 0) + 1;
-                dayData.deletedTasks.push({ ...task, deletedAt: new Date().toISOString() });
-                saveDayData(currentViewDate, dayData);
-                renderTasks(dayData.tasks);
-                updateStatsDisplay(dayData);
-                updateTotalDurationDisplay();
-                showToast('任务已删除'); }
-            function endTiming(id) { if (!isTodayView || id !== currentTimingId) return; if (timingInterval) { clearInterval(
-                    timingInterval);
-                    timingInterval = null; } const dayData = getDayData(currentViewDate); const task = dayData.tasks.find(t => t.id ===
-                    id); if (!task) return; let dur = 0; if (task.activeTimingStart) { dur = Math.max(0, Math.floor((Date.now() - new Date(
-                        task.activeTimingStart).getTime()) / 1000));
-                    task.records.push({ start: task.activeTimingStart, end: new Date().toISOString(), duration: dur });
-                    task.activeTimingStart = null; }
-                currentTimingId = null;
-                timingStart = null; const totalDuration = (task.records || []).reduce((s, r) => s + (r.duration || 0), 0);
-                saveDayData(currentViewDate, dayData);
-                renderTasks(dayData.tasks);
-                updateTotalDurationDisplay();
-                showCompletionModal(task, dur, totalDuration); }
-            function parseTimeToDate(timeStr) { const [h, m] = timeStr.split(':').map(Number); const d = new Date();
-                d.setHours(h, m, 0, 0); return d; }
-            function showFocusMode(task) { const startTimeDate = new Date(timingStart);
-                document.getElementById('focusStartTime').textContent =
-                    `${String(startTimeDate.getHours()).padStart(2,'0')}:${String(startTimeDate.getMinutes()).padStart(2,'0')}`;
+            function uncompleteTask(id) { if (!isTodayView && !isFutureView) return; if (!confirm('确认将此任务标记为未完成吗？之前的复盘记录将被清除，但计时记录会保留。')) return; const dayData = getDayData(currentViewDate); const task = dayData.tasks.find(t => t.id === id); if (!task) return; task.completed = false; task.reflection = null; task.activeTimingStart = null; if (task.id === currentTimingId) { if (timingInterval) { clearInterval(timingInterval); timingInterval = null; } currentTimingId = null; timingStart = null; } addVersion(task, 'uncompleted', false); dayData.stats.modificationCount = (dayData.stats.modificationCount || 0) + 1; saveDayData(currentViewDate, dayData); renderTasks(dayData.tasks); updateStatsDisplay(dayData); updateDailyBadge(dayData); updateTotalDurationDisplay(); showToast('任务已取消完成'); }
+            function deleteTaskById(id) { const dayData = getDayData(currentViewDate); const task = dayData.tasks.find(t => t.id === id); if (!task) return; dayData.tasks = dayData.tasks.filter(t => t.id !== id); if (currentTimingId === id) { if (timingInterval) { clearInterval(timingInterval); timingInterval = null; } currentTimingId = null; timingStart = null; } dayData.stats.deletedCount = (dayData.stats.deletedCount || 0) + 1; dayData.deletedTasks.push({ ...task, deletedAt: new Date().toISOString() }); saveDayData(currentViewDate, dayData); renderTasks(dayData.tasks); updateStatsDisplay(dayData); updateTotalDurationDisplay(); showToast('任务已删除'); }
+            function endTiming(id) { if (!isTodayView || id !== currentTimingId) return; if (timingInterval) { clearInterval(timingInterval); timingInterval = null; } const dayData = getDayData(currentViewDate); const task = dayData.tasks.find(t => t.id === id); if (!task) return; let dur = 0; if (task.activeTimingStart) { dur = Math.max(0, Math.floor((Date.now() - new Date(task.activeTimingStart).getTime()) / 1000)); task.records.push({ start: task.activeTimingStart, end: new Date().toISOString(), duration: dur }); task.activeTimingStart = null; } currentTimingId = null; timingStart = null; const totalDuration = (task.records || []).reduce((s, r) => s + (r.duration || 0), 0); saveDayData(currentViewDate, dayData); renderTasks(dayData.tasks); updateTotalDurationDisplay(); showCompletionModal(task, dur, totalDuration); }
+            function parseTimeToDate(timeStr) { const [h, m] = timeStr.split(':').map(Number); const d = new Date(); d.setHours(h, m, 0, 0); return d; }
+            function showFocusMode(task) {
+                // 防止重复打开专注模式
+                const overlay = document.getElementById('focusOverlay');
+                if (overlay && overlay.style.display === 'flex') return;
+
+                const startTimeDate = new Date(timingStart);
+                document.getElementById('focusStartTime').textContent = `${String(startTimeDate.getHours()).padStart(2,'0')}:${String(startTimeDate.getMinutes()).padStart(2,'0')}`;
                 document.getElementById('focusEndTime').textContent = task.endTime;
-                document.getElementById('focusOverlay').style.display = 'flex'; if (focusInterval) clearInterval(focusInterval); const
-                    updateFocusInfo = () => { const now = new Date(); const elapsed = Math.floor((now - startTimeDate) / 1000);
-                        document.getElementById('focusTimer').textContent = formatDuration(Math.max(0, elapsed)); const endDate =
-                            parseTimeToDate(task.endTime); let remaining = Math.floor((endDate - now) / 1000); const remainingEl =
-                            document.getElementById('focusRemaining'); if (remaining >= 0) { remainingEl.textContent = formatDuration(
-                                remaining);
-                            remainingEl.classList.remove('overtime'); } else { remainingEl.textContent = '超时 ' + formatDuration(Math.abs(
-                                remaining));
-                            remainingEl.classList.add('overtime'); } };
+                document.getElementById('focusOverlay').style.display = 'flex';
+                if (focusInterval) clearInterval(focusInterval);
+                const updateFocusInfo = () => {
+                    const now = new Date();
+                    const elapsed = Math.floor((now - startTimeDate) / 1000);
+                    document.getElementById('focusTimer').textContent = formatDuration(Math.max(0, elapsed));
+                    const endDate = parseTimeToDate(task.endTime);
+                    let remaining = Math.floor((endDate - now) / 1000);
+                    const remainingEl = document.getElementById('focusRemaining');
+                    if (remaining >= 0) {
+                        remainingEl.textContent = formatDuration(remaining);
+                        remainingEl.classList.remove('overtime');
+                    } else {
+                        remainingEl.textContent = '超时 ' + formatDuration(Math.abs(remaining));
+                        remainingEl.classList.add('overtime');
+                    }
+                };
                 updateFocusInfo();
                 focusInterval = setInterval(updateFocusInfo, 500);
                 window.addEventListener('popstate', blockBack);
-                history.pushState({ focus: true }, '', window.location.href); }
-            function hideFocusMode() { document.getElementById('focusOverlay').style.display = 'none'; if (focusInterval) {
-                    clearInterval(focusInterval);
-                    focusInterval = null; }
-                window.removeEventListener('popstate', blockBack); if (history.state && history.state.focus) history.back(); }
-            function blockBack(e) { e.preventDefault(); if (confirm('强制返回将结束本次计时，下次需重新开始。确定要结束吗？')) { endTiming(currentTimingId);
-                    hideFocusMode(); } else { history.pushState({ focus: true }, '', window.location.href); } }
-            document.getElementById('btnEndFocus').addEventListener('click', () => { if (currentTimingId) { endTiming(
-                    currentTimingId);
-                    hideFocusMode(); } });
-
-            const questionSet = [{ id: 'q1', text: '① 完成这件事时，我感觉难度如何？', options: ['太简单', '刚刚好', '有点难', '太难了'], weights: [0.33, 1.0,
-                    0.67, 0.0
-                ] }, { id: 'q2', text: '② 我做这件事是发自内心的"我想做"。', options: ['完全不是', '有一点', '比较符合', '非常符合'], weights: [0.0, 0.33,
-                    0.67, 1.0
-                ] }, { id: 'q3', text: '③ 我相信自己有能力做好它。', options: ['完全不信', '有一点信心', '比较自信', '完全自信'], weights: [0.0, 0.33, 0.67,
-                    1.0
-                ] }, { id: 'q4', text: '④ 我清楚地知道自己的进展如何。', options: ['非常模糊', '有点模糊', '比较清楚', '非常清楚'], weights: [0.0, 0.33, 0.67,
-                    1.0
-                ] }, { id: 'q5', text: '⑤ 通过这件事，我和他人产生了连接。', options: ['完全没有', '间接相关', '有一定连接', '连接很深'], weights: [0.0, 0.33,
-                    0.67, 1.0
-                ] }];
-
-            function showCompletionModal(task, lastDur, totalDuration) { const html =
-                    `<div class="modal-dialog"><button class="modal-close-x" id="btnCloseComp">×</button><h3>计时结束</h3>
-        <p style="text-align:center;margin-bottom:8px;">本次计时 ${formatDurationFull(lastDur)}</p>
-        <p style="text-align:center;margin-bottom:20px;color:var(--text-muted);">累计总时长 ${formatDurationFull(totalDuration)}</p>
-        <div class="modal-actions" style="justify-content:center;"><button class="btn-modal-primary" id="btnMarkCompleted">已完成，填写复盘</button><button class="btn-modal-secondary" id="btnMarkPaused">未完成，稍后继续</button></div></div>`;
-                openModal(html);
-                document.getElementById('btnCloseComp').onclick = closeModal;
-                document.getElementById('btnMarkCompleted').onclick = () => { closeModal();
-                    showReflectionModal(task, totalDuration); };
-                document.getElementById('btnMarkPaused').onclick = () => { closeModal(); const dayData = getDayData(currentViewDate);
-                    const t = dayData.tasks.find(x => x.id === task.id); if (t) { t.activeTimingStart = null;
-                        saveDayData(currentViewDate, dayData); }
-                    renderTasks(dayData.tasks);
-                    updateTotalDurationDisplay();
-                    showToast('计时已保存，任务未完成'); };
-                addEscListener(closeModal); }
-
-            function showReflectionModal(task, totalDuration) { if (!isTodayView) return; let qHtml = '';
-                questionSet.forEach(q => { qHtml +=
-                        `<div class="question-block"><div class="question-text">${q.text}</div><div class="options-row" id="${q.id}">${q.options.map((opt,i) => `<button class="opt-btn" data-weight="${q.weights[i]}" data-opt="${i}">${opt}</button>`).join('')}</div></div>`
-                        ; }); const firstRecord = (task.records && task.records.length > 0) ? task.records[0] : null; const
-                    lastRecord = (task.records && task.records.length > 0) ? task.records[task.records.length - 1] : null; const
-                    actualStartStr = firstRecord ? formatTimeFromISO(firstRecord.start) : (task.activeTimingStart ?
-                        formatTimeFromISO(task.activeTimingStart) : '无记录'); const actualEndStr = lastRecord ? formatTimeFromISO(
-                        lastRecord.end) : '无记录'; const html =
-                    `<div class="modal-dialog"><button class="modal-close-x" id="btnCloseRefl">×</button><h3>任务完成复盘</h3>
-        <div class="modal-field"><label>计划开始</label><input type="time" id="rStart" value="${task.startTime}"></div>
-        <div class="modal-field"><label>计划截止</label><input type="time" id="rEnd" value="${task.endTime}"></div>
-        <div class="modal-field"><label>地点</label><input id="rPlace" value="${escapeHTML(task.place)}"></div>
-        <div class="modal-field"><label>人物</label><input id="rPeople" value="${escapeHTML(task.people)}"></div>
-        <div class="modal-field"><label>类别</label><input id="rCat" value="${escapeHTML(task.category)}"></div>
-        <div class="modal-field"><label>工具</label><input id="rTool" value="${escapeHTML(task.tool||'')}"></div>
-        <div class="modal-field"><label>任务</label><input id="rTitle" value="${escapeHTML(task.title)}"></div>
-        <div class="modal-field"><label>首次计时开始</label><div class="readonly-field">${actualStartStr}</div></div>
-        <div class="modal-field"><label>最后计时结束</label><div class="readonly-field">${actualEndStr}</div></div>
-        <div class="modal-field"><label>累计时长</label><div class="readonly-field">${formatDurationFull(totalDuration)}（共${(task.records||[]).length}次计时）</div></div>
-        ${qHtml}
-        <div class="score-preview">当前综合评分：<span id="scoreDisplay">0.00</span> / 5.00</div>
-        <div class="modal-field"><label>复盘笔记</label><textarea id="rText" placeholder="这件事我做得如何？遇到了什么障碍？" rows="2"></textarea></div>
-        <div class="modal-field"><label>微小收获</label><input id="rTakeaway" placeholder="通过这次行动，我学到了……"></div>
-        <div class="modal-actions"><button class="btn-modal-secondary" id="btnCancelRefl">取消</button><button class="btn-modal-primary" id="btnSaveRefl">保存复盘</button></div></div>`;
-                openModal(html); const selected = {}; const updateScore = () => { let total = 0;
-                    questionSet.forEach(q => { if (selected[q.id] !== undefined) total += selected[q.id]; });
-                    document.getElementById('scoreDisplay').textContent = total.toFixed(2); return total; };
-                questionSet.forEach(q => { const c = document.getElementById(q.id);
-                    c.querySelectorAll('.opt-btn').forEach(b => b.addEventListener('click', () => { c.querySelectorAll(
-                            '.opt-btn').forEach(x => x.classList.remove('selected'));
-                        b.classList.add('selected');
-                        selected[q.id] = parseFloat(b.dataset.weight);
-                        updateScore(); })); }); const close = () => { closeModal();
-                    renderTasks(getDayData(currentViewDate).tasks);
-                    updateTotalDurationDisplay(); };
-                document.getElementById('btnCloseRefl').onclick = close;
-                document.getElementById('btnCancelRefl').onclick = close;
-                document.getElementById('btnSaveRefl').onclick = () => { const start = document.getElementById('rStart').value,
-                        end = document.getElementById('rEnd').value; const place = document.getElementById('rPlace').value
-                        .trim(),
-                        people = document.getElementById('rPeople').value.trim(); const cat = document.getElementById('rCat')
-                        .value.trim(),
-                        tool = document.getElementById('rTool').value.trim(); const title = document.getElementById('rTitle')
-                        .value.trim(); if (!start || !end || !place || !people || !cat || !title) { showToast('请填写所有必填字段'); return; } if (
-                        !questionSet.every(q => selected[q.id] !== undefined)) { showToast('请回答所有问题'); return; } const score =
-                        updateScore(); const dayData = getDayData(currentViewDate); const t = dayData.tasks.find(x => x.id ===
-                        task.id); if (!t) return;
-                    Object.assign(t, { startTime: start, endTime: end, place, people, category: cat, tool, title });
-                    t.reflection = { actualDuration: totalDuration, rating: score, answers: { ...selected }, text: document
-                            .getElementById('rText').value.trim(),
-                        takeaway: document.getElementById('rTakeaway').value.trim(), firstRecordStart: firstRecord ? firstRecord
-                            .start : null,
-                        lastRecordEnd: lastRecord ? lastRecord.end : null,
-                        recordCount: (t.records || []).length
-                    };
-                    t.completed = true;
-                    t.activeTimingStart = null;
-                    addVersion(t, 'completed', false);
-                    dayData.stats.modificationCount = (dayData.stats.modificationCount || 0) + 1;
-                    saveDayData(currentViewDate, dayData);
-                    close();
-                    renderTasks(dayData.tasks);
-                    updateTotalDurationDisplay();
-                    updateDailyBadge(dayData);
-                    showToast('复盘已保存'); };
-                addEscListener(close); }
-
-            function showViewReflection(task) { if (!task.reflection) return; const r = task.reflection; let detailHtml = ''; if (r
-                    .answers && Object.keys(r.answers).length > 0) {
-                    detailHtml +=
-                        '<div style="margin-top:10px;font-size:0.88rem;color:var(--text-secondary);font-weight:600;">各项得分详情</div>';
-                    questionSet.forEach(q => { const weightVal = r.answers[q.id]; let optText = '未作答',
-                            fillClass = 'low',
-                            fillPercent = 0; if (weightVal !== undefined) { const idx = q.weights.indexOf(weightVal); if (idx >=
-                                0) optText = q.options[idx];
-                            fillPercent = Math.round((weightVal / 1.0) * 100); if (fillPercent >= 70) fillClass = 'high'; else if (
-                                fillPercent >= 35) fillClass = 'mid'; else fillClass = 'low'; }
-                        detailHtml +=
-                            `<div class="score-detail-row"><span class="score-detail-label">${q.text.replace(/^[①②③④⑤]\s*/, '')}</span><div class="score-detail-bar"><div class="score-detail-fill ${fillClass}" style="width:${fillPercent}%;"></div></div><span class="score-detail-value">${optText} (${weightVal !== undefined ? weightVal.toFixed(2) : '?'})</span></div>`
-                            ; }); } const firstRecordStartStr = r.firstRecordStart ? formatTimeFromISO(r.firstRecordStart) :
-                    '无记录'; const lastRecordEndStr = r.lastRecordEnd ? formatTimeFromISO(r.lastRecordEnd) : '无记录'; const html =
-                    `<div class="modal-dialog"><button class="modal-close-x" id="btnCloseView">×</button><h3>复盘记录</h3>
-        <div class="readonly-field">${buildNarrativeHTML(task)}</div>
-        <div class="modal-field"><label>首次计时开始</label><div class="readonly-field">${firstRecordStartStr}</div></div>
-        <div class="modal-field"><label>最后计时结束</label><div class="readonly-field">${lastRecordEndStr}</div></div>
-        <div class="modal-field"><label>累计时长</label><div class="readonly-field">${formatDurationFull(r.actualDuration)}（共${r.recordCount||0}次计时）</div></div>
-        <div class="modal-field"><label>综合评分</label><div class="readonly-field" style="font-weight:600;color:var(--accent-green);">${r.rating.toFixed(2)} / 5.00</div></div>
-        ${detailHtml}
-        <div class="modal-field"><label>笔记</label><div class="readonly-field">${escapeHTML(r.text || '无')}</div></div>
-        <div class="modal-field"><label>收获</label><div class="readonly-field">${escapeHTML(r.takeaway || '无')}</div></div>
-        <div class="modal-actions"><button class="btn-modal-primary" id="btnCloseViewBtn">关闭</button></div></div>`;
-                openModal(html); const close = () => closeModal();
-                document.getElementById('btnCloseView').onclick = close;
-                document.getElementById('btnCloseViewBtn').onclick = close;
-                addEscListener(close); }
-
-            function showEditModal(task) { const html =
-                    `<div class="modal-dialog"><button class="modal-close-x" id="btnCloseEdit">×</button><h3>编辑任务信息</h3>
-        <div class="modal-field"><label>计划开始</label><input type="time" id="eStart" value="${task.startTime}"></div>
-        <div class="modal-field"><label>计划截止</label><input type="time" id="eEnd" value="${task.endTime}"></div>
-        <div class="modal-field"><label>地点</label><input id="ePlace" value="${escapeHTML(task.place)}"></div>
-        <div class="modal-field"><label>人物</label><input id="ePeople" value="${escapeHTML(task.people)}"></div>
-        <div class="modal-field"><label>类别</label><input id="eCat" value="${escapeHTML(task.category)}"></div>
-        <div class="modal-field"><label>工具</label><input id="eTool" value="${escapeHTML(task.tool||'')}"></div>
-        <div class="modal-field"><label>任务</label><input id="eTitle" value="${escapeHTML(task.title)}"></div>
-        <div class="modal-actions"><button class="btn-modal-secondary" id="btnCancelEdit">取消</button><button class="btn-modal-primary" id="btnSaveEdit">保存修改</button></div></div>`;
-                openModal(html); const close = () => closeModal();
-                document.getElementById('btnCloseEdit').onclick = close;
-                document.getElementById('btnCancelEdit').onclick = close;
-                document.getElementById('btnSaveEdit').onclick = () => { const start = document.getElementById('eStart').value,
-                        end = document.getElementById('eEnd').value; const place = document.getElementById('ePlace').value
-                        .trim(),
-                        people = document.getElementById('ePeople').value.trim(); const cat = document.getElementById('eCat')
-                        .value.trim(),
-                        tool = document.getElementById('eTool').value.trim(); const title = document.getElementById('eTitle')
-                        .value.trim(); if (!start || !end || !place || !people || !cat || !title) { showToast('请填写所有必填字段'); return; }
-                    const dayData = getDayData(currentViewDate); const t = dayData.tasks.find(x => x.id === task.id); if (!t) { close();
-                        return; }
-                    Object.assign(t, { startTime: start, endTime: end, place, people, category: cat, tool, title });
-                    addVersion(t, 'modified', false);
-                    dayData.stats.modificationCount = (dayData.stats.modificationCount || 0) + 1;
-                    saveDayData(currentViewDate, dayData);
-                    close();
-                    renderTasks(dayData.tasks);
-                    updateStatsDisplay(dayData);
-                    updateTotalDurationDisplay();
-                    showToast('任务已更新'); };
-                addEscListener(close); }
-
-            function showStartModal(task) { if (!isTodayView) return; if (currentTimingId && currentTimingId !== task.id) {
-                    showToast('请先结束当前计时'); return; } const html =
-                    `<div class="modal-dialog"><button class="modal-close-x" id="btnCloseStart">×</button><h3>确认实际任务信息</h3>
-        <div class="modal-field"><label>计划开始</label><input type="time" id="mStart" value="${task.startTime}"></div>
-        <div class="modal-field"><label>计划截止</label><input type="time" id="mEnd" value="${task.endTime}"></div>
-        <div class="modal-field"><label>地点</label><input id="mPlace" value="${escapeHTML(task.place)}"></div>
-        <div class="modal-field"><label>人物</label><input id="mPeople" value="${escapeHTML(task.people)}"></div>
-        <div class="modal-field"><label>类别</label><input id="mCat" value="${escapeHTML(task.category)}"></div>
-        <div class="modal-field"><label>工具</label><input id="mTool" value="${escapeHTML(task.tool||'')}"></div>
-        <div class="modal-field"><label>任务</label><input id="mTitle" value="${escapeHTML(task.title)}"></div>
-        <div class="modal-actions"><button class="btn-modal-danger" id="btnDeleteTask">删除任务</button><button class="btn-modal-secondary" id="btnCancelStart">取消</button><button class="btn-modal-primary" id="btnConfirmStart">确认并开始计时</button></div></div>`;
-                openModal(html); const close = () => closeModal();
-                document.getElementById('btnCloseStart').onclick = close;
-                document.getElementById('btnCancelStart').onclick = close;
-                document.getElementById('btnDeleteTask').onclick = () => { if (confirm('确认删除该任务吗？此操作不可撤销。')) {
-                    deleteTaskById(task.id);
-                    closeModal(); } };
-                document.getElementById('btnConfirmStart').onclick = () => { const start = document.getElementById('mStart').value,
-                        end = document.getElementById('mEnd').value; const place = document.getElementById('mPlace').value
-                        .trim(),
-                        people = document.getElementById('mPeople').value.trim(); const cat = document.getElementById('mCat')
-                        .value.trim(),
-                        tool = document.getElementById('mTool').value.trim(); const title = document.getElementById('mTitle')
-                        .value.trim(); if (!start || !end || !place || !people || !cat || !title) { showToast('请填写所有必填字段'); return; }
-                    const dayData = getDayData(currentViewDate); const t = dayData.tasks.find(x => x.id === task.id); if (!t) { close();
-                        return; }
-                    Object.assign(t, { startTime: start, endTime: end, place, people, category: cat, tool, title });
-                    t.activeTimingStart = new Date().toISOString();
-                    addVersion(t, 'started', false);
-                    dayData.stats.modificationCount = (dayData.stats.modificationCount || 0) + 1;
-                    saveDayData(currentViewDate, dayData);
-                    currentTimingId = task.id;
-                    timingStart = t.activeTimingStart;
-                    startInterval(task.id);
-                    close();
-                    renderTasks(dayData.tasks);
-                    updateTotalDurationDisplay();
-                    showToast('计时已开始');
-                    showFocusMode(t); };
-                addEscListener(close); }
-
-            function computeWeightedScore() { const dayData = getDayData(currentViewDate); const completed = dayData.tasks.filter(t =>
-                    t.completed && t.reflection); if (completed.length === 0) return null; let totalWeight = 0,
-                    weightedSum = 0;
-                completed.forEach(t => { const dur = t.reflection.actualDuration || 0; const rating = t.reflection.rating || 0;
-                    weightedSum += rating * dur;
-                    totalWeight += dur; }); return totalWeight > 0 ? weightedSum / totalWeight : (completed.reduce((s, t) => s + (t
-                    .reflection.rating || 0), 0) / completed.length); }
-            function hasIncompleteTasks() { const dayData = getDayData(currentViewDate); if (!dayData.tasks || dayData.tasks.length ===
-                    0) return false; return dayData.tasks.some(t => !t.completed); }
-
-            function isEmptyToday() { const dayData = getDayData(currentViewDate); return !dayData.tasks || dayData.tasks.length ===
-            0; }
-
-            function showEmptyDayEasterEgg() {
-                const html = `
-                <div class="modal-dialog">
-                    <button class="modal-close-x" id="btnCloseEmpty">×</button>
-                    <h3>💭</h3>
-                    <div class="empty-day-message">
-                        今天什么也没做，<br>但还是辛苦自己了。<br><br>
-                        <em>休息也是重要的一天。</em>
-                    </div>
-                    <div class="modal-actions" style="justify-content:center;">
-                        <button class="btn-modal-primary" id="btnCloseEmptyBtn">好的，明天见</button>
-                    </div>
-                </div>`;
-                openModal(html);
-                document.getElementById('btnCloseEmpty').onclick = closeModal;
-                document.getElementById('btnCloseEmptyBtn').onclick = closeModal;
-                addEscListener(closeModal);
+                history.pushState({ focus: true }, '', window.location.href);
             }
+            function hideFocusMode() { document.getElementById('focusOverlay').style.display = 'none'; if (focusInterval) { clearInterval(focusInterval); focusInterval = null; } window.removeEventListener('popstate', blockBack); if (history.state && history.state.focus) history.back(); }
+            function blockBack(e) { e.preventDefault(); if (confirm('强制返回将结束本次计时，下次需重新开始。确定要结束吗？')) { endTiming(currentTimingId); hideFocusMode(); } else { history.pushState({ focus: true }, '', window.location.href); } }
+            document.getElementById('btnEndFocus').addEventListener('click', () => { if (currentTimingId) { endTiming(currentTimingId); hideFocusMode(); } });
 
-            function openDailyReviewModal(isEdit = false) { if (!isTodayView) return; const dayData = getDayData(currentViewDate); if (
-                    hasIncompleteTasks()) { showToast('请先完成或处理所有未完成的任务，再进行每日复盘。'); return; } const existing = dayData.dailyReflection; const
-                    autoScore = computeWeightedScore(); const autoScoreText = autoScore !== null ?
-                    `${autoScore.toFixed(2)} / 5.00` : '暂无（今日无已完成任务）'; const existingAnswers = existing?.answers || {}; const
-                    existingIdentity = existing?.identityPractice || ''; const existingAction = existing?.tomorrowAction || ''; const
-                    titleText = isEdit ? '查看/修改今日复盘' : '结束今天'; const html =
-                    `<div class="modal-dialog"><button class="modal-close-x" id="btnCloseDaily">×</button><h3>${titleText}</h3><div style="text-align:center;margin-bottom:18px;"><div style="font-size:0.95rem;color:var(--text-secondary);">今日任务综合评分（加权）</div><div style="font-size:1.9rem;font-weight:600;color:var(--accent-green);">${autoScoreText}</div></div><p style="font-size:0.88rem;color:var(--text-muted);margin-bottom:16px;text-align:center;">以下反思基于自我决定理论，帮助洞察今日心理需求满足状况。</p><div class="question-block"><div class="question-text">① 今天我体验到了自主选择的感觉（Autonomy）？</div><div class="options-row" id="dq1"><button class="opt-btn" data-val="yes">是</button><button class="opt-btn" data-val="no">否</button></div></div><div class="question-block"><div class="question-text">② 今天我感受到了有效完成任务的胜任感（Competence）？</div><div class="options-row" id="dq2"><button class="opt-btn" data-val="yes">是</button><button class="opt-btn" data-val="no">否</button></div></div><div class="question-block"><div class="question-text">③ 今天我与他人建立了有意义的连接或贡献（Relatedness）？</div><div class="options-row" id="dq3"><button class="opt-btn" data-val="yes">是</button><button class="opt-btn" data-val="no">否</button></div></div><div class="modal-field"><label>身份践行反思</label><textarea id="dailyIdentity" placeholder="今天的我，在多大程度上成为了早上想成为的那种人？" rows="2">${escapeHTML(existingIdentity)}</textarea></div><div class="modal-field"><label>明天关键行动</label><input id="dailyAction" placeholder="明天，我要优先固化哪一个微小的动作？" value="${escapeHTML(existingAction)}"></div><div class="modal-actions"><button class="btn-modal-secondary" id="btnCancelDaily">取消</button><button class="btn-modal-primary" id="btnSaveDaily">${isEdit ? '更新复盘' : '保存复盘'}</button></div></div>`;
-                openModal(html); const answers = { dq1: existingAnswers.dq1 || null, dq2: existingAnswers.dq2 || null, dq3: existingAnswers
-                        .dq3 || null };
-                document.querySelectorAll('.options-row').forEach(row => { row.querySelectorAll('.opt-btn').forEach(b => { b
-                        .addEventListener('click', () => { row.querySelectorAll('.opt-btn').forEach(x => x.classList
-                                .remove('selected'));
-                            b.classList.add('selected');
-                            answers[row.id] = b.dataset.val; }); if (b.dataset.val === answers[row.id]) b.classList.add(
-                            'selected'); }); }); const close = () => closeModal();
-                document.getElementById('btnCloseDaily').onclick = close;
-                document.getElementById('btnCancelDaily').onclick = close;
-                document.getElementById('btnSaveDaily').onclick = () => { const dayData2 = getDayData(currentViewDate);
-                    dayData2.dailyReflection = { satisfaction: autoScore !== null ? autoScore : 0, autoScore: autoScore,
-                        answers: { ...answers }, identityPractice: document.getElementById('dailyIdentity').value.trim(),
-                        tomorrowAction: document.getElementById('dailyAction').value.trim(), completedAt: new Date()
-                        .toISOString() };
-                    saveDayData(currentViewDate, dayData2);
-                    close();
-                    updateDailyBadge(dayData2);
-                    showToast(isEdit ? '今日复盘已更新' : '今日复盘已保存'); };
-                addEscListener(close); }
+            const questionSet = [{ id: 'q1', text: '① 完成这件事时，我感觉难度如何？', options: ['太简单', '刚刚好', '有点难', '太难了'], weights: [0.33, 1.0, 0.67, 0.0] }, { id: 'q2', text: '② 我做这件事是发自内心的"我想做"。', options: ['完全不是', '有一点', '比较符合', '非常符合'], weights: [0.0, 0.33, 0.67, 1.0] }, { id: 'q3', text: '③ 我相信自己有能力做好它。', options: ['完全不信', '有一点信心', '比较自信', '完全自信'], weights: [0.0, 0.33, 0.67, 1.0] }, { id: 'q4', text: '④ 我清楚地知道自己的进展如何。', options: ['非常模糊', '有点模糊', '比较清楚', '非常清楚'], weights: [0.0, 0.33, 0.67, 1.0] }, { id: 'q5', text: '⑤ 通过这件事，我和他人产生了连接。', options: ['完全没有', '间接相关', '有一定连接', '连接很深'], weights: [0.0, 0.33, 0.67, 1.0] }];
 
-            btnDailyReview.addEventListener('click', () => {
-                if (!isTodayView) return;
-                const dayData = getDayData(currentViewDate);
-                if (isEmptyToday()) {
-                    showEmptyDayEasterEgg();
-                    return;
-                }
-                if (hasIncompleteTasks()) {
-                    showToast('请先完成或处理所有未完成的任务，再进行每日复盘。');
-                    return;
-                }
-                const isDone = !!dayData.dailyReflection?.completedAt;
-                openDailyReviewModal(isDone);
-            });
+            function showCompletionModal(task, lastDur, totalDuration) { const html = `<div class="modal-dialog"><button class="modal-close-x" id="btnCloseComp">×</button><h3>计时结束</h3><p style="text-align:center;margin-bottom:8px;">本次计时 ${formatDurationFull(lastDur)}</p><p style="text-align:center;margin-bottom:20px;color:var(--text-muted);">累计总时长 ${formatDurationFull(totalDuration)}</p><div class="modal-actions" style="justify-content:center;"><button class="btn-modal-primary" id="btnMarkCompleted">已完成，填写复盘</button><button class="btn-modal-secondary" id="btnMarkPaused">未完成，稍后继续</button></div></div>`; openModal(html); document.getElementById('btnCloseComp').onclick = closeModal; document.getElementById('btnMarkCompleted').onclick = () => { closeModal(); showReflectionModal(task, totalDuration); }; document.getElementById('btnMarkPaused').onclick = () => { closeModal(); const dayData = getDayData(currentViewDate); const t = dayData.tasks.find(x => x.id === task.id); if (t) { t.activeTimingStart = null; saveDayData(currentViewDate, dayData); } renderTasks(dayData.tasks); updateTotalDurationDisplay(); showToast('计时已保存，任务未完成'); }; addEscListener(closeModal); }
 
-            function showDataManagementModal() { const allData = loadAll(); const dateKeys = Object.keys(allData).sort(); let
-                    summaryHtml = '';
-                dateKeys.forEach(dk => { const dd = allData[dk]; const taskCount = (dd.tasks || []).length; const completedCount = (
-                        dd.tasks || []).filter(t => t.completed).length; const hasReflection = dd.dailyReflection?.completedAt ?
-                        '是' : '否';
-                    summaryHtml +=
-                        `<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border-light);font-size:0.9rem;"><span><strong>${dk}</strong> ${getWeekdayCN(dk)}</span><span>任务 ${taskCount} | 完成 ${completedCount} | 复盘 ${hasReflection}</span></div>`
-                        ; }); if (!summaryHtml) summaryHtml =
-                    '<p style="text-align:center;color:var(--text-muted);">暂无数据</p>'; const html =
-                    `<div class="modal-dialog" style="max-width:620px;"><button class="modal-close-x" id="btnCloseDataMgmt">×</button><h3>数据概览</h3><div style="max-height:260px;overflow-y:auto;margin-bottom:16px;">${summaryHtml}</div><p style="font-size:0.85rem;color:var(--text-muted);text-align:center;">共 ${dateKeys.length} 天记录</p><div class="modal-actions" style="justify-content:center;gap:10px;flex-wrap:wrap;"><button class="btn-modal-secondary" id="btnViewRawJSON2">查看原始JSON</button><button class="btn-modal-secondary" id="btnExportJSON2">导出JSON数据</button><button class="btn-modal-secondary" id="btnImportJSON">导入JSON数据</button><button class="btn-modal-danger" id="btnClearData">清除数据</button></div></div>`;
-                openModal(html);
-                document.getElementById('btnCloseDataMgmt').onclick = closeModal;
-                document.getElementById('btnViewRawJSON2').onclick = () => { const jsonStr = JSON.stringify(allData, null, 2); const
-                        html2 =
-                        `<div class="modal-dialog" style="max-width:620px;max-height:80vh;"><button class="modal-close-x" id="btnCloseRaw2">×</button><h3>原始JSON数据</h3><pre style="background:var(--bg);padding:16px;border-radius:var(--radius-sm);overflow:auto;max-height:50vh;font-size:0.8rem;font-family:var(--font-mono);white-space:pre-wrap;word-break:break-all;">${escapeHTML(jsonStr)}</pre><div class="modal-actions"><button class="btn-modal-primary" id="btnCloseRaw2Btn">关闭</button></div></div>`;
-                    openModal(html2);
-                    document.getElementById('btnCloseRaw2').onclick = closeModal;
-                    document.getElementById('btnCloseRaw2Btn').onclick = closeModal;
-                    addEscListener(closeModal); };
-                document.getElementById('btnExportJSON2').onclick = () => { const blob = new Blob([JSON.stringify(allData, null, 2)], {
-                        type: 'application/json' }); const a = document.createElement('a');
-                    a.href = URL.createObjectURL(blob);
-                    a.download = `一日叙事_数据导出_${getTodayKey()}.json`;
-                    a.click();
-                    showToast('数据已导出'); };
-                document.getElementById('btnImportJSON').onclick = () => { closeModal();
-                    showImportModal(); };
-                document.getElementById('btnClearData').onclick = () => { closeModal();
-                    showClearDataModal(); };
-                addEscListener(closeModal); }
+            function showReflectionModal(task, totalDuration) { if (!isTodayView) return; let qHtml = ''; questionSet.forEach(q => { qHtml += `<div class="question-block"><div class="question-text">${q.text}</div><div class="options-row" id="${q.id}">${q.options.map((opt,i) => `<button class="opt-btn" data-weight="${q.weights[i]}" data-opt="${i}">${opt}</button>`).join('')}</div></div>`; }); const firstRecord = (task.records && task.records.length > 0) ? task.records[0] : null; const lastRecord = (task.records && task.records.length > 0) ? task.records[task.records.length - 1] : null; const actualStartStr = firstRecord ? formatTimeFromISO(firstRecord.start) : (task.activeTimingStart ? formatTimeFromISO(task.activeTimingStart) : '无记录'); const actualEndStr = lastRecord ? formatTimeFromISO(lastRecord.end) : '无记录'; const html = `<div class="modal-dialog"><button class="modal-close-x" id="btnCloseRefl">×</button><h3>任务完成复盘</h3><div class="modal-field"><label>计划开始</label><input type="time" id="rStart" value="${task.startTime}"></div><div class="modal-field"><label>计划截止</label><input type="time" id="rEnd" value="${task.endTime}"></div><div class="modal-field"><label>地点</label><input id="rPlace" value="${escapeHTML(task.place)}"></div><div class="modal-field"><label>人物</label><input id="rPeople" value="${escapeHTML(task.people)}"></div><div class="modal-field"><label>类别</label><input id="rCat" value="${escapeHTML(task.category)}"></div><div class="modal-field"><label>工具</label><input id="rTool" value="${escapeHTML(task.tool||'')}"></div><div class="modal-field"><label>任务</label><input id="rTitle" value="${escapeHTML(task.title)}"></div><div class="modal-field"><label>首次计时开始</label><div class="readonly-field">${actualStartStr}</div></div><div class="modal-field"><label>最后计时结束</label><div class="readonly-field">${actualEndStr}</div></div><div class="modal-field"><label>累计时长</label><div class="readonly-field">${formatDurationFull(totalDuration)}（共${(task.records||[]).length}次计时）</div></div>${qHtml}<div class="score-preview">当前综合评分：<span id="scoreDisplay">0.00</span> / 5.00</div><div class="modal-field"><label>复盘笔记</label><textarea id="rText" placeholder="这件事我做得如何？遇到了什么障碍？" rows="2"></textarea></div><div class="modal-field"><label>微小收获</label><input id="rTakeaway" placeholder="通过这次行动，我学到了……"></div><div class="modal-actions"><button class="btn-modal-secondary" id="btnCancelRefl">取消</button><button class="btn-modal-primary" id="btnSaveRefl">保存复盘</button></div></div>`; openModal(html); const selected = {}; const updateScore = () => { let total = 0; questionSet.forEach(q => { if (selected[q.id] !== undefined) total += selected[q.id]; }); document.getElementById('scoreDisplay').textContent = total.toFixed(2); return total; }; questionSet.forEach(q => { const c = document.getElementById(q.id); c.querySelectorAll('.opt-btn').forEach(b => b.addEventListener('click', () => { c.querySelectorAll('.opt-btn').forEach(x => x.classList.remove('selected')); b.classList.add('selected'); selected[q.id] = parseFloat(b.dataset.weight); updateScore(); })); }); const close = () => { closeModal(); renderTasks(getDayData(currentViewDate).tasks); updateTotalDurationDisplay(); }; document.getElementById('btnCloseRefl').onclick = close; document.getElementById('btnCancelRefl').onclick = close; document.getElementById('btnSaveRefl').onclick = () => { const start = document.getElementById('rStart').value, end = document.getElementById('rEnd').value; const place = document.getElementById('rPlace').value.trim(), people = document.getElementById('rPeople').value.trim(); const cat = document.getElementById('rCat').value.trim(), tool = document.getElementById('rTool').value.trim(); const title = document.getElementById('rTitle').value.trim(); if (!start || !end || !place || !people || !cat || !title) { showToast('请填写所有必填字段'); return; } if (!questionSet.every(q => selected[q.id] !== undefined)) { showToast('请回答所有问题'); return; } const score = updateScore(); const dayData = getDayData(currentViewDate); const t = dayData.tasks.find(x => x.id === task.id); if (!t) return; Object.assign(t, { startTime: start, endTime: end, place, people, category: cat, tool, title }); t.reflection = { actualDuration: totalDuration, rating: score, answers: { ...selected }, text: document.getElementById('rText').value.trim(), takeaway: document.getElementById('rTakeaway').value.trim(), firstRecordStart: firstRecord ? firstRecord.start : null, lastRecordEnd: lastRecord ? lastRecord.end : null, recordCount: (t.records || []).length }; t.completed = true; t.activeTimingStart = null; addVersion(t, 'completed', false); dayData.stats.modificationCount = (dayData.stats.modificationCount || 0) + 1; saveDayData(currentViewDate, dayData); close(); renderTasks(dayData.tasks); updateTotalDurationDisplay(); updateDailyBadge(dayData); showToast('复盘已保存'); }; addEscListener(close); }
 
-            function showImportModal() { const html = `
-        <div class="modal-dialog"><button class="modal-close-x" id="btnCloseImport">×</button><h3>导入JSON数据</h3>
-        <p style="margin-bottom:18px;color:var(--text-secondary);">请选择一个JSON文件，然后选择导入方式。</p>
-        <div class="modal-field"><input type="file" id="importFileInput" accept=".json,application/json" style="padding:8px;"></div>
-        <div id="importConflictMsg" style="color:#c44d34;font-size:0.85rem;margin-bottom:12px;"></div>
-        <div class="modal-actions"><button class="btn-modal-secondary" id="btnCancelImport">取消</button><button class="btn-modal-primary" id="btnReplaceImport">替代现有数据</button><button class="btn-modal-primary" id="btnMergeImport" style="background:var(--accent-indigo);">合并数据</button></div></div>`;
-                openModal(html); const fileInput = document.getElementById('importFileInput'); const conflictMsg = document
-                    .getElementById('importConflictMsg'); const btnReplace = document.getElementById('btnReplaceImport'); const
-                    btnMerge = document.getElementById('btnMergeImport');
-                document.getElementById('btnCloseImport').onclick = closeModal;
-                document.getElementById('btnCancelImport').onclick = closeModal; let importedData = null;
-                fileInput.addEventListener('change', (e) => { const file = e.target.files[0]; if (!file) return; const reader =
-                        new FileReader();
-                    reader.onload = (ev) => { try { importedData = JSON.parse(ev.target.result); if (typeof importedData !==
-                                'object' || Array.isArray(importedData)) { throw new Error('格式不正确'); }
-                            conflictMsg.textContent = '';
-                            showToast('文件读取成功'); } catch (err) { conflictMsg.textContent =
-                            '文件解析失败，请检查JSON格式。';
-                        importedData = null; } };
-                    reader.readAsText(file); }); const processReplace = () => { if (!importedData) { conflictMsg.textContent =
-                        '请先选择有效的JSON文件。'; return; } if (!confirm('替代将清除所有现有数据并替换为导入数据，此操作不可撤销。确定继续吗？')) return;
-                    saveAll(importedData);
-                    closeModal();
-                    updateUIMode();
-                    showToast('数据已完全替代'); }; const processMerge = () => { if (!importedData) { conflictMsg.textContent =
-                        '请先选择有效的JSON文件。'; return; } const currentAll = loadAll(); const importKeys = Object.keys(
-                        importedData); const existingKeys = Object.keys(currentAll); const conflictDates = importKeys.filter(k =>
-                        existingKeys.includes(k)); if (conflictDates.length > 0) { conflictMsg.textContent =
-                        `合并失败：以下日期已存在数据，请先清除冲突日期或选择替代。冲突日期：${conflictDates.join('、')}`; return; } const merged = { ...currentAll,
-                        ...importedData };
-                    saveAll(merged);
-                    closeModal();
-                    updateUIMode();
-                    showToast('数据合并成功'); };
-                btnReplace.onclick = processReplace;
-                btnMerge.onclick = processMerge;
-                addEscListener(closeModal); }
+            function showViewReflection(task) { if (!task.reflection) return; const r = task.reflection; let detailHtml = ''; if (r.answers && Object.keys(r.answers).length > 0) { detailHtml += '<div style="margin-top:10px;font-size:0.88rem;color:var(--text-secondary);font-weight:600;">各项得分详情</div>'; questionSet.forEach(q => { const weightVal = r.answers[q.id]; let optText = '未作答', fillClass = 'low', fillPercent = 0; if (weightVal !== undefined) { const idx = q.weights.indexOf(weightVal); if (idx >= 0) optText = q.options[idx]; fillPercent = Math.round((weightVal / 1.0) * 100); if (fillPercent >= 70) fillClass = 'high'; else if (fillPercent >= 35) fillClass = 'mid'; else fillClass = 'low'; } detailHtml += `<div class="score-detail-row"><span class="score-detail-label">${q.text.replace(/^[①②③④⑤]\s*/, '')}</span><div class="score-detail-bar"><div class="score-detail-fill ${fillClass}" style="width:${fillPercent}%;"></div></div><span class="score-detail-value">${optText} (${weightVal !== undefined ? weightVal.toFixed(2) : '?'})</span></div>`; }); } const firstRecordStartStr = r.firstRecordStart ? formatTimeFromISO(r.firstRecordStart) : '无记录'; const lastRecordEndStr = r.lastRecordEnd ? formatTimeFromISO(r.lastRecordEnd) : '无记录'; const html = `<div class="modal-dialog"><button class="modal-close-x" id="btnCloseView">×</button><h3>复盘记录</h3><div class="readonly-field">${buildNarrativeHTML(task)}</div><div class="modal-field"><label>首次计时开始</label><div class="readonly-field">${firstRecordStartStr}</div></div><div class="modal-field"><label>最后计时结束</label><div class="readonly-field">${lastRecordEndStr}</div></div><div class="modal-field"><label>累计时长</label><div class="readonly-field">${formatDurationFull(r.actualDuration)}（共${r.recordCount||0}次计时）</div></div><div class="modal-field"><label>综合评分</label><div class="readonly-field" style="font-weight:600;color:var(--accent-green);">${r.rating.toFixed(2)} / 5.00</div></div>${detailHtml}<div class="modal-field"><label>笔记</label><div class="readonly-field">${escapeHTML(r.text || '无')}</div></div><div class="modal-field"><label>收获</label><div class="readonly-field">${escapeHTML(r.takeaway || '无')}</div></div><div class="modal-actions"><button class="btn-modal-primary" id="btnCloseViewBtn">关闭</button></div></div>`; openModal(html); const close = () => closeModal(); document.getElementById('btnCloseView').onclick = close; document.getElementById('btnCloseViewBtn').onclick = close; addEscListener(close); }
 
-            function showClearDataModal() { const html = `
-        <div class="modal-dialog" style="max-width:560px;"><button class="modal-close-x" id="btnCloseClear">×</button><h3>清除数据</h3>
-        <p style="color:var(--text-muted);margin-bottom:16px;">指定条件删除任务数据。留空的字段表示不限定条件。</p>
-        <div class="modal-field"><label>开始日期（含）</label><input type="date" id="clearStartDate"></div>
-        <div class="modal-field"><label>结束日期（含）</label><input type="date" id="clearEndDate"></div>
-        <div class="modal-field"><label>类别（模糊匹配）</label><input type="text" id="clearCategory" placeholder="例如：学习"></div>
-        <div class="modal-field"><label>人物（模糊匹配）</label><input type="text" id="clearPeople" placeholder="例如：同事"></div>
-        <div class="modal-field"><label>工具（模糊匹配）</label><input type="text" id="clearTool" placeholder="例如：电脑"></div>
-        <div id="clearResultMsg" style="color:#c44d34;font-size:0.85rem;margin-bottom:8px;"></div>
-        <div class="modal-actions"><button class="btn-modal-secondary" id="btnCancelClear">取消</button><button class="btn-modal-danger" id="btnConfirmClear">确认清除</button></div></div>`;
-                openModal(html); const startInput = document.getElementById('clearStartDate'); const endInput = document
-                    .getElementById('clearEndDate'); const catInput = document.getElementById('clearCategory'); const peopleInput =
-                    document.getElementById('clearPeople'); const toolInput = document.getElementById('clearTool'); const resultMsg =
-                    document.getElementById('clearResultMsg');
-                document.getElementById('btnCloseClear').onclick = closeModal;
-                document.getElementById('btnCancelClear').onclick = closeModal;
-                document.getElementById('btnConfirmClear').onclick = () => { const startDate = startInput.value; const endDate =
-                        endInput.value; const catFilter = catInput.value.trim().toLowerCase(); const peopleFilter = peopleInput
-                        .value.trim().toLowerCase(); const toolFilter = toolInput.value.trim().toLowerCase(); if (!startDate && !
-                        endDate && !catFilter && !peopleFilter && !toolFilter) { resultMsg.textContent = '请至少指定一个清除条件。'; return; } if (!
-                        confirm('确认按条件清除数据吗？此操作不可撤销。')) return; const allData = loadAll(); let deletedCount = 0;
-                    Object.keys(allData).forEach(dateKey => { if (startDate && dateKey < startDate) return; if (endDate &&
-                            dateKey > endDate) return; const dayData = allData[dateKey]; if (!dayData.tasks) return; const
-                            originalLength = dayData.tasks.length;
-                        dayData.tasks = dayData.tasks.filter(task => { if (catFilter && (!task.category || !task.category
-                                .toLowerCase().includes(catFilter))) return true; if (peopleFilter && (!task.people || !task
-                                .people.toLowerCase().includes(peopleFilter))) return true; if (toolFilter && (!task.tool || !
-                                task.tool.toLowerCase().includes(toolFilter))) return true; return false; });
-                        deletedCount += (originalLength - dayData.tasks.length); });
-                    saveAll(allData);
-                    closeModal();
-                    updateUIMode();
-                    showToast(`已删除 ${deletedCount} 个任务`); };
-                addEscListener(closeModal); }
+            function showEditModal(task) { const html = `<div class="modal-dialog"><button class="modal-close-x" id="btnCloseEdit">×</button><h3>编辑任务信息</h3><div class="modal-field"><label>计划开始</label><input type="time" id="eStart" value="${task.startTime}"></div><div class="modal-field"><label>计划截止</label><input type="time" id="eEnd" value="${task.endTime}"></div><div class="modal-field"><label>地点</label><input id="ePlace" value="${escapeHTML(task.place)}"></div><div class="modal-field"><label>人物</label><input id="ePeople" value="${escapeHTML(task.people)}"></div><div class="modal-field"><label>类别</label><input id="eCat" value="${escapeHTML(task.category)}"></div><div class="modal-field"><label>工具</label><input id="eTool" value="${escapeHTML(task.tool||'')}"></div><div class="modal-field"><label>任务</label><input id="eTitle" value="${escapeHTML(task.title)}"></div><div class="modal-actions"><button class="btn-modal-secondary" id="btnCancelEdit">取消</button><button class="btn-modal-primary" id="btnSaveEdit">保存修改</button></div></div>`; openModal(html); const close = () => closeModal(); document.getElementById('btnCloseEdit').onclick = close; document.getElementById('btnCancelEdit').onclick = close; document.getElementById('btnSaveEdit').onclick = () => { const start = document.getElementById('eStart').value, end = document.getElementById('eEnd').value; const place = document.getElementById('ePlace').value.trim(), people = document.getElementById('ePeople').value.trim(); const cat = document.getElementById('eCat').value.trim(), tool = document.getElementById('eTool').value.trim(); const title = document.getElementById('eTitle').value.trim(); if (!start || !end || !place || !people || !cat || !title) { showToast('请填写所有必填字段'); return; } const dayData = getDayData(currentViewDate); const t = dayData.tasks.find(x => x.id === task.id); if (!t) { close(); return; } Object.assign(t, { startTime: start, endTime: end, place, people, category: cat, tool, title }); addVersion(t, 'modified', false); dayData.stats.modificationCount = (dayData.stats.modificationCount || 0) + 1; saveDayData(currentViewDate, dayData); close(); renderTasks(dayData.tasks); updateStatsDisplay(dayData); updateTotalDurationDisplay(); showToast('任务已更新'); }; addEscListener(close); }
+
+            function showStartModal(task) { if (!isTodayView) return; if (currentTimingId && currentTimingId !== task.id) { showToast('请先结束当前计时'); return; } const html = `<div class="modal-dialog"><button class="modal-close-x" id="btnCloseStart">×</button><h3>确认实际任务信息</h3><div class="modal-field"><label>计划开始</label><input type="time" id="mStart" value="${task.startTime}"></div><div class="modal-field"><label>计划截止</label><input type="time" id="mEnd" value="${task.endTime}"></div><div class="modal-field"><label>地点</label><input id="mPlace" value="${escapeHTML(task.place)}"></div><div class="modal-field"><label>人物</label><input id="mPeople" value="${escapeHTML(task.people)}"></div><div class="modal-field"><label>类别</label><input id="mCat" value="${escapeHTML(task.category)}"></div><div class="modal-field"><label>工具</label><input id="mTool" value="${escapeHTML(task.tool||'')}"></div><div class="modal-field"><label>任务</label><input id="mTitle" value="${escapeHTML(task.title)}"></div><div class="modal-actions"><button class="btn-modal-danger" id="btnDeleteTask">删除任务</button><button class="btn-modal-secondary" id="btnCancelStart">取消</button><button class="btn-modal-primary" id="btnConfirmStart">确认并开始计时</button></div></div>`; openModal(html); const close = () => closeModal(); document.getElementById('btnCloseStart').onclick = close; document.getElementById('btnCancelStart').onclick = close; document.getElementById('btnDeleteTask').onclick = () => { if (confirm('确认删除该任务吗？此操作不可撤销。')) { deleteTaskById(task.id); closeModal(); } }; document.getElementById('btnConfirmStart').onclick = () => { const start = document.getElementById('mStart').value, end = document.getElementById('mEnd').value; const place = document.getElementById('mPlace').value.trim(), people = document.getElementById('mPeople').value.trim(); const cat = document.getElementById('mCat').value.trim(), tool = document.getElementById('mTool').value.trim(); const title = document.getElementById('mTitle').value.trim(); if (!start || !end || !place || !people || !cat || !title) { showToast('请填写所有必填字段'); return; } const dayData = getDayData(currentViewDate); const t = dayData.tasks.find(x => x.id === task.id); if (!t) { close(); return; } Object.assign(t, { startTime: start, endTime: end, place, people, category: cat, tool, title }); t.activeTimingStart = new Date().toISOString(); addVersion(t, 'started', false); dayData.stats.modificationCount = (dayData.stats.modificationCount || 0) + 1; saveDayData(currentViewDate, dayData); currentTimingId = task.id; timingStart = t.activeTimingStart; startInterval(task.id); close(); renderTasks(dayData.tasks); updateTotalDurationDisplay(); showToast('计时已开始'); showFocusMode(t); }; addEscListener(close); }
+
+            function computeWeightedScore() { const dayData = getDayData(currentViewDate); const completed = dayData.tasks.filter(t => t.completed && t.reflection); if (completed.length === 0) return null; let totalWeight = 0, weightedSum = 0; completed.forEach(t => { const dur = t.reflection.actualDuration || 0; const rating = t.reflection.rating || 0; weightedSum += rating * dur; totalWeight += dur; }); return totalWeight > 0 ? weightedSum / totalWeight : (completed.reduce((s, t) => s + (t.reflection.rating || 0), 0) / completed.length); }
+            function hasIncompleteTasks() { const dayData = getDayData(currentViewDate); if (!dayData.tasks || dayData.tasks.length === 0) return false; return dayData.tasks.some(t => !t.completed); }
+            function isEmptyToday() { const dayData = getDayData(currentViewDate); return !dayData.tasks || dayData.tasks.length === 0; }
+
+            function showEmptyDayEasterEgg() { const html = `<div class="modal-dialog"><button class="modal-close-x" id="btnCloseEmpty">×</button><h3>💭</h3><div class="empty-day-message">今天什么也没做，<br>但还是辛苦自己了。<br><br><em>休息也是重要的一天。</em></div><div class="modal-actions" style="justify-content:center;"><button class="btn-modal-primary" id="btnCloseEmptyBtn">好的，明天见</button></div></div>`; openModal(html); document.getElementById('btnCloseEmpty').onclick = closeModal; document.getElementById('btnCloseEmptyBtn').onclick = closeModal; addEscListener(closeModal); }
+
+            function openDailyReviewModal(isEdit = false) { if (!isTodayView) return; const dayData = getDayData(currentViewDate); if (hasIncompleteTasks()) { showToast('请先完成或处理所有未完成的任务，再进行每日复盘。'); return; } const existing = dayData.dailyReflection; const autoScore = computeWeightedScore(); const autoScoreText = autoScore !== null ? `${autoScore.toFixed(2)} / 5.00` : '暂无（今日无已完成任务）'; const existingAnswers = existing?.answers || {}; const existingIdentity = existing?.identityPractice || ''; const existingAction = existing?.tomorrowAction || ''; const titleText = isEdit ? '查看/修改今日复盘' : '结束今天'; const html = `<div class="modal-dialog"><button class="modal-close-x" id="btnCloseDaily">×</button><h3>${titleText}</h3><div style="text-align:center;margin-bottom:18px;"><div style="font-size:0.95rem;color:var(--text-secondary);">今日任务综合评分（加权）</div><div style="font-size:1.9rem;font-weight:600;color:var(--accent-green);">${autoScoreText}</div></div><p style="font-size:0.88rem;color:var(--text-muted);margin-bottom:16px;text-align:center;">以下反思基于自我决定理论，帮助洞察今日心理需求满足状况。</p><div class="question-block"><div class="question-text">① 今天我体验到了自主选择的感觉（Autonomy）？</div><div class="options-row" id="dq1"><button class="opt-btn" data-val="yes">是</button><button class="opt-btn" data-val="no">否</button></div></div><div class="question-block"><div class="question-text">② 今天我感受到了有效完成任务的胜任感（Competence）？</div><div class="options-row" id="dq2"><button class="opt-btn" data-val="yes">是</button><button class="opt-btn" data-val="no">否</button></div></div><div class="question-block"><div class="question-text">③ 今天我与他人建立了有意义的连接或贡献（Relatedness）？</div><div class="options-row" id="dq3"><button class="opt-btn" data-val="yes">是</button><button class="opt-btn" data-val="no">否</button></div></div><div class="modal-field"><label>身份践行反思</label><textarea id="dailyIdentity" placeholder="今天的我，在多大程度上成为了早上想成为的那种人？" rows="2">${escapeHTML(existingIdentity)}</textarea></div><div class="modal-field"><label>明天关键行动</label><input id="dailyAction" placeholder="明天，我要优先固化哪一个微小的动作？" value="${escapeHTML(existingAction)}"></div><div class="modal-actions"><button class="btn-modal-secondary" id="btnCancelDaily">取消</button><button class="btn-modal-primary" id="btnSaveDaily">${isEdit ? '更新复盘' : '保存复盘'}</button></div></div>`; openModal(html); const answers = { dq1: existingAnswers.dq1 || null, dq2: existingAnswers.dq2 || null, dq3: existingAnswers.dq3 || null }; document.querySelectorAll('.options-row').forEach(row => { row.querySelectorAll('.opt-btn').forEach(b => { b.addEventListener('click', () => { row.querySelectorAll('.opt-btn').forEach(x => x.classList.remove('selected')); b.classList.add('selected'); answers[row.id] = b.dataset.val; }); if (b.dataset.val === answers[row.id]) b.classList.add('selected'); }); }); const close = () => closeModal(); document.getElementById('btnCloseDaily').onclick = close; document.getElementById('btnCancelDaily').onclick = close; document.getElementById('btnSaveDaily').onclick = () => { const dayData2 = getDayData(currentViewDate); dayData2.dailyReflection = { satisfaction: autoScore !== null ? autoScore : 0, autoScore: autoScore, answers: { ...answers }, identityPractice: document.getElementById('dailyIdentity').value.trim(), tomorrowAction: document.getElementById('dailyAction').value.trim(), completedAt: new Date().toISOString() }; saveDayData(currentViewDate, dayData2); close(); updateDailyBadge(dayData2); showToast(isEdit ? '今日复盘已更新' : '今日复盘已保存'); }; addEscListener(close); }
+
+            btnDailyReview.addEventListener('click', () => { if (!isTodayView) return; const dayData = getDayData(currentViewDate); if (isEmptyToday()) { showEmptyDayEasterEgg(); return; } if (hasIncompleteTasks()) { showToast('请先完成或处理所有未完成的任务，再进行每日复盘。'); return; } const isDone = !!dayData.dailyReflection?.completedAt; openDailyReviewModal(isDone); });
+
+            function showDataManagementModal() { const allData = loadAll(); const dateKeys = Object.keys(allData).sort(); let summaryHtml = ''; dateKeys.forEach(dk => { const dd = allData[dk]; const taskCount = (dd.tasks || []).length; const completedCount = (dd.tasks || []).filter(t => t.completed).length; const hasReflection = dd.dailyReflection?.completedAt ? '是' : '否'; summaryHtml += `<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border-light);font-size:0.9rem;"><span><strong>${dk}</strong> ${getWeekdayCN(dk)}</span><span>任务 ${taskCount} | 完成 ${completedCount} | 复盘 ${hasReflection}</span></div>`; }); if (!summaryHtml) summaryHtml = '<p style="text-align:center;color:var(--text-muted);">暂无数据</p>'; const html = `<div class="modal-dialog" style="max-width:620px;"><button class="modal-close-x" id="btnCloseDataMgmt">×</button><h3>数据概览</h3><div style="max-height:260px;overflow-y:auto;margin-bottom:16px;">${summaryHtml}</div><p style="font-size:0.85rem;color:var(--text-muted);text-align:center;">共 ${dateKeys.length} 天记录</p><div class="modal-actions" style="justify-content:center;gap:10px;flex-wrap:wrap;"><button class="btn-modal-secondary" id="btnViewRawJSON2">查看原始JSON</button><button class="btn-modal-secondary" id="btnExportJSON2">导出JSON数据</button><button class="btn-modal-secondary" id="btnImportJSON">导入JSON数据</button><button class="btn-modal-danger" id="btnClearData">清除数据</button></div></div>`; openModal(html); document.getElementById('btnCloseDataMgmt').onclick = closeModal; document.getElementById('btnViewRawJSON2').onclick = () => { const jsonStr = JSON.stringify(allData, null, 2); const html2 = `<div class="modal-dialog" style="max-width:620px;max-height:80vh;"><button class="modal-close-x" id="btnCloseRaw2">×</button><h3>原始JSON数据</h3><pre style="background:var(--bg);padding:16px;border-radius:var(--radius-sm);overflow:auto;max-height:50vh;font-size:0.8rem;font-family:var(--font-mono);white-space:pre-wrap;word-break:break-all;">${escapeHTML(jsonStr)}</pre><div class="modal-actions"><button class="btn-modal-primary" id="btnCloseRaw2Btn">关闭</button></div></div>`; openModal(html2); document.getElementById('btnCloseRaw2').onclick = closeModal; document.getElementById('btnCloseRaw2Btn').onclick = closeModal; addEscListener(closeModal); }; document.getElementById('btnExportJSON2').onclick = () => { const blob = new Blob([JSON.stringify(allData, null, 2)], { type: 'application/json' }); const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `一日叙事_数据导出_${getTodayKey()}.json`; a.click(); showToast('数据已导出'); }; document.getElementById('btnImportJSON').onclick = () => { closeModal(); showImportModal(); }; document.getElementById('btnClearData').onclick = () => { closeModal(); showClearDataModal(); }; addEscListener(closeModal); }
+
+            function showImportModal() { const html = `<div class="modal-dialog"><button class="modal-close-x" id="btnCloseImport">×</button><h3>导入JSON数据</h3><p style="margin-bottom:18px;color:var(--text-secondary);">请选择一个JSON文件，然后选择导入方式。</p><div class="modal-field"><input type="file" id="importFileInput" accept=".json,application/json" style="padding:8px;"></div><div id="importConflictMsg" style="color:#c44d34;font-size:0.85rem;margin-bottom:12px;"></div><div class="modal-actions"><button class="btn-modal-secondary" id="btnCancelImport">取消</button><button class="btn-modal-primary" id="btnReplaceImport">替代现有数据</button><button class="btn-modal-primary" id="btnMergeImport" style="background:var(--accent-indigo);">合并数据</button></div></div>`; openModal(html); const fileInput = document.getElementById('importFileInput'); const conflictMsg = document.getElementById('importConflictMsg'); const btnReplace = document.getElementById('btnReplaceImport'); const btnMerge = document.getElementById('btnMergeImport'); document.getElementById('btnCloseImport').onclick = closeModal; document.getElementById('btnCancelImport').onclick = closeModal; let importedData = null; fileInput.addEventListener('change', (e) => { const file = e.target.files[0]; if (!file) return; const reader = new FileReader(); reader.onload = (ev) => { try { importedData = JSON.parse(ev.target.result); if (typeof importedData !== 'object' || Array.isArray(importedData)) { throw new Error('格式不正确'); } conflictMsg.textContent = ''; showToast('文件读取成功'); } catch (err) { conflictMsg.textContent = '文件解析失败，请检查JSON格式。'; importedData = null; } }; reader.readAsText(file); }); const processReplace = () => { if (!importedData) { conflictMsg.textContent = '请先选择有效的JSON文件。'; return; } if (!confirm('替代将清除所有现有数据并替换为导入数据，此操作不可撤销。确定继续吗？')) return; saveAll(importedData); closeModal(); updateUIMode(); showToast('数据已完全替代'); }; const processMerge = () => { if (!importedData) { conflictMsg.textContent = '请先选择有效的JSON文件。'; return; } const currentAll = loadAll(); const importKeys = Object.keys(importedData); const existingKeys = Object.keys(currentAll); const conflictDates = importKeys.filter(k => existingKeys.includes(k)); if (conflictDates.length > 0) { conflictMsg.textContent = `合并失败：以下日期已存在数据，请先清除冲突日期或选择替代。冲突日期：${conflictDates.join('、')}`; return; } const merged = { ...currentAll, ...importedData }; saveAll(merged); closeModal(); updateUIMode(); showToast('数据合并成功'); }; btnReplace.onclick = processReplace; btnMerge.onclick = processMerge; addEscListener(closeModal); }
+
+            function showClearDataModal() { const html = `<div class="modal-dialog" style="max-width:560px;"><button class="modal-close-x" id="btnCloseClear">×</button><h3>清除数据</h3><p style="color:var(--text-muted);margin-bottom:16px;">指定条件删除任务数据。留空的字段表示不限定条件。</p><div class="modal-field"><label>开始日期（含）</label><input type="date" id="clearStartDate"></div><div class="modal-field"><label>结束日期（含）</label><input type="date" id="clearEndDate"></div><div class="modal-field"><label>类别（模糊匹配）</label><input type="text" id="clearCategory" placeholder="例如：学习"></div><div class="modal-field"><label>人物（模糊匹配）</label><input type="text" id="clearPeople" placeholder="例如：同事"></div><div class="modal-field"><label>工具（模糊匹配）</label><input type="text" id="clearTool" placeholder="例如：电脑"></div><div id="clearResultMsg" style="color:#c44d34;font-size:0.85rem;margin-bottom:8px;"></div><div class="modal-actions"><button class="btn-modal-secondary" id="btnCancelClear">取消</button><button class="btn-modal-danger" id="btnConfirmClear">确认清除</button></div></div>`; openModal(html); const startInput = document.getElementById('clearStartDate'); const endInput = document.getElementById('clearEndDate'); const catInput = document.getElementById('clearCategory'); const peopleInput = document.getElementById('clearPeople'); const toolInput = document.getElementById('clearTool'); const resultMsg = document.getElementById('clearResultMsg'); document.getElementById('btnCloseClear').onclick = closeModal; document.getElementById('btnCancelClear').onclick = closeModal; document.getElementById('btnConfirmClear').onclick = () => { const startDate = startInput.value; const endDate = endInput.value; const catFilter = catInput.value.trim().toLowerCase(); const peopleFilter = peopleInput.value.trim().toLowerCase(); const toolFilter = toolInput.value.trim().toLowerCase(); if (!startDate && !endDate && !catFilter && !peopleFilter && !toolFilter) { resultMsg.textContent = '请至少指定一个清除条件。'; return; } if (!confirm('确认按条件清除数据吗？此操作不可撤销。')) return; const allData = loadAll(); let deletedCount = 0; Object.keys(allData).forEach(dateKey => { if (startDate && dateKey < startDate) return; if (endDate && dateKey > endDate) return; const dayData = allData[dateKey]; if (!dayData.tasks) return; const originalLength = dayData.tasks.length; dayData.tasks = dayData.tasks.filter(task => { if (catFilter && (!task.category || !task.category.toLowerCase().includes(catFilter))) return true; if (peopleFilter && (!task.people || !task.people.toLowerCase().includes(peopleFilter))) return true; if (toolFilter && (!task.tool || !task.tool.toLowerCase().includes(toolFilter))) return true; return false; }); deletedCount += (originalLength - dayData.tasks.length); }); saveAll(allData); closeModal(); updateUIMode(); showToast(`已删除 ${deletedCount} 个任务`); }; addEscListener(closeModal); }
 
             function showDraftModal() { const drafts = loadDrafts(); const buildDraftHTML = () => { if (drafts.length === 0) return '<p style="text-align:center;color:var(--text-muted);padding:20px;">暂无历史草稿</p>'; return drafts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).map(draft => { const dateStr = new Date(draft.createdAt).toLocaleString('zh-CN', {month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'}); const preview = draft.content.length > 100 ? draft.content.slice(0, 100) + '…' : draft.content; return `<div class="draft-history-item" data-draft-id="${draft.id}"><div class="draft-history-meta"><span>${dateStr}</span><button class="btn-task" style="font-size:0.75rem;padding:4px 10px;color:#c44d34;border-color:#c44d34;" data-delete-draft="${draft.id}">删除</button></div><div class="draft-history-preview">${escapeHTML(preview)}</div><div class="draft-history-full" style="display:none;">${escapeHTML(draft.content)}</div></div>`; }).join(''); }; const html = `<div class="modal-dialog" style="max-width:560px;max-height:80vh;"><button class="modal-close-x" id="btnCloseDraft">×</button><h3>草稿纸</h3><div class="draft-guide">有些事情可能不是一天就能决定的，但你可以在这里梳理思路，把它拆解成今天的任务。草稿纸会保留你所有的记录，除非你主动删除它。</div><div class="draft-tab-row"><div class="draft-tab active" id="draftTabEdit">✏️ 编辑</div><div class="draft-tab" id="draftTabHistory">📋 历史草稿 (${drafts.length})</div></div><div id="draftEditPanel"><div class="modal-field"><textarea id="draftTextarea" placeholder="在这里随意打字，梳理今天要做的事…" rows="8" style="min-height:180px;"></textarea></div><div class="modal-actions"><button class="btn-modal-primary" id="btnSaveDraft">保存草稿</button></div></div><div id="draftHistoryPanel" style="display:none;"><div style="max-height:350px;overflow-y:auto;" id="draftHistoryList">${buildDraftHTML()}</div></div></div>`; openModal(html); const textarea = document.getElementById('draftTextarea'); const historyList = document.getElementById('draftHistoryList'); const editPanel = document.getElementById('draftEditPanel'); const historyPanel = document.getElementById('draftHistoryPanel'); const tabEdit = document.getElementById('draftTabEdit'); const tabHistory = document.getElementById('draftTabHistory'); const refreshHistory = () => { const updatedDrafts = loadDrafts(); tabHistory.textContent = `📋 历史草稿 (${updatedDrafts.length})`; if (updatedDrafts.length === 0) { historyList.innerHTML = '<p style="text-align:center;color:var(--text-muted);padding:20px;">暂无历史草稿</p>'; } else { historyList.innerHTML = updatedDrafts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).map(draft => { const dateStr = new Date(draft.createdAt).toLocaleString('zh-CN', {month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'}); const preview = draft.content.length > 100 ? draft.content.slice(0, 100) + '…' : draft.content; return `<div class="draft-history-item" data-draft-id="${draft.id}"><div class="draft-history-meta"><span>${dateStr}</span><button class="btn-task" style="font-size:0.75rem;padding:4px 10px;color:#c44d34;border-color:#c44d34;" data-delete-draft="${draft.id}">删除</button></div><div class="draft-history-preview">${escapeHTML(preview)}</div><div class="draft-history-full" style="display:none;">${escapeHTML(draft.content)}</div></div>`; }).join(''); } bindHistoryEvents(); }; const bindHistoryEvents = () => { historyList.querySelectorAll('.draft-history-item').forEach(item => { item.addEventListener('click', (e) => { if (e.target.closest('[data-delete-draft]')) return; const full = item.querySelector('.draft-history-full'); if (full) full.style.display = full.style.display === 'none' ? 'block' : 'none'; }); }); historyList.querySelectorAll('[data-delete-draft]').forEach(btn => { btn.addEventListener('click', (e) => { e.stopPropagation(); const draftId = btn.dataset.deleteDraft; if (confirm('确认删除这条草稿吗？')) { const currentDrafts = loadDrafts(); saveDrafts(currentDrafts.filter(d => d.id !== draftId)); refreshHistory(); showToast('草稿已删除'); } }); }); }; tabEdit.addEventListener('click', () => { tabEdit.classList.add('active'); tabHistory.classList.remove('active'); editPanel.style.display = ''; historyPanel.style.display = 'none'; }); tabHistory.addEventListener('click', () => { tabHistory.classList.add('active'); tabEdit.classList.remove('active'); editPanel.style.display = 'none'; historyPanel.style.display = ''; refreshHistory(); }); document.getElementById('btnCloseDraft').onclick = closeModal; document.getElementById('btnSaveDraft').onclick = () => { const content = textarea.value.trim(); if (!content) { showToast('请输入草稿内容'); return; } const currentDrafts = loadDrafts(); currentDrafts.push({ id: uuid(), content, createdAt: new Date().toISOString() }); saveDrafts(currentDrafts); textarea.value = ''; showToast('草稿已保存'); refreshHistory(); }; bindHistoryEvents(); addEscListener(closeModal); }
 
@@ -1979,8 +1330,23 @@
             let intentionTimer;
             [throughEl, becomeEl].forEach(el => { el.addEventListener('input', () => { clearTimeout(intentionTimer); intentionTimer = setTimeout(saveCurrentIntention, 500); }); el.addEventListener('blur', saveCurrentIntention); });
 
-            updateUIMode(); if (isTodayView) restoreTiming(); let lastDateCheck = getTodayKey();
+            updateUIMode(); if (isTodayView) restoreTiming();
+            let lastDateCheck = getTodayKey();
             setInterval(() => { if (getTodayKey() !== lastDateCheck) { lastDateCheck = getTodayKey(); if (isTodayView) { currentViewDate = getTodayKey(); updateUIMode(); restoreTiming(); } showToast('新的一天'); } updateTotalDurationDisplay(); }, 30000);
+
+            // 页面从后台恢复时，如果正在计时，确保专注浮层显示
+            document.addEventListener('visibilitychange', () => {
+                if (!document.hidden && isTodayView && currentTimingId) {
+                    const overlay = document.getElementById('focusOverlay');
+                    if (!overlay || overlay.style.display !== 'flex') {
+                        const dayData = getDayData(currentViewDate);
+                        const task = dayData.tasks.find(t => t.id === currentTimingId);
+                        if (task && task.activeTimingStart) {
+                            showFocusMode(task);
+                        }
+                    }
+                }
+            });
         })();
     </script>
     <script>
