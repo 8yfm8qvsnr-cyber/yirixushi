@@ -19,9 +19,9 @@
             --accent-indigo-soft: #eef1f8;
             --border: #e2e2de;
             --border-light: #f0f0ea;
-            --shadow: 0 1px 3px rgba(0,0,0,0.04);
-            --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
-            --shadow-lg: 0 8px 24px rgba(0,0,0,0.08);
+            --shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
             --radius: 12px;
             --radius-sm: 8px;
             --radius-xs: 6px;
@@ -39,569 +39,1171 @@
             --focus-bg: #ffffff;
             --overtime-color: #c44d34;
         }
-        * { margin:0; padding:0; box-sizing:border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             background: var(--bg);
             color: var(--text);
             font-family: var(--font-sans);
-            line-height: 1.6;
+            line-height: 1.65;
             min-height: 100vh;
             display: flex;
             justify-content: center;
-            padding: 24px 16px 60px;
+            padding: 24px 16px 80px;
             -webkit-font-smoothing: antialiased;
             position: relative;
             letter-spacing: -0.01em;
             overflow-x: hidden;
+            font-size: 1.05rem;
         }
-        .app-container { width:100%; max-width:var(--max-width); display:flex; flex-direction:column; gap:20px; }
+        .app-container {
+            width: 100%;
+            max-width: var(--max-width);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
 
         .focus-overlay {
-            position: fixed; inset: 0; background: var(--focus-bg); z-index: 1500;
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-            font-family: var(--font-sans); color: var(--text); padding: 20px;
-            backdrop-filter: blur(6px); animation: fadeIn 0.25s ease;
+            position: fixed;
+            inset: 0;
+            background: var(--focus-bg);
+            z-index: 1500;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-sans);
+            color: var(--text);
+            padding: 20px;
+            backdrop-filter: blur(6px);
+            animation: fadeIn 0.25s ease;
         }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        .focus-timer { font-size: 4.5rem; font-weight: 300; font-family: var(--font-mono); color: var(--accent-green); letter-spacing: 0.04em; margin-bottom: 8px; line-height: 1; }
-        .focus-info { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 12px; display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
-        .focus-info span { font-weight: 500; }
-        .focus-info .overtime { color: var(--overtime-color); font-weight: 600; }
-        .focus-task-label { font-size: 1.1rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 8px; padding: 6px 20px; background: var(--accent-green-soft); border-radius: 20px; }
-        .focus-encouragement { font-size: 1rem; color: var(--accent-indigo); font-style: italic; margin-bottom: 36px; letter-spacing: 0.02em; }
-        .btn-end-focus { padding: 12px 36px; border-radius: 24px; border: 2px solid var(--accent-green); background: transparent; color: var(--accent-green); font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all var(--transition); letter-spacing: 0.03em; font-family: var(--font-sans); }
-        .btn-end-focus:hover { background: var(--accent-green); color: #fff; }
-
-        .philosophy-icon, .memo-icon {
-            position: fixed; bottom: 24px; width: 38px; height: 38px; border-radius: 50%;
-            background: rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.06);
-            display: flex; align-items: center; justify-content: center; cursor: pointer;
-            z-index: 900; transition: all var(--transition); color: var(--text-muted);
-            font-size: 18px; user-select: none; backdrop-filter: blur(4px);
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
-        .philosophy-icon { right: 24px; }
-        .memo-icon { left: 24px; }
-        .philosophy-icon:hover, .memo-icon:hover { background: rgba(0,0,0,0.07); border-color: var(--accent-green); color: var(--accent-green); transform: scale(1.05); }
+        .focus-timer {
+            font-size: 4.8rem;
+            font-weight: 300;
+            font-family: var(--font-mono);
+            color: var(--accent-green);
+            letter-spacing: 0.04em;
+            margin-bottom: 12px;
+            line-height: 1;
+        }
+        .focus-info {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-family: var(--font-sans);
+        }
+        .focus-info span {
+            font-weight: 500;
+        }
+        .focus-info .overtime {
+            color: var(--overtime-color);
+            font-weight: 600;
+        }
+        .btn-end-focus {
+            padding: 12px 36px;
+            border-radius: 24px;
+            border: 2px solid var(--accent-green);
+            background: transparent;
+            color: var(--accent-green);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition);
+            letter-spacing: 0.03em;
+            font-family: var(--font-sans);
+            margin-top: 18px;
+        }
+        .btn-end-focus:hover {
+            background: var(--accent-green);
+            color: #fff;
+        }
 
-        .header-section { text-align:center; padding:12px 0 4px; }
-        .date-navigation { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
-        .date-nav-input { padding: 6px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.9rem; font-family: var(--font-sans); background: var(--card-bg); color: var(--text); outline: none; cursor: pointer; transition: all var(--transition); }
-        .date-nav-input:focus { border-color: var(--accent-green); box-shadow: 0 0 0 2px var(--accent-green-soft); }
-        .date-nav-btn { background: none; border: 1px solid var(--border); border-radius: 20px; padding: 6px 14px; font-size: 0.85rem; cursor: pointer; color: var(--text-secondary); font-family: var(--font-sans); transition: all var(--transition); }
-        .date-nav-btn:hover { border-color: var(--accent-green); color: var(--accent-green); background: var(--accent-green-soft); }
-        .date-display { font-size:1.0rem; font-weight:500; color:var(--text-secondary); margin-bottom:12px; letter-spacing:0.02em; }
-        .identity-intention-wrapper { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; font-size:1.1rem; color:var(--accent-indigo); line-height:2.2; gap:0 4px; padding:6px 0; }
-        .identity-intention-wrapper span { white-space:nowrap; font-weight:500; }
+        .menu-fab {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 900;
+            transition: all var(--transition);
+            color: rgba(0, 0, 0, 0.25);
+            font-size: 20px;
+            user-select: none;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            font-weight: 400;
+            line-height: 1;
+        }
+        .menu-fab:hover {
+            background: rgba(255, 255, 255, 0.8);
+            border-color: rgba(45, 106, 79, 0.25);
+            color: rgba(45, 106, 79, 0.55);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+            transform: scale(1.04);
+        }
+        .menu-fab-inner {
+            display: inline-block;
+            line-height: 1;
+            pointer-events: none;
+            transform: none;
+            font-size: 20px;
+        }
+        .menu-popup {
+            position: fixed;
+            bottom: 78px;
+            right: 28px;
+            z-index: 910;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: var(--radius);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: var(--shadow-lg);
+            display: none;
+            flex-direction: column;
+            padding: 8px 0;
+            min-width: 150px;
+            animation: slideUpMenu 0.2s ease;
+            font-family: var(--font-sans);
+        }
+        .menu-popup.active {
+            display: flex;
+        }
+        @keyframes slideUpMenu {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .menu-popup-item {
+            padding: 12px 22px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            color: var(--text);
+            transition: all var(--transition);
+            border: none;
+            background: transparent;
+            text-align: left;
+            font-family: var(--font-sans);
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+        }
+        .menu-popup-item:hover {
+            background: var(--accent-green-soft);
+            color: var(--accent-green);
+        }
+        .menu-backdrop {
+            position: fixed;
+            inset: 0;
+            z-index: 905;
+            display: none;
+        }
+        .menu-backdrop.active {
+            display: block;
+        }
+
+        .header-section {
+            text-align: center;
+            padding: 12px 0 4px;
+            font-family: var(--font-sans);
+        }
+        .date-navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+            flex-wrap: wrap;
+        }
+        .date-nav-input {
+            padding: 7px 12px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-family: var(--font-sans);
+            background: var(--card-bg);
+            color: var(--text);
+            outline: none;
+            cursor: pointer;
+            transition: all var(--transition);
+            -webkit-appearance: auto;
+            appearance: auto;
+            min-width: 130px;
+        }
+        .date-nav-input:focus {
+            border-color: var(--accent-green);
+            box-shadow: 0 0 0 2px var(--accent-green-soft);
+        }
+        .date-nav-btn {
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 6px 14px;
+            font-size: 0.88rem;
+            cursor: pointer;
+            color: var(--text-secondary);
+            font-family: var(--font-sans);
+            transition: all var(--transition);
+            white-space: nowrap;
+        }
+        .date-nav-btn:hover {
+            border-color: var(--accent-green);
+            color: var(--accent-green);
+            background: var(--accent-green-soft);
+        }
+        .date-weekday {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+        .date-relative-text {
+            font-size: 0.93rem;
+            font-weight: 500;
+            color: var(--accent-indigo);
+            margin: 0 2px;
+        }
+        .identity-intention-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--accent-indigo);
+            line-height: 2.3;
+            gap: 0 4px;
+            padding: 6px 0;
+            font-family: var(--font-sans);
+        }
+        .identity-intention-wrapper span {
+            white-space: nowrap;
+            font-weight: 500;
+        }
         .identity-input {
-            border:none; border-bottom:2px dashed var(--accent-indigo-light);
-            background:transparent; font-size:1.1rem; font-family:var(--font-sans);
-            color:var(--accent-indigo); padding:2px 8px; margin:0 2px; outline:none;
-            width: auto; min-width:10px; text-align:center; transition:border-color 0.2s, width 0.1s; font-weight:500;
-            overflow: visible; white-space: nowrap;
+            border: none;
+            border-bottom: 2px solid var(--accent-indigo-light);
+            background: transparent;
+            font-size: 1.2rem;
+            font-family: var(--font-sans);
+            color: var(--accent-indigo);
+            padding: 2px 8px;
+            margin: 0 2px;
+            outline: none;
+            width: auto;
+            min-width: 10px;
+            text-align: center;
+            transition: border-color 0.2s, width 0.1s;
+            font-weight: 500;
+            overflow: visible;
+            white-space: nowrap;
         }
-        .identity-input:focus { border-bottom-style:solid; border-bottom-color:var(--accent-green); background:var(--accent-green-soft); border-radius:4px; }
-        .identity-input[readonly] { border-bottom-style: dashed; cursor: default; }
-        .daily-review-badge { display:inline-block; font-size:0.82rem; color:var(--accent-green); background:var(--accent-green-soft); padding:4px 14px; border-radius:16px; margin-top:8px; font-weight:500; }
-        .stats-bar { display:flex; justify-content:center; gap:24px; font-size:0.82rem; color:var(--text-muted); margin-top:6px; letter-spacing:0.03em; }
-        .stats-bar span { font-weight:500; color:var(--text-secondary); }
-        .stats-bar strong { font-weight:600; color:var(--text); }
+        .identity-input:focus {
+            border-bottom-color: var(--accent-green);
+            background: var(--accent-green-soft);
+            border-radius: 4px;
+        }
+        .identity-input[readonly] {
+            border-bottom-style: solid;
+            cursor: default;
+        }
+        .daily-review-badge {
+            display: inline-block;
+            font-size: 0.88rem;
+            color: var(--accent-green);
+            background: var(--accent-green-soft);
+            padding: 5px 16px;
+            border-radius: 16px;
+            margin-top: 8px;
+            font-weight: 500;
+            font-family: var(--font-sans);
+        }
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 22px;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-top: 6px;
+            letter-spacing: 0.03em;
+            flex-wrap: wrap;
+            font-family: var(--font-sans);
+        }
+        .stats-bar span {
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+        .stats-bar strong {
+            font-weight: 600;
+            color: var(--text);
+        }
 
-        .top-actions { display:flex; justify-content:flex-end; gap:8px; flex-wrap:wrap; align-items:center; }
-        .btn-sm { font-size:0.82rem; padding:6px 16px; border-radius:16px; border:1px solid var(--border); background:var(--card-bg); color:var(--text-secondary); cursor:pointer; transition:all var(--transition); font-weight:500; letter-spacing:0.02em; font-family:var(--font-sans); }
-        .btn-sm:hover { border-color:var(--accent-green); color:var(--accent-green); background:var(--accent-green-soft); }
-        .btn-sm.btn-select { color:var(--accent-indigo); border-color:var(--accent-indigo-light); }
-        .btn-sm.btn-select.active { background:var(--accent-indigo); color:#fff; border-color:var(--accent-indigo); }
-        .btn-sm.btn-delete-selected { background:#c44d34; color:#fff; border-color:#c44d34; display:none; }
-        .btn-sm.btn-delete-selected.visible { display:inline-block; }
+        .create-section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            padding: 22px;
+            box-shadow: var(--shadow);
+            font-family: var(--font-sans);
+        }
+        .btn-add-task {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--accent-green);
+            background: transparent;
+            border: 2px dashed var(--border);
+            border-radius: var(--radius-sm);
+            padding: 16px 20px;
+            cursor: pointer;
+            width: 100%;
+            justify-content: center;
+            transition: all var(--transition);
+            letter-spacing: 0.02em;
+            font-family: var(--font-sans);
+        }
+        .btn-add-task:hover {
+            border-color: var(--accent-green);
+            background: var(--accent-green-soft);
+            color: var(--accent-green-light);
+        }
+        .create-form {
+            display: none;
+            flex-direction: column;
+            gap: 18px;
+            margin-top: 18px;
+            animation: fadeSlideIn 0.2s ease;
+        }
+        .create-form.active {
+            display: flex;
+        }
+        @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateY(-6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .sentence-form {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 6px 8px;
+            font-size: 0.98rem;
+            color: var(--text);
+            line-height: 2.0;
+            background: var(--bg);
+            border-radius: var(--radius-sm);
+            padding: 18px 16px;
+            font-family: var(--font-sans);
+        }
+        .inline-input {
+            border: none;
+            border-bottom: 2px solid var(--accent-indigo-light);
+            background: transparent;
+            font-family: var(--font-sans);
+            font-size: 0.98rem;
+            color: var(--text);
+            padding: 5px 8px 5px 6px;
+            outline: none;
+            width: auto;
+            min-width: 30px;
+            transition: border-color 0.2s, width 0.2s;
+            text-align: center;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            flex-shrink: 1;
+            flex-grow: 0;
+        }
+        .inline-input:focus {
+            border-bottom-color: var(--accent-green);
+            background: var(--accent-green-soft);
+            border-radius: 4px;
+        }
+        .inline-input[type="time"] {
+            width: 100px;
+            min-width: 100px;
+            max-width: 100px;
+            text-align: center;
+            font-family: var(--font-mono);
+            -webkit-appearance: auto;
+            appearance: auto;
+            flex-shrink: 0;
+            padding-right: 8px;
+        }
+        .btn-save-task {
+            align-self: center;
+            padding: 12px 30px;
+            border-radius: 22px;
+            border: none;
+            background: var(--accent-green);
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all var(--transition);
+            letter-spacing: 0.03em;
+            font-family: var(--font-sans);
+            margin-top: 6px;
+        }
+        .btn-save-task:hover {
+            background: var(--accent-green-light);
+            box-shadow: var(--shadow-md);
+        }
 
-        .create-section { background:var(--card-bg); border-radius:var(--radius); border:1px solid var(--border); padding:20px; box-shadow:var(--shadow); }
-        .btn-add-task { display:flex; align-items:center; gap:8px; font-size:0.95rem; font-weight:500; color:var(--accent-green); background:transparent; border:2px dashed var(--border); border-radius:var(--radius-sm); padding:14px 20px; cursor:pointer; width:100%; justify-content:center; transition:all var(--transition); letter-spacing:0.02em; font-family:var(--font-sans); }
-        .btn-add-task:hover { border-color:var(--accent-green); background:var(--accent-green-soft); color:var(--accent-green-light); }
-        .create-form { display:none; flex-direction:column; gap:14px; margin-top:16px; animation:fadeSlideIn 0.2s ease; }
-        .create-form.active { display:flex; }
-        @keyframes fadeSlideIn { from{opacity:0;transform:translateY(-6px);} to{opacity:1;transform:translateY(0);} }
-        .form-row { display:flex; gap:12px; flex-wrap:wrap; }
-        .form-field { flex:1; min-width:120px; display:flex; flex-direction:column; gap:4px; }
-        .form-field label { font-size:0.78rem; font-weight:600; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.04em; }
-        .form-field input, .form-field select { padding:10px 14px; border:1px solid var(--border); border-radius:var(--radius-xs); font-size:0.93rem; font-family:var(--font-sans); background:var(--bg); color:var(--text); transition:all var(--transition); outline:none; width:100%; }
-        .form-field input:focus { border-color:var(--accent-green); box-shadow:0 0 0 3px var(--accent-green-soft); background:#fff; }
-        .btn-save-task { align-self:flex-end; padding:10px 24px; border-radius:20px; border:none; background:var(--accent-green); color:#fff; font-weight:600; font-size:0.9rem; cursor:pointer; transition:all var(--transition); letter-spacing:0.03em; font-family:var(--font-sans); }
-        .btn-save-task:hover { background:var(--accent-green-light); box-shadow:var(--shadow-md); }
+        .tasks-section {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .no-tasks-hint {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            padding: 44px 20px;
+            font-family: var(--font-sans);
+        }
+        .task-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            padding: 16px 18px;
+            box-shadow: var(--shadow);
+            transition: all var(--transition);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-family: var(--font-sans);
+        }
+        .task-card:hover {
+            box-shadow: var(--shadow-md);
+            border-color: #d0d0ca;
+        }
+        .task-card.completed {
+            opacity: 0.78;
+            background: #fafaf9;
+            border-color: var(--border-light);
+        }
+        .task-card.completed .task-narrative span {
+            text-decoration: line-through;
+            text-decoration-color: #aaa;
+        }
+        .task-card.completed .task-narrative .narr-category,
+        .task-card.completed .task-narrative .narr-tool {
+            text-decoration: none;
+        }
+        .task-card.timing-active {
+            border-color: var(--accent-green);
+            animation: breathe 2.5s ease-in-out infinite;
+            background: #f9fdfb;
+        }
+        .task-content {
+            flex: 1;
+            min-width: 0;
+        }
+        @keyframes breathe {
+            0%, 100% { box-shadow: 0 0 6px var(--breathe-color-1); }
+            50% { box-shadow: 0 0 16px var(--breathe-color-2); }
+        }
+        .task-narrative {
+            font-size: 0.98rem;
+            color: var(--text);
+            margin-bottom: 10px;
+            word-break: break-word;
+            line-height: 1.6;
+        }
+        .narr-category {
+            display: inline-block;
+            background: var(--category-bg);
+            color: var(--category-text);
+            font-weight: 600;
+            font-size: 0.82rem;
+            padding: 3px 11px;
+            border-radius: 12px;
+            margin-right: 6px;
+        }
+        .narr-tool {
+            display: inline-block;
+            background: var(--tool-bg);
+            color: var(--tool-text);
+            font-weight: 600;
+            font-size: 0.82rem;
+            padding: 3px 11px;
+            border-radius: 12px;
+            margin-right: 6px;
+        }
+        .narr-time {
+            color: var(--accent-indigo);
+            font-weight: 600;
+            font-family: var(--font-mono);
+        }
+        .narr-place {
+            color: var(--text-secondary);
+        }
+        .narr-people {
+            color: var(--accent-green);
+            font-weight: 500;
+        }
+        .narr-title {
+            font-weight: 600;
+        }
+        .task-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 0.86rem;
+            color: var(--text-muted);
+            font-family: var(--font-sans);
+        }
+        .timer-display {
+            font-family: var(--font-mono);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent-green);
+            background: var(--accent-green-soft);
+            padding: 4px 12px;
+            border-radius: 14px;
+        }
+        .accumulated-time {
+            font-family: var(--font-mono);
+            color: var(--text-secondary);
+        }
+        .task-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 14px;
+        }
+        .btn-task {
+            font-size: 0.86rem;
+            padding: 8px 18px;
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            background: var(--card-bg);
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-weight: 500;
+            transition: all var(--transition);
+            letter-spacing: 0.02em;
+            font-family: var(--font-sans);
+        }
+        .btn-task:hover {
+            border-color: var(--accent-green);
+            color: var(--accent-green);
+            background: var(--accent-green-soft);
+        }
+        .btn-task.btn-start {
+            background: var(--accent-green);
+            color: #fff;
+            border-color: var(--accent-green);
+        }
+        .btn-task.btn-start:hover {
+            background: var(--accent-green-light);
+        }
+        .btn-task.btn-end {
+            background: #c44d34;
+            color: #fff;
+            border-color: #c44d34;
+        }
+        .btn-task.btn-view {
+            color: var(--accent-indigo);
+            border-color: var(--accent-indigo-light);
+        }
+        .btn-task.btn-edit {
+            color: var(--accent-indigo);
+            border-color: var(--accent-indigo-light);
+        }
+        .btn-task.btn-uncomplete {
+            color: #c44d34;
+            border-color: #c44d34;
+        }
+        .completed-check {
+            color: var(--accent-green);
+            font-weight: 600;
+            font-size: 0.86rem;
+        }
 
-        .tasks-section { display:flex; flex-direction:column; gap:14px; }
-        .no-tasks-hint { text-align:center; color:var(--text-muted); font-size:0.9rem; padding:40px 20px; }
-        .task-card { background:var(--card-bg); border-radius:var(--radius); border:1px solid var(--border); padding:16px 18px; box-shadow:var(--shadow); transition:all var(--transition); display:flex; align-items:flex-start; gap:14px; }
-        .task-card:hover { box-shadow:var(--shadow-md); border-color:#d0d0ca; }
-        .task-card.completed { opacity:0.75; background:#fafaf9; border-color:var(--border-light); }
-        .task-card.completed .task-narrative span { text-decoration: line-through; text-decoration-color: #aaa; }
-        .task-card.timing-active { border-color:var(--accent-green); animation:breathe 2.5s ease-in-out infinite; background:#f9fdfb; }
-        .task-checkbox { display:none; align-items:center; padding-top:2px; }
-        .task-checkbox.visible { display:flex; }
-        .task-checkbox input { width:18px; height:18px; cursor:pointer; accent-color:var(--accent-green); }
-        .task-content { flex:1; }
-        @keyframes breathe { 0%,100%{ box-shadow:0 0 6px var(--breathe-color-1); } 50%{ box-shadow:0 0 16px var(--breathe-color-2); } }
-        .task-narrative { font-size:0.93rem; color:var(--text); margin-bottom:10px; word-break:break-word; line-height:1.6; }
-        .narr-category { display:inline-block; background:var(--category-bg); color:var(--category-text); font-weight:600; font-size:0.78rem; padding:2px 10px; border-radius:12px; margin-right:6px; }
-        .narr-tool { display:inline-block; background:var(--tool-bg); color:var(--tool-text); font-weight:600; font-size:0.78rem; padding:2px 10px; border-radius:12px; margin-right:6px; }
-        .narr-time { color:var(--accent-indigo); font-weight:600; font-family:var(--font-mono); }
-        .narr-place { color:var(--text-secondary); font-style:italic; }
-        .narr-people { color:var(--accent-green); font-weight:500; }
-        .narr-title { font-weight:600; }
-        .task-meta { display:flex; align-items:center; gap:12px; flex-wrap:wrap; font-size:0.82rem; color:var(--text-muted); }
-        .timer-display { font-family:var(--font-mono); font-size:1.05rem; font-weight:600; color:var(--accent-green); background:var(--accent-green-soft); padding:3px 12px; border-radius:14px; }
-        .accumulated-time { font-family:var(--font-mono); color:var(--text-secondary); }
-        .task-actions { display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; }
-        .btn-task { font-size:0.82rem; padding:7px 16px; border-radius:18px; border:1px solid var(--border); background:var(--card-bg); color:var(--text-secondary); cursor:pointer; font-weight:500; transition:all var(--transition); letter-spacing:0.02em; }
-        .btn-task:hover { border-color:var(--accent-green); color:var(--accent-green); background:var(--accent-green-soft); }
-        .btn-task.btn-start { background:var(--accent-green); color:#fff; border-color:var(--accent-green); }
-        .btn-task.btn-start:hover { background:var(--accent-green-light); }
-        .btn-task.btn-end { background:#c44d34; color:#fff; border-color:#c44d34; }
-        .btn-task.btn-view { color:var(--accent-indigo); border-color:var(--accent-indigo-light); }
-        .btn-task.btn-edit { color:var(--accent-indigo); border-color:var(--accent-indigo-light); }
-        .completed-check { color:var(--accent-green); font-weight:600; font-size:0.82rem; }
+        .daily-review-section {
+            text-align: center;
+            padding: 14px 0 22px;
+            font-family: var(--font-sans);
+        }
+        .btn-daily-review {
+            padding: 15px 38px;
+            border-radius: 28px;
+            border: none;
+            background: var(--accent-indigo);
+            color: #fff;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 2px 12px rgba(58, 79, 122, 0.15);
+            transition: all var(--transition);
+            letter-spacing: 0.03em;
+            font-family: var(--font-sans);
+        }
+        .btn-daily-review:hover {
+            background: var(--accent-indigo-light);
+            box-shadow: 0 4px 16px rgba(58, 79, 122, 0.25);
+            transform: translateY(-1px);
+        }
+        .btn-daily-review.is-done {
+            background: #5a7a5a;
+            color: #fff;
+        }
 
-        .daily-review-section { text-align:center; padding:12px 0 20px; }
-        .btn-daily-review { padding:14px 36px; border-radius:28px; border:none; background:var(--accent-indigo); color:#fff; font-weight:600; font-size:0.95rem; cursor:pointer; box-shadow:0 2px 12px rgba(58,79,122,0.15); transition:all var(--transition); letter-spacing:0.03em; }
-        .btn-daily-review:hover { background:var(--accent-indigo-light); box-shadow:0 4px 16px rgba(58,79,122,0.25); transform:translateY(-1px); }
-        .btn-daily-review.done { background:#e0e0da; color:var(--text-muted); pointer-events:none; box-shadow:none; transform:none; }
+        .question-block {
+            background: var(--question-bg);
+            border-radius: var(--radius-sm);
+            padding: 15px 16px;
+            margin-bottom: 10px;
+            border: 1px solid var(--border-light);
+            font-family: var(--font-sans);
+        }
+        .question-text {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            color: var(--text);
+        }
+        .options-row {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .opt-btn {
+            flex: 1;
+            min-width: 70px;
+            padding: 9px 8px;
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            background: #fff;
+            font-size: 0.86rem;
+            cursor: pointer;
+            text-align: center;
+            transition: all var(--transition);
+            font-weight: 500;
+            color: var(--text-secondary);
+            font-family: var(--font-sans);
+        }
+        .opt-btn:hover {
+            border-color: var(--accent-green);
+            background: var(--accent-green-soft);
+            color: var(--accent-green);
+        }
+        .opt-btn.selected {
+            background: var(--accent-green);
+            color: #fff;
+            border-color: var(--accent-green);
+            font-weight: 600;
+        }
+        .score-preview {
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 16px 0 8px;
+            color: var(--accent-green);
+            font-family: var(--font-sans);
+        }
+        .score-detail-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 7px 0;
+            border-bottom: 1px solid var(--border-light);
+            font-size: 0.88rem;
+            font-family: var(--font-sans);
+        }
+        .score-detail-row:last-child {
+            border-bottom: none;
+        }
+        .score-detail-label {
+            color: var(--text-secondary);
+            flex: 1;
+        }
+        .score-detail-value {
+            font-weight: 600;
+            color: var(--text);
+            min-width: 50px;
+            text-align: right;
+        }
+        .score-detail-bar {
+            width: 60px;
+            height: 6px;
+            background: #e0e0da;
+            border-radius: 3px;
+            margin: 0 10px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .score-detail-fill {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.3s;
+        }
+        .score-detail-fill.high {
+            background: var(--accent-green);
+        }
+        .score-detail-fill.mid {
+            background: #e0a840;
+        }
+        .score-detail-fill.low {
+            background: #c44d34;
+        }
 
-        .question-block { background:var(--question-bg); border-radius:var(--radius-sm); padding:14px 16px; margin-bottom:10px; border:1px solid var(--border-light); }
-        .question-text { font-weight:600; font-size:0.9rem; margin-bottom:10px; color:var(--text); }
-        .options-row { display:flex; gap:6px; flex-wrap:wrap; }
-        .opt-btn { flex:1; min-width:70px; padding:8px 6px; border-radius:18px; border:1px solid var(--border); background:#fff; font-size:0.82rem; cursor:pointer; text-align:center; transition:all var(--transition); font-weight:500; color:var(--text-secondary); }
-        .opt-btn:hover { border-color:var(--accent-green); background:var(--accent-green-soft); color:var(--accent-green); }
-        .opt-btn.selected { background:var(--accent-green); color:#fff; border-color:var(--accent-green); font-weight:600; }
-        .score-preview { text-align:center; font-weight:600; font-size:1.05rem; margin:14px 0 6px; color:var(--accent-green); }
-
-        .modal-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.25); z-index:1000; display:flex; align-items:center; justify-content:center; padding:20px; backdrop-filter:blur(2px); }
-        .modal-dialog { background:#fff; border-radius:var(--radius); box-shadow:var(--shadow-lg); width:100%; max-width:520px; max-height:85vh; overflow-y:auto; padding:28px 24px; position:relative; animation:slideUp 0.25s ease; font-family:var(--font-sans); }
-        @keyframes slideUp { from{opacity:0;transform:translateY(16px);} to{opacity:1;transform:translateY(0);} }
-        .modal-dialog h3 { font-size:1.1rem; font-weight:600; margin-bottom:20px; text-align:center; color:var(--text); }
-        .modal-field { margin-bottom:16px; display:flex; flex-direction:column; gap:6px; }
-        .modal-field label { font-size:0.8rem; font-weight:600; color:var(--text-secondary); }
-        .modal-field input, .modal-field textarea { padding:10px 14px; border:1px solid var(--border); border-radius:var(--radius-xs); font-size:0.93rem; font-family:var(--font-sans); background:var(--bg); width:100%; outline:none; transition:all var(--transition); }
-        .modal-field input:focus, .modal-field textarea:focus { border-color:var(--accent-green); box-shadow:0 0 0 3px var(--accent-green-soft); background:#fff; }
-        .modal-actions { display:flex; gap:10px; justify-content:flex-end; margin-top:24px; flex-wrap:wrap; }
-        .btn-modal-primary { padding:10px 24px; border-radius:20px; border:none; background:var(--accent-green); color:#fff; font-weight:600; font-size:0.9rem; cursor:pointer; transition:all var(--transition); }
-        .btn-modal-primary:hover { background:var(--accent-green-light); }
-        .btn-modal-secondary { padding:10px 20px; border-radius:20px; border:1px solid var(--border); background:#fff; color:var(--text-secondary); font-weight:500; cursor:pointer; }
-        .btn-modal-danger { padding:10px 20px; border-radius:20px; border:1px solid #c44d34; background:#fff; color:#c44d34; font-weight:500; cursor:pointer; }
-        .btn-modal-danger:hover { background:#fdf2f2; }
-        .modal-close-x { position:absolute; top:16px; right:18px; background:none; border:none; font-size:1.4rem; cursor:pointer; color:var(--text-muted); width:32px; height:32px; display:flex; align-items:center; justify-content:center; border-radius:50%; transition:all var(--transition); }
-        .modal-close-x:hover { background:#f0f0ea; color:var(--text); }
-        .readonly-field { padding:10px 14px; background:var(--bg); border-radius:var(--radius-xs); font-size:0.9rem; color:var(--text-secondary); border:1px solid var(--border-light); line-height:1.5; }
-        .toast { position:fixed; bottom:30px; left:50%; transform:translateX(-50%); background:#1e1e1e; color:#fff; padding:10px 28px; border-radius:24px; z-index:2000; font-size:0.88rem; box-shadow:0 4px 16px rgba(0,0,0,0.2); animation:toastIn 0.3s ease, toastOut 0.3s ease 2s forwards; }
-        @keyframes toastIn { from{opacity:0;transform:translateX(-50%) translateY(12px);} to{opacity:1;transform:translateX(-50%) translateY(0);} }
-        @keyframes toastOut { from{opacity:1;} to{opacity:0;transform:translateX(-50%) translateY(-8px);} }
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.25);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            backdrop-filter: blur(2px);
+        }
+        .modal-dialog {
+            background: #fff;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            width: 100%;
+            max-width: 540px;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 30px 26px;
+            position: relative;
+            animation: slideUp 0.25s ease;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .modal-dialog h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 22px;
+            text-align: center;
+            color: var(--text);
+        }
+        .modal-field {
+            margin-bottom: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            font-family: var(--font-sans);
+        }
+        .modal-field label {
+            font-size: 0.84rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+        .modal-field input,
+        .modal-field textarea {
+            padding: 11px 14px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xs);
+            font-size: 0.95rem;
+            font-family: var(--font-sans);
+            background: var(--bg);
+            width: 100%;
+            outline: none;
+            transition: all var(--transition);
+        }
+        .modal-field input:focus,
+        .modal-field textarea:focus {
+            border-color: var(--accent-green);
+            box-shadow: 0 0 0 3px var(--accent-green-soft);
+            background: #fff;
+        }
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            margin-top: 26px;
+            flex-wrap: wrap;
+        }
+        .btn-modal-primary {
+            padding: 11px 26px;
+            border-radius: 22px;
+            border: none;
+            background: var(--accent-green);
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all var(--transition);
+            font-family: var(--font-sans);
+        }
+        .btn-modal-primary:hover {
+            background: var(--accent-green-light);
+        }
+        .btn-modal-secondary {
+            padding: 11px 22px;
+            border-radius: 22px;
+            border: 1px solid var(--border);
+            background: #fff;
+            color: var(--text-secondary);
+            font-weight: 500;
+            cursor: pointer;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+        }
+        .btn-modal-danger {
+            padding: 11px 22px;
+            border-radius: 22px;
+            border: 1px solid #c44d34;
+            background: #fff;
+            color: #c44d34;
+            font-weight: 500;
+            cursor: pointer;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+        }
+        .btn-modal-danger:hover {
+            background: #fdf2f2;
+        }
+        .modal-close-x {
+            position: absolute;
+            top: 16px;
+            right: 18px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-muted);
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all var(--transition);
+        }
+        .modal-close-x:hover {
+            background: #f0f0ea;
+            color: var(--text);
+        }
+        .readonly-field {
+            padding: 11px 14px;
+            background: var(--bg);
+            border-radius: var(--radius-xs);
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-light);
+            line-height: 1.5;
+            word-break: break-word;
+            font-family: var(--font-sans);
+        }
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1e1e1e;
+            color: #fff;
+            padding: 11px 30px;
+            border-radius: 24px;
+            z-index: 2000;
+            font-size: 0.92rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            animation: toastIn 0.3s ease, toastOut 0.3s ease 2s forwards;
+            font-family: var(--font-sans);
+        }
+        @keyframes toastIn {
+            from { opacity: 0; transform: translateX(-50%) translateY(12px); }
+            to { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+        @keyframes toastOut {
+            from { opacity: 1; }
+            to { opacity: 0; transform: translateX(-50%) translateY(-8px); }
+        }
+        .behavior-summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+            margin: 10px 0;
+            font-family: var(--font-sans);
+        }
+        .behavior-summary-table th,
+        .behavior-summary-table td {
+            padding: 9px 12px;
+            border-bottom: 1px solid var(--border-light);
+            text-align: left;
+        }
+        .behavior-summary-table th {
+            font-weight: 600;
+            color: var(--accent-indigo);
+            font-size: 0.82rem;
+        }
+        .behavior-highlight {
+            background: var(--accent-green-soft);
+            border-radius: var(--radius-xs);
+            padding: 14px 18px;
+            margin: 12px 0;
+            font-size: 0.92rem;
+            font-family: var(--font-sans);
+        }
 
         @media (max-width:480px) {
-            .form-row { flex-direction:column; gap:10px; }
-            .modal-dialog { padding:22px 16px; }
-            .focus-timer { font-size:3.2rem; }
-            .identity-intention-wrapper { font-size:1rem; }
-            .identity-input { font-size:1rem; }
-            .task-card { padding:12px 14px; }
-            .btn-task { font-size:0.78rem; padding:6px 12px; }
+            body {
+                font-size: 1rem;
+            }
+            .sentence-form {
+                font-size: 0.9rem;
+                padding: 14px 12px;
+            }
+            .inline-input {
+                font-size: 0.9rem;
+                min-width: 24px;
+            }
+            .inline-input[type="time"] {
+                width: 86px;
+                min-width: 86px;
+                max-width: 86px;
+            }
+            .modal-dialog {
+                padding: 24px 18px;
+            }
+            .focus-timer {
+                font-size: 3.5rem;
+            }
+            .identity-intention-wrapper {
+                font-size: 1.1rem;
+            }
+            .identity-input {
+                font-size: 1.1rem;
+            }
+            .task-card {
+                padding: 14px 16px;
+            }
+            .btn-task {
+                font-size: 0.82rem;
+                padding: 7px 14px;
+            }
+            .menu-fab {
+                bottom: 20px;
+                right: 20px;
+                width: 36px;
+                height: 36px;
+                font-size: 18px;
+            }
+            .menu-popup {
+                bottom: 66px;
+                right: 20px;
+            }
+            .date-nav-input {
+                min-width: 115px;
+                font-size: 0.88rem;
+            }
         }
     </style>
-<link rel="manifest" href="manifest.json?v=3">
+    <link rel="manifest" href="manifest.json?v=3">
 </head>
 <body>
-<div class="app-container">
-    <div class="top-actions">
-        <button class="btn-sm btn-select" id="btnToggleSelect">☑ 选择任务</button>
-        <button class="btn-sm btn-delete-selected" id="btnDeleteSelected">🗑 删除所选</button>
-        <button class="btn-sm" id="btnExport">📥 导出数据</button>
-    </div>
-    <div class="header-section">
-        <div class="date-navigation">
-            <input type="date" class="date-nav-input" id="dateNavInput">
-            <button class="date-nav-btn" id="btnToday">今天</button>
-        </div>
-        <div class="date-display" id="dateDisplay"></div>
-        <div class="identity-intention-wrapper">
-            <span>今天，我想通过</span>
-            <input type="text" class="identity-input" id="intentionThrough" placeholder="______" maxlength="30" aria-label="通过什么方式">
-            <span>，成为更</span>
-            <input type="text" class="identity-input" id="intentionBecome" placeholder="______" maxlength="30" aria-label="成为更什么样的人">
-            <span>的人。</span>
-        </div>
-        <div id="dailyReviewBadge" style="display:none;"></div>
-        <div class="stats-bar" id="statsBar">
-            <span>📋 创建 <strong id="statCreated">0</strong></span>
-            <span>🗑 删除 <strong id="statDeleted">0</strong></span>
-            <span>✏️ 修改 <strong id="statModified">0</strong></span>
-        </div>
-    </div>
-    <div class="create-section" id="createSection">
-        <button class="btn-add-task" id="btnToggleForm"><span>+</span> 添加任务</button>
-        <div class="create-form" id="createForm">
-            <div class="form-row">
-                <div class="form-field"><label>⏰ 计划开始</label><input type="time" id="inputStartTime" value="09:00"></div>
-                <div class="form-field"><label>⏰ 计划截止</label><input type="time" id="inputEndTime" value="10:00"></div>
+    <div class="app-container">
+        <div class="header-section">
+            <div class="date-navigation">
+                <input type="date" class="date-nav-input" id="dateNavInput">
+                <span class="date-weekday" id="dateWeekday"></span>
+                <span class="date-relative-text" id="dateRelativeText"></span>
+                <button class="date-nav-btn" id="btnBackToday" style="display:none;">回到今天</button>
             </div>
-            <div class="form-row">
-                <div class="form-field"><label>📍 地点</label><input type="text" id="inputPlace" placeholder="如 图书馆" maxlength="30"></div>
-                <div class="form-field"><label>👤 人物</label><input type="text" id="inputPeople" list="peopleList" placeholder="如 独自" maxlength="30"><datalist id="peopleList"><option value="独自"><option value="和室友"><option value="和朋友"><option value="和同事"><option value="和家人"><option value="和伴侣"><option value="和父母"></datalist></div>
+            <div class="identity-intention-wrapper">
+                <span id="intentionDateText">今天</span><span>，我想通过</span>
+                <input type="text" class="identity-input" id="intentionThrough" placeholder="______" maxlength="30" aria-label="通过什么方式">
+                <span>，成为更</span>
+                <input type="text" class="identity-input" id="intentionBecome" placeholder="______" maxlength="30" aria-label="成为更什么样的人">
+                <span>的人。</span>
             </div>
-            <div class="form-row">
-                <div class="form-field"><label>🏷️ 类别</label><input type="text" id="inputCategory" list="catList" placeholder="如 学习" maxlength="20"><datalist id="catList"><option value="学习"><option value="工作"><option value="健身"><option value="社交"><option value="阅读"><option value="创作"><option value="休息"><option value="家务"><option value="交通"><option value="其他"></datalist></div>
-                <div class="form-field"><label>🔧 工具</label><input type="text" id="inputTool" list="toolList" placeholder="如 电脑" maxlength="30"><datalist id="toolList"><option value="电脑"><option value="手机"><option value="纸笔"><option value="iPad"><option value="Kindle"><option value="VS Code"><option value="Excel"><option value="Python"><option value="相机"><option value="其他"></datalist></div>
+            <div id="dailyReviewBadge" style="display:none;"></div>
+            <div class="stats-bar" id="statsBar">
+                <span>创建 <strong id="statCreated">0</strong></span>
+                <span>删除 <strong id="statDeleted">0</strong></span>
+                <span>修改 <strong id="statModified">0</strong></span>
+                <span>今日总时长 <strong id="statTotalDuration">0分</strong></span>
             </div>
-            <div class="form-row"><div class="form-field" style="flex:2;"><label>📋 任务名称</label><input type="text" id="inputTitle" placeholder="如 做高数题" maxlength="50"></div></div>
-            <button class="btn-save-task" id="btnSaveTask">保存任务</button>
+        </div>
+        <div class="create-section" id="createSection">
+            <button class="btn-add-task" id="btnToggleForm">+ 添加任务</button>
+            <div class="create-form" id="createForm">
+                <div class="sentence-form">
+                    <span>从</span><input type="time" id="inputStartTime" value="09:00" class="inline-input">
+                    <span>至</span><input type="time" id="inputEndTime" value="10:00" class="inline-input">
+                    <span>，在</span><input type="text" id="inputPlace" placeholder="地点" class="inline-input" maxlength="30">
+                    <span>与</span><input type="text" id="inputPeople" placeholder="人物" class="inline-input" maxlength="30">
+                    <span>，使用</span><input type="text" id="inputTool" placeholder="工具" class="inline-input" maxlength="30">
+                    <span>进行</span><input type="text" id="inputCategory" placeholder="类别" class="inline-input" maxlength="20">
+                    <span>类任务：</span><input type="text" id="inputTitle" placeholder="任务名称" class="inline-input" maxlength="50">
+                </div>
+                <button class="btn-save-task" id="btnSaveTask">保存任务</button>
+            </div>
+        </div>
+        <div class="tasks-section" id="tasksSection"><div class="no-tasks-hint">暂未添加任务 · 从「添加任务」开始记录今日行动</div></div>
+        <div class="daily-review-section" id="dailyReviewSection">
+            <button class="btn-daily-review" id="btnDailyReview">结束今天，记录成长</button>
         </div>
     </div>
-    <div class="tasks-section" id="tasksSection"><div class="no-tasks-hint">暂未添加任务 · 从「添加任务」开始记录今日行动</div></div>
-    <div class="daily-review-section" id="dailyReviewSection">
-        <button class="btn-daily-review" id="btnDailyReview">🌙 结束今天，记录成长</button>
+    <div class="menu-fab" id="menuFab" title="菜单"><span class="menu-fab-inner">•</span></div>
+    <div class="menu-popup" id="menuPopup">
+        <button class="menu-popup-item" id="menuViewData">查看数据</button>
+        <button class="menu-popup-item" id="menuBehaviorData">行为数据</button>
     </div>
-</div>
-<div class="philosophy-icon" id="philosophyIcon" title="设计理念">✦</div>
-<div class="memo-icon" id="memoIcon" title="备忘录">📝</div>
-<div id="modalOverlay" class="modal-overlay" style="display:none;"></div>
-<div id="toastContainer"></div>
-<div id="focusOverlay" class="focus-overlay" style="display:none;">
-    <div class="focus-timer" id="focusTimer">00:00</div>
-    <div class="focus-info">
-        <span>🕒 开始于 <strong id="focusStartTime">--:--</strong></span>
-        <span>⏰ 现在 <strong id="focusCurrentTime">--:--</strong></span>
-        <span>⏳ 剩余 <strong id="focusRemaining">--:--</strong></span>
+    <div class="menu-backdrop" id="menuBackdrop"></div>
+    <div id="modalOverlay" class="modal-overlay" style="display:none;"></div>
+    <div id="toastContainer"></div>
+    <div id="focusOverlay" class="focus-overlay" style="display:none;">
+        <div class="focus-timer" id="focusTimer">00:00</div>
+        <div class="focus-info">
+            <span>开始于 <strong id="focusStartTime">--:--</strong></span>
+            <span>计划截止 <strong id="focusEndTime">--:--</strong></span>
+            <span>剩余 <strong id="focusRemaining">--:--</strong></span>
+        </div>
+        <button class="btn-end-focus" id="btnEndFocus">结束计时</button>
     </div>
-    <div class="focus-task-label" id="focusTaskName"></div>
-    <div class="focus-encouragement" id="focusEncouragement"></div>
-    <button class="btn-end-focus" id="btnEndFocus">结束计时</button>
-</div>
-<script>
-(function() {
-    const STORAGE_KEY = 'one_day_narrative_v19';
-    const MEMO_KEY = 'one_day_memo';
-    const encouragements = ["此刻即所有。","专注是最高级的享受。","你在塑造今天的自己。","微小的行动，扎实的超越。","呼吸，然后继续。","不追过去，不惧未来。","利用好被赋予的每一分钟。","行动是治愈焦虑的良药。"];
-    let currentViewDate = getTodayKey();
-    let isTodayView = true;
-    let isFutureView = false;
+    <script>
+        (function() {
+            const STORAGE_KEY = 'one_day_narrative_v28';
+            let currentViewDate = getTodayKey();
+            let isTodayView = true;
+            let isFutureView = false;
 
-    function getTodayKey() { const d=new Date(); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; }
-    function getTomorrowKey() { const d=new Date(); d.setDate(d.getDate()+1); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; }
-    function formatDateCN(dateStr) { const [y,m,d]=dateStr.split('-').map(Number); const date = new Date(y, m-1, d); const w=['星期日','星期一','星期二','星期三','星期四','星期五','星期六']; return `${y}年${m}月${d}日 <span class="weekday">${w[date.getDay()]}</span>`; }
-    function uuid() { return crypto.randomUUID?.() ?? 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c=>(c==='x'?Math.random()*16|0:(Math.random()*16|0)&0x3|0x8).toString(16)); }
-    function formatDuration(s) { s=Math.max(0,s|0); const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),sec=s%60; return h>0?`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`:`${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`; }
-    function formatDurationFull(s) { s=Math.max(0,s|0); const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),sec=s%60; let p=[]; if(h)p.push(`${h}小时`); if(m)p.push(`${m}分钟`); if(sec||!p.length)p.push(`${sec}秒`); return p.join(''); }
-    function showToast(msg) { const c=document.getElementById('toastContainer'); const t=document.createElement('div'); t.className='toast'; t.textContent=msg; c.appendChild(t); setTimeout(()=>t.remove(),2500); }
-    function loadAll() { try { return JSON.parse(localStorage.getItem(STORAGE_KEY))||{}; } catch { return {}; } }
-    function saveAll(d) { localStorage.setItem(STORAGE_KEY, JSON.stringify(d)); }
-    function getDayData(dateKey) { const all = loadAll(); if (!all[dateKey]) all[dateKey] = { intentionThrough:'',intentionBecome:'',tasks:[],deletedTasks:[],stats:{createdCount:0,deletedCount:0,modificationCount:0},dailyReflection:null }; return all[dateKey]; }
-    function saveDayData(dateKey, data) { const all = loadAll(); all[dateKey] = data; saveAll(all); }
+            function getTodayKey() { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; }
+            function getTomorrowKey() { const d = new Date(); d.setDate(d.getDate() + 1); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; }
+            function getWeekdayCN(dateStr) { const [y, m, d] = dateStr.split('-').map(Number); const date = new Date(y, m - 1, d); const w = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六']; return w[date.getDay()]; }
+            function getRelativeDateText(dateStr) { const today = new Date(); today.setHours(0, 0, 0, 0); const target = new Date(dateStr + 'T00:00:00'); const diffTime = target - today; const diffDays = Math.round(diffTime / (1000 * 60 * 60 * 24)); if (diffDays === 0) return '今天'; if (diffDays === -1) return '昨天'; if (diffDays === 1) return '明天'; if (diffDays < -1) return `${Math.abs(diffDays)}天前`; return `${diffDays}天后`; }
+            function uuid() { return crypto.randomUUID?.() ?? 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => (c === 'x' ? Math.random() * 16 | 0 : (Math.random() * 16 | 0) & 0x3 | 0x8).toString(16)); }
+            function formatDuration(s) { s = Math.max(0, s | 0); const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), sec = s % 60; return h > 0 ? `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}` : `${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`; }
+            function formatDurationFull(s) { s = Math.max(0, s | 0); const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), sec = s % 60; let p = []; if (h) p.push(`${h}小时`); if (m) p.push(`${m}分钟`); if (sec || !p.length) p.push(`${sec}秒`); return p.join(''); }
+            function formatTimeFromISO(isoStr) { if (!isoStr) return '--:--'; const d = new Date(isoStr); return `${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}:${String(d.getSeconds()).padStart(2,'0')}`; }
+            function showToast(msg) { const c = document.getElementById('toastContainer'); const t = document.createElement('div'); t.className = 'toast'; t.textContent = msg; c.appendChild(t); setTimeout(() => t.remove(), 2500); }
+            function loadAll() { try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch { return {}; } }
+            function saveAll(d) { localStorage.setItem(STORAGE_KEY, JSON.stringify(d)); }
+            function getDayData(dateKey) { const all = loadAll(); if (!all[dateKey]) all[dateKey] = { intentionThrough: '', intentionBecome: '', tasks: [], deletedTasks: [], stats: { createdCount: 0, deletedCount: 0, modificationCount: 0 }, dailyReflection: null }; return all[dateKey]; }
+            function saveDayData(dateKey, data) { const all = loadAll(); all[dateKey] = data; saveAll(all); }
 
-    let currentTimingId=null, timingInterval=null, timingStart=null, focusInterval=null, isSelectMode=false;
+            let currentTimingId = null, timingInterval = null, timingStart = null, focusInterval = null;
 
-    const dateDisplay=document.getElementById('dateDisplay'), throughEl=document.getElementById('intentionThrough'), becomeEl=document.getElementById('intentionBecome');
-    const dailyBadge=document.getElementById('dailyReviewBadge'), btnToggle=document.getElementById('btnToggleForm'), createForm=document.getElementById('createForm');
-    const inputStartTime=document.getElementById('inputStartTime'), inputEndTime=document.getElementById('inputEndTime'), inputPlace=document.getElementById('inputPlace');
-    const inputPeople=document.getElementById('inputPeople'), inputCategory=document.getElementById('inputCategory'), inputTool=document.getElementById('inputTool'), inputTitle=document.getElementById('inputTitle');
-    const btnSave=document.getElementById('btnSaveTask'), tasksSection=document.getElementById('tasksSection'), btnDailyReview=document.getElementById('btnDailyReview');
-    const btnExport=document.getElementById('btnExport'), modalOverlay=document.getElementById('modalOverlay');
-    const btnToggleSelect=document.getElementById('btnToggleSelect'), btnDeleteSelected=document.getElementById('btnDeleteSelected');
-    const dateNavInput = document.getElementById('dateNavInput');
-    const btnToday = document.getElementById('btnToday');
+            const intentionDateText = document.getElementById('intentionDateText');
+            const dateWeekdayEl = document.getElementById('dateWeekday'), throughEl = document.getElementById('intentionThrough'), becomeEl = document.getElementById('intentionBecome');
+            const dailyBadge = document.getElementById('dailyReviewBadge'), btnToggle = document.getElementById('btnToggleForm'), createForm = document.getElementById('createForm');
+            const inputStartTime = document.getElementById('inputStartTime'), inputEndTime = document.getElementById('inputEndTime'), inputPlace = document.getElementById('inputPlace');
+            const inputPeople = document.getElementById('inputPeople'), inputCategory = document.getElementById('inputCategory'), inputTool = document.getElementById('inputTool'), inputTitle = document.getElementById('inputTitle');
+            const btnSave = document.getElementById('btnSaveTask'), tasksSection = document.getElementById('tasksSection'), btnDailyReview = document.getElementById('btnDailyReview');
+            const modalOverlay = document.getElementById('modalOverlay');
+            const dateNavInput = document.getElementById('dateNavInput');
+            const dateRelativeText = document.getElementById('dateRelativeText');
+            const btnBackToday = document.getElementById('btnBackToday');
+            const menuFab = document.getElementById('menuFab'), menuPopup = document.getElementById('menuPopup'), menuBackdrop = document.getElementById('menuBackdrop');
 
-    function autoWidth(input) {
-        if (input.readOnly) return;
-        const mirror=document.createElement('span');
-        mirror.style.position='absolute'; mirror.style.visibility='hidden'; mirror.style.whiteSpace='pre';
-        mirror.style.font=window.getComputedStyle(input).font; mirror.style.padding=window.getComputedStyle(input).padding;
-        mirror.textContent=input.value||input.placeholder||''; document.body.appendChild(mirror);
-        const spanWidth=mirror.offsetWidth; document.body.removeChild(mirror);
-        input.style.width = Math.max(10, spanWidth) + 'px';
-    }
-    [throughEl,becomeEl].forEach(el=>{ el.addEventListener('input',()=>autoWidth(el)); el.addEventListener('blur',()=>autoWidth(el)); });
+            function autoWidth(input) { if (input.readOnly || input.type === 'time') return; const mirror = document.createElement('span'); mirror.style.position = 'absolute'; mirror.style.visibility = 'hidden'; mirror.style.whiteSpace = 'pre'; mirror.style.font = window.getComputedStyle(input).font; mirror.style.padding = window.getComputedStyle(input).padding; mirror.textContent = input.value || input.placeholder || ''; document.body.appendChild(mirror); const spanWidth = mirror.offsetWidth; document.body.removeChild(mirror); input.style.width = Math.max(10, spanWidth) + 'px'; }
+            function adjustAllInlineInputs() { document.querySelectorAll('.inline-input:not([type="time"])').forEach(el => autoWidth(el)); }
+            [throughEl, becomeEl].forEach(el => { el.addEventListener('input', () => autoWidth(el)); el.addEventListener('blur', () => autoWidth(el)); });
+            document.querySelectorAll('.inline-input:not([type="time"])').forEach(el => { el.addEventListener('input', () => autoWidth(el)); el.addEventListener('blur', () => autoWidth(el)); });
 
-    function updateUIMode() {
-        const todayKey = getTodayKey();
-        isTodayView = (currentViewDate === todayKey);
-        isFutureView = (currentViewDate > todayKey);
-        const today = isTodayView;
-        const future = isFutureView;
-        document.getElementById('createSection').style.display = (today || future) ? '' : 'none';
-        document.getElementById('dailyReviewSection').style.display = today ? '' : 'none';
-        throughEl.readOnly = !(today || future); becomeEl.readOnly = !(today || future);
-        if (!(today || future)) { throughEl.style.pointerEvents = 'none'; becomeEl.style.pointerEvents = 'none'; }
-        else { throughEl.style.pointerEvents = ''; becomeEl.style.pointerEvents = ''; }
-        btnToggleSelect.style.display = (today || future) ? '' : 'none';
-        if (!today && !future) { btnDeleteSelected.style.display = 'none'; isSelectMode = false; }
-        dateNavInput.value = currentViewDate;
-        dateNavInput.max = getTomorrowKey();
-        dateDisplay.innerHTML = formatDateCN(currentViewDate);
-        loadAndRenderDay();
-    }
+            function updateUIMode() { const todayKey = getTodayKey(); isTodayView = (currentViewDate === todayKey); isFutureView = (currentViewDate > todayKey); const today = isTodayView; const future = isFutureView; document.getElementById('createSection').style.display = (today || future) ? '' : 'none'; document.getElementById('dailyReviewSection').style.display = today ? '' : 'none'; throughEl.readOnly = !(today || future); becomeEl.readOnly = !(today || future); if (!(today || future)) { throughEl.style.pointerEvents = 'none'; becomeEl.style.pointerEvents = 'none'; } else { throughEl.style.pointerEvents = ''; becomeEl.style.pointerEvents = ''; } dateNavInput.value = currentViewDate; dateNavInput.max = getTomorrowKey(); dateWeekdayEl.textContent = getWeekdayCN(currentViewDate); const relText = getRelativeDateText(currentViewDate); dateRelativeText.textContent = relText; intentionDateText.textContent = relText; if (isTodayView) { btnBackToday.style.display = 'none'; } else { btnBackToday.style.display = ''; } loadAndRenderDay(); }
 
-    function loadAndRenderDay() {
-        const dayData = getDayData(currentViewDate);
-        updateIntentionDisplay(dayData);
-        updateStatsDisplay(dayData.stats);
-        updateDailyBadge(dayData);
-        renderTasks(dayData.tasks);
-    }
+            function loadAndRenderDay() { const dayData = getDayData(currentViewDate); updateIntentionDisplay(dayData); updateStatsDisplay(dayData); updateDailyBadge(dayData); renderTasks(dayData.tasks); updateTotalDurationDisplay(); }
+            function updateIntentionDisplay(dayData) { throughEl.value = dayData.intentionThrough || ''; becomeEl.value = dayData.intentionBecome || ''; autoWidth(throughEl); autoWidth(becomeEl); }
+            function updateStatsDisplay(dayData) { const s = (dayData && dayData.stats) ? dayData.stats : { createdCount: 0, deletedCount: 0, modificationCount: 0 }; document.getElementById('statCreated').textContent = s.createdCount || 0; document.getElementById('statDeleted').textContent = s.deletedCount || 0; document.getElementById('statModified').textContent = s.modificationCount || 0; }
+            function updateTotalDurationDisplay() { const dayData = getDayData(currentViewDate); let totalSec = 0; if (dayData.tasks) { dayData.tasks.forEach(t => { if (t.records) { totalSec += t.records.reduce((s, r) => s + (r.duration || 0), 0); } if (t.activeTimingStart && isTodayView && t.id === currentTimingId) { totalSec += Math.max(0, Math.floor((Date.now() - new Date(t.activeTimingStart).getTime()) / 1000)); } }); } document.getElementById('statTotalDuration').textContent = formatDurationFull(totalSec) || '0秒'; }
+            function updateDailyBadge(dayData) { if (dayData.dailyReflection?.completedAt) { dailyBadge.style.display = 'inline-block'; dailyBadge.textContent = '当日复盘已完成'; btnDailyReview.classList.add('is-done'); btnDailyReview.textContent = '查看/修改今日复盘'; } else { dailyBadge.style.display = 'none'; btnDailyReview.classList.remove('is-done'); btnDailyReview.textContent = '结束今天，记录成长'; } }
+            function saveCurrentIntention() { if (!isTodayView && !isFutureView) return; const dayData = getDayData(currentViewDate); dayData.intentionThrough = throughEl.value.trim(); dayData.intentionBecome = becomeEl.value.trim(); dayData.intention = `今天，我想通过${dayData.intentionThrough||'______'}，成为更${dayData.intentionBecome||'______'}的人。`; saveDayData(currentViewDate, dayData); }
+            function addVersion(task, stage, saveAndUpdate = false) { if (!task.versions) task.versions = []; task.versions.push({ stage, time: new Date().toISOString(), data: { startTime: task.startTime, endTime: task.endTime, place: task.place, people: task.people, category: task.category, tool: task.tool, title: task.title } }); if (stage !== 'created') { const dayData = getDayData(currentViewDate); if (!dayData.stats) dayData.stats = { createdCount: 0, deletedCount: 0, modificationCount: 0 }; dayData.stats.modificationCount = (dayData.stats.modificationCount || 0) + 1; if (saveAndUpdate) { saveDayData(currentViewDate, dayData); updateStatsDisplay(dayData); } } }
 
-    function updateIntentionDisplay(dayData) { throughEl.value = dayData.intentionThrough || ''; becomeEl.value = dayData.intentionBecome || ''; autoWidth(throughEl); autoWidth(becomeEl); }
-    function updateStatsDisplay(stats) { const s = stats || {createdCount:0, deletedCount:0, modificationCount:0}; document.getElementById('statCreated').textContent = s.createdCount; document.getElementById('statDeleted').textContent = s.deletedCount; document.getElementById('statModified').textContent = s.modificationCount; }
-    function updateDailyBadge(dayData) { if (dayData.dailyReflection?.completedAt) { dailyBadge.style.display='inline-block'; dailyBadge.textContent = '✅ 当日复盘已完成'; btnDailyReview.classList.add('done'); btnDailyReview.textContent = '✅ 当日复盘已完成'; } else { dailyBadge.style.display='none'; btnDailyReview.classList.remove('done'); btnDailyReview.textContent = '🌙 结束今天，记录成长'; } }
-    function saveCurrentIntention() { if (!isTodayView && !isFutureView) return; const dayData = getDayData(currentViewDate); dayData.intentionThrough = throughEl.value.trim(); dayData.intentionBecome = becomeEl.value.trim(); dayData.intention = `今天，我想通过${dayData.intentionThrough||'______'}，成为更${dayData.intentionBecome||'______'}的人。`; saveDayData(currentViewDate, dayData); }
-    function addVersion(task, stage) { if (!isTodayView && !isFutureView) return; if (!task.versions) task.versions = []; task.versions.push({ stage, time: new Date().toISOString(), data: { startTime: task.startTime, endTime: task.endTime, place: task.place, people: task.people, category: task.category, tool: task.tool, title: task.title } }); const dayData = getDayData(currentViewDate); if (!dayData.stats) dayData.stats = {createdCount:0, deletedCount:0, modificationCount:0}; dayData.stats.modificationCount = (dayData.stats.modificationCount || 0) + 1; saveDayData(currentViewDate, dayData); updateStatsDisplay(dayData.stats); }
-    function restoreTiming() { if (!isTodayView) return; const dayData = getDayData(currentViewDate); for (const t of dayData.tasks) { if (t.activeTimingStart && Date.now() - new Date(t.activeTimingStart).getTime() < 86400000) { currentTimingId = t.id; timingStart = t.activeTimingStart; startInterval(t.id); break; } else if (t.activeTimingStart) { t.activeTimingStart = null; saveDayData(currentViewDate, dayData); } } }
-    function startInterval(id) { if (timingInterval) clearInterval(timingInterval); timingInterval = setInterval(() => updateTimingDisplay(id), 500); }
-    function updateTimingDisplay(id) { const card = document.querySelector(`.task-card[data-task-id="${id}"]`); if (!card) return; const disp = card.querySelector('.timer-display'); const dayData = getDayData(currentViewDate); const task = dayData.tasks.find(t => t.id === id); if (!task?.activeTimingStart) return; const elapsed = Math.floor((Date.now() - new Date(task.activeTimingStart).getTime()) / 1000); if (disp) disp.textContent = '⏱ ' + formatDuration(Math.max(0, elapsed)); }
-    function buildNarrativeHTML(task) { const cat = escapeHTML(task.category || '未分类'); const tool = task.tool ? `<span class="narr-tool">🔧 ${escapeHTML(task.tool)}</span>` : ''; const timeStr = `${escapeHTML(task.startTime || '--:--')} - ${escapeHTML(task.endTime || '--:--')}`; const place = escapeHTML(task.place || '未知'); const people = escapeHTML(task.people || '独自'); const title = escapeHTML(task.title || '未命名'); return `<span class="narr-category">${cat}</span>${tool} <span class="narr-time">${timeStr}</span> 在 <span class="narr-place">${place}</span> <span class="narr-people">${people}</span> <span class="narr-title">${title}</span>`; }
-    function escapeHTML(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
-    function renderTasks(tasks) { tasksSection.innerHTML = ''; if (!tasks || tasks.length === 0) { tasksSection.innerHTML = `<div class="no-tasks-hint">${isTodayView ? '暂未添加任务 · 从「添加任务」开始记录今日行动' : (isFutureView ? '暂无任务，可为明天添加计划' : '该日无任务记录')}</div>`; return; } tasks.forEach(task => tasksSection.appendChild(buildCard(task))); if (currentTimingId && timingInterval) updateTimingDisplay(currentTimingId); }
+            function restoreTiming() { if (!isTodayView) return; const dayData = getDayData(currentViewDate); for (const t of dayData.tasks) { if (t.activeTimingStart && Date.now() - new Date(t.activeTimingStart).getTime() < 86400000) { currentTimingId = t.id; timingStart = t.activeTimingStart; startInterval(t.id); break; } else if (t.activeTimingStart) { t.activeTimingStart = null; saveDayData(currentViewDate, dayData); } } }
+            function startInterval(id) { if (timingInterval) clearInterval(timingInterval); timingInterval = setInterval(() => { updateTimingDisplay(id); updateTotalDurationDisplay(); }, 500); }
+            function updateTimingDisplay(id) { const card = document.querySelector(`.task-card[data-task-id="${id}"]`); if (!card) return; const disp = card.querySelector('.timer-display'); const dayData = getDayData(currentViewDate); const task = dayData.tasks.find(t => t.id === id); if (!task?.activeTimingStart) return; const elapsed = Math.floor((Date.now() - new Date(task.activeTimingStart).getTime()) / 1000); if (disp) disp.textContent = formatDuration(Math.max(0, elapsed)); }
+            function buildNarrativeHTML(task) { const cat = escapeHTML(task.category || '未分类'); const tool = task.tool ? `<span class="narr-tool">${escapeHTML(task.tool)}</span>` : ''; const timeStr = `${escapeHTML(task.startTime || '--:--')} - ${escapeHTML(task.endTime || '--:--')}`; const place = escapeHTML(task.place || '未知'); const people = escapeHTML(task.people || '独自'); const title = escapeHTML(task.title || '未命名'); return `<span class="narr-category">${cat}</span>${tool} <span class="narr-time">${timeStr}</span>，在<span class="narr-place">${place}</span>与<span class="narr-people">${people}</span>，进行<span class="narr-title">${title}</span>`; }
+            function escapeHTML(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+            function sortTasks(tasks) { if (!tasks || tasks.length === 0) return []; const incomplete = tasks.filter(t => !t.completed).sort((a, b) => (a.startTime || '').localeCompare(b.startTime || '')); const completed = tasks.filter(t => t.completed).sort((a, b) => (a.startTime || '').localeCompare(b.startTime || '')); return [...incomplete, ...completed]; }
+            function renderTasks(tasks) { tasksSection.innerHTML = ''; const sorted = sortTasks(tasks); if (sorted.length === 0) { tasksSection.innerHTML = `<div class="no-tasks-hint">${isTodayView ? '暂未添加任务 · 从「添加任务」开始记录今日行动' : (isFutureView ? '暂无任务，可为明天添加计划' : '该日无任务记录')}</div>`; return; } sorted.forEach(task => tasksSection.appendChild(buildCard(task))); if (currentTimingId && timingInterval) updateTimingDisplay(currentTimingId); updateTotalDurationDisplay(); }
+            function buildCard(task) { const card = document.createElement('div'); card.className = 'task-card'; card.dataset.taskId = task.id; if (task.completed) card.classList.add('completed'); if (task.id === currentTimingId && isTodayView) card.classList.add('timing-active'); const contentDiv = document.createElement('div'); contentDiv.className = 'task-content'; const narr = document.createElement('div'); narr.className = 'task-narrative'; narr.innerHTML = buildNarrativeHTML(task); contentDiv.appendChild(narr); const meta = document.createElement('div'); meta.className = 'task-meta'; const recordCount = (task.records || []).length; const totalDuration = (task.records || []).reduce((s, r) => s + (r.duration || 0), 0); if (recordCount > 0) { meta.innerHTML = `<span class="accumulated-time">${recordCount}次 累计 ${formatDurationFull(totalDuration)}</span>`; } if (task.id === currentTimingId && task.activeTimingStart && isTodayView) { const nowElapsed = Math.floor((Date.now() - new Date(task.activeTimingStart).getTime()) / 1000); meta.innerHTML = `<span class="timer-display">${formatDuration(Math.max(0, nowElapsed))}</span>` + meta.innerHTML; } if (task.completed) meta.innerHTML += '<span class="completed-check">已完成</span>'; contentDiv.appendChild(meta); const actions = document.createElement('div'); actions.className = 'task-actions'; if (task.completed && task.reflection) { const btn = document.createElement('button'); btn.className = 'btn-task btn-view'; btn.textContent = '查看复盘'; btn.onclick = (e) => { e.stopPropagation(); showViewReflection(task); }; actions.appendChild(btn); } else if (isTodayView && task.id === currentTimingId) { const btn = document.createElement('button'); btn.className = 'btn-task btn-end'; btn.textContent = '结束计时'; btn.onclick = (e) => { e.stopPropagation(); endTiming(task.id); }; actions.appendChild(btn); } else if (isTodayView && !task.completed) { const btn = document.createElement('button'); btn.className = 'btn-task btn-start'; btn.textContent = '开始计时'; btn.onclick = (e) => { e.stopPropagation(); showStartModal(task); }; actions.appendChild(btn); } else if (isFutureView && !task.completed) { const btn = document.createElement('button'); btn.className = 'btn-task btn-edit'; btn.textContent = '编辑'; btn.onclick = (e) => { e.stopPropagation(); showEditModal(task); }; actions.appendChild(btn); } if (task.completed && (isTodayView || isFutureView)) { const btnUncomplete = document.createElement('button'); btnUncomplete.className = 'btn-task btn-uncomplete'; btnUncomplete.textContent = '取消完成'; btnUncomplete.onclick = (e) => { e.stopPropagation(); uncompleteTask(task.id); }; actions.appendChild(btnUncomplete); } if ((isTodayView || isFutureView) && task.completed) { const btnDel = document.createElement('button'); btnDel.className = 'btn-task'; btnDel.style.color = '#c44d34'; btnDel.style.borderColor = '#c44d34'; btnDel.textContent = '删除'; btnDel.onclick = (e) => { e.stopPropagation(); if (confirm('确认删除该已完成任务吗？此操作不可撤销。')) { deleteTaskById(task.id); } }; actions.appendChild(btnDel); } contentDiv.appendChild(actions); card.appendChild(contentDiv); return card; }
 
-    function buildCard(task) {
-        const card = document.createElement('div'); card.className = 'task-card'; card.dataset.taskId = task.id;
-        if (task.completed) card.classList.add('completed'); if (task.id === currentTimingId && isTodayView) card.classList.add('timing-active');
-        const checkboxDiv = document.createElement('div'); checkboxDiv.className = 'task-checkbox'; if (isSelectMode && (isTodayView || isFutureView)) checkboxDiv.classList.add('visible');
-        const cb = document.createElement('input'); cb.type = 'checkbox'; cb.dataset.taskId = task.id; checkboxDiv.appendChild(cb);
-        const contentDiv = document.createElement('div'); contentDiv.className = 'task-content';
-        const narr = document.createElement('div'); narr.className = 'task-narrative'; narr.innerHTML = buildNarrativeHTML(task); contentDiv.appendChild(narr);
-        const meta = document.createElement('div'); meta.className = 'task-meta';
-        const recordCount = (task.records || []).length;
-        const totalDuration = (task.records || []).reduce((s, r) => s + (r.duration || 0), 0);
-        if (recordCount > 0) {
-            meta.innerHTML = `<span class="accumulated-time">⏱ ${recordCount}次 累计 ${formatDurationFull(totalDuration)}</span>`;
-        }
-        if (task.id === currentTimingId && task.activeTimingStart && isTodayView) {
-            const nowElapsed = Math.floor((Date.now() - new Date(task.activeTimingStart).getTime()) / 1000);
-            meta.innerHTML = `<span class="timer-display">⏱ ${formatDuration(Math.max(0, nowElapsed))}</span>` + meta.innerHTML;
-        }
-        if (task.completed) meta.innerHTML += '<span class="completed-check">✓ 已完成</span>';
-        contentDiv.appendChild(meta);
-        const actions = document.createElement('div'); actions.className = 'task-actions';
-        if (task.completed && task.reflection) { const btn = document.createElement('button'); btn.className = 'btn-task btn-view'; btn.textContent = '📋 查看复盘'; btn.onclick = (e) => { e.stopPropagation(); showViewReflection(task); }; actions.appendChild(btn); }
-        else if (isTodayView && task.id === currentTimingId) { const btn = document.createElement('button'); btn.className = 'btn-task btn-end'; btn.textContent = '⏹ 结束计时'; btn.onclick = (e) => { e.stopPropagation(); endTiming(task.id); }; actions.appendChild(btn); }
-        else if (isTodayView && !task.completed) { const btn = document.createElement('button'); btn.className = 'btn-task btn-start'; btn.textContent = '▶ 开始计时'; btn.onclick = (e) => { e.stopPropagation(); showStartModal(task); }; actions.appendChild(btn); }
-        else if (isFutureView && !task.completed) { const btn = document.createElement('button'); btn.className = 'btn-task btn-edit'; btn.textContent = '✏️ 编辑'; btn.onclick = (e) => { e.stopPropagation(); showEditModal(task); }; actions.appendChild(btn); }
-        contentDiv.appendChild(actions); card.appendChild(checkboxDiv); card.appendChild(contentDiv); return card;
-    }
+            function uncompleteTask(id) { if (!isTodayView && !isFutureView) return; if (!confirm('确认将此任务标记为未完成吗？之前的复盘记录将被清除，但计时记录会保留。')) return; const dayData = getDayData(currentViewDate); const task = dayData.tasks.find(t => t.id === id); if (!task) return; task.completed = false; task.reflection = null; task.activeTimingStart = null; if (task.id === currentTimingId) { if (timingInterval) { clearInterval(timingInterval); timingInterval = null; } currentTimingId = null; timingStart = null; } addVersion(task, 'uncompleted', false); dayData.stats.modificationCount = (dayData.stats.modificationCount || 0) + 1; saveDayData(currentViewDate, dayData); renderTasks(dayData.tasks); updateStatsDisplay(dayData); updateDailyBadge(dayData); updateTotalDurationDisplay(); showToast('任务已取消完成'); }
+            function deleteTaskById(id) { const dayData = getDayData(currentViewDate); const task = dayData.tasks.find(t => t.id === id); if (!task) return; dayData.tasks = dayData.tasks.filter(t => t.id !== id); if (currentTimingId === id) { if (timingInterval) { clearInterval(timingInterval); timingInterval = null; } currentTimingId = null; timingStart = null; } dayData.stats.deletedCount = (dayData.stats.deletedCount || 0) + 1; dayData.deletedTasks.push({ ...task, deletedAt: new Date().toISOString() }); saveDayData(currentViewDate, dayData); renderTasks(dayData.tasks); updateStatsDisplay(dayData); updateTotalDurationDisplay(); showToast('任务已删除'); }
+            function endTiming(id) { if (!isTodayView || id !== currentTimingId) return; if (timingInterval) { clearInterval(timingInterval); timingInterval = null; } const dayData = getDayData(currentViewDate); const task = dayData.tasks.find(t => t.id === id); if (!task) return; let dur = 0; if (task.activeTimingStart) { dur = Math.max(0, Math.floor((Date.now() - new Date(task.activeTimingStart).getTime()) / 1000)); task.records.push({ start: task.activeTimingStart, end: new Date().toISOString(), duration: dur }); task.activeTimingStart = null; } currentTimingId = null; timingStart = null; const totalDuration = (task.records || []).reduce((s, r) => s + (r.duration || 0), 0); saveDayData(currentViewDate, dayData); renderTasks(dayData.tasks); updateTotalDurationDisplay(); showCompletionModal(task, dur, totalDuration); }
+            function parseTimeToDate(timeStr) { const [h, m] = timeStr.split(':').map(Number); const d = new Date(); d.setHours(h, m, 0, 0); return d; }
+            function showFocusMode(task) { const startTimeDate = new Date(timingStart); document.getElementById('focusStartTime').textContent = `${String(startTimeDate.getHours()).padStart(2,'0')}:${String(startTimeDate.getMinutes()).padStart(2,'0')}`; document.getElementById('focusEndTime').textContent = task.endTime; document.getElementById('focusOverlay').style.display = 'flex'; if (focusInterval) clearInterval(focusInterval); const updateFocusInfo = () => { const now = new Date(); const elapsed = Math.floor((now - startTimeDate) / 1000); document.getElementById('focusTimer').textContent = formatDuration(Math.max(0, elapsed)); const endDate = parseTimeToDate(task.endTime); let remaining = Math.floor((endDate - now) / 1000); const remainingEl = document.getElementById('focusRemaining'); if (remaining >= 0) { remainingEl.textContent = formatDuration(remaining); remainingEl.classList.remove('overtime'); } else { remainingEl.textContent = '超时 ' + formatDuration(Math.abs(remaining)); remainingEl.classList.add('overtime'); } }; updateFocusInfo(); focusInterval = setInterval(updateFocusInfo, 500); window.addEventListener('popstate', blockBack); history.pushState({ focus: true }, '', window.location.href); }
+            function hideFocusMode() { document.getElementById('focusOverlay').style.display = 'none'; if (focusInterval) { clearInterval(focusInterval); focusInterval = null; } window.removeEventListener('popstate', blockBack); if (history.state && history.state.focus) history.back(); }
+            function blockBack(e) { e.preventDefault(); if (confirm('强制返回将结束本次计时，下次需重新开始。确定要结束吗？')) { endTiming(currentTimingId); hideFocusMode(); } else { history.pushState({ focus: true }, '', window.location.href); } }
+            document.getElementById('btnEndFocus').addEventListener('click', () => { if (currentTimingId) { endTiming(currentTimingId); hideFocusMode(); } });
 
-    function endTiming(id) { if (!isTodayView || id !== currentTimingId) return; if (timingInterval) { clearInterval(timingInterval); timingInterval = null; } const dayData = getDayData(currentViewDate); const task = dayData.tasks.find(t => t.id === id); if (!task) return; let dur = 0; if (task.activeTimingStart) { dur = Math.max(0, Math.floor((Date.now() - new Date(task.activeTimingStart).getTime()) / 1000)); task.records.push({ start: task.activeTimingStart, end: new Date().toISOString(), duration: dur }); task.activeTimingStart = null; } currentTimingId = null; timingStart = null; saveDayData(currentViewDate, dayData); renderTasks(dayData.tasks); showCompletionModal(task, dur); }
+            const questionSet = [{ id: 'q1', text: '① 完成这件事时，我感觉难度如何？', options: ['太简单', '刚刚好', '有点难', '太难了'], weights: [0.33, 1.0, 0.67, 0.0] }, { id: 'q2', text: '② 我做这件事是发自内心的"我想做"。', options: ['完全不是', '有一点', '比较符合', '非常符合'], weights: [0.0, 0.33, 0.67, 1.0] }, { id: 'q3', text: '③ 我相信自己有能力做好它。', options: ['完全不信', '有一点信心', '比较自信', '完全自信'], weights: [0.0, 0.33, 0.67, 1.0] }, { id: 'q4', text: '④ 我清楚地知道自己的进展如何。', options: ['非常模糊', '有点模糊', '比较清楚', '非常清楚'], weights: [0.0, 0.33, 0.67, 1.0] }, { id: 'q5', text: '⑤ 通过这件事，我和他人产生了连接。', options: ['完全没有', '间接相关', '有一定连接', '连接很深'], weights: [0.0, 0.33, 0.67, 1.0] }];
 
-    function parseTimeToDate(timeStr) { const [h, m] = timeStr.split(':').map(Number); const d = new Date(); d.setHours(h, m, 0, 0); return d; }
+            function showCompletionModal(task, lastDur, totalDuration) { const html = `<div class="modal-dialog"><button class="modal-close-x" id="btnCloseComp">×</button><h3>计时结束</h3><p style="text-align:center; margin-bottom:8px;">本次计时 ${formatDurationFull(lastDur)}</p><p style="text-align:center; margin-bottom:20px; color:var(--text-muted);">累计总时长 ${formatDurationFull(totalDuration)}</p><div class="modal-actions" style="justify-content:center;"><button class="btn-modal-primary" id="btnMarkCompleted">已完成，填写复盘</button><button class="btn-modal-secondary" id="btnMarkPaused">未完成，稍后继续</button></div></div>`; openModal(html); document.getElementById('btnCloseComp').onclick = closeModal; document.getElementById('btnMarkCompleted').onclick = () => { closeModal(); showReflectionModal(task, totalDuration); }; document.getElementById('btnMarkPaused').onclick = () => { closeModal(); const dayData = getDayData(currentViewDate); const t = dayData.tasks.find(x => x.id === task.id); if (t) { t.activeTimingStart = null; saveDayData(currentViewDate, dayData); } renderTasks(dayData.tasks); updateTotalDurationDisplay(); showToast('计时已保存，任务未完成'); }; addEscListener(closeModal); }
 
-    function showFocusMode(task) {
-        const startTimeDate = new Date(timingStart);
-        document.getElementById('focusStartTime').textContent = `${String(startTimeDate.getHours()).padStart(2, '0')}:${String(startTimeDate.getMinutes()).padStart(2, '0')}`;
-        document.getElementById('focusTaskName').textContent = `${task.category || ''} · ${task.startTime}-${task.endTime} ${task.title || ''}`;
-        document.getElementById('focusEncouragement').textContent = encouragements[Math.floor(Math.random() * encouragements.length)];
-        document.getElementById('focusOverlay').style.display = 'flex';
-        if (focusInterval) clearInterval(focusInterval);
-        const updateFocusInfo = () => {
-            const now = new Date();
-            document.getElementById('focusCurrentTime').textContent = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
-            const elapsed = Math.floor((now - startTimeDate) / 1000);
-            document.getElementById('focusTimer').textContent = formatDuration(Math.max(0, elapsed));
-            const endDate = parseTimeToDate(task.endTime);
-            let remaining = Math.floor((endDate - now) / 1000);
-            const remainingEl = document.getElementById('focusRemaining');
-            if (remaining >= 0) { remainingEl.textContent = formatDuration(remaining); remainingEl.classList.remove('overtime'); }
-            else { remainingEl.textContent = '超时 ' + formatDuration(Math.abs(remaining)); remainingEl.classList.add('overtime'); }
-        };
-        updateFocusInfo(); focusInterval = setInterval(updateFocusInfo, 500);
-        window.addEventListener('popstate', blockBack); history.pushState({ focus: true }, '', window.location.href);
-    }
-    function hideFocusMode() { document.getElementById('focusOverlay').style.display = 'none'; if (focusInterval) { clearInterval(focusInterval); focusInterval = null; } window.removeEventListener('popstate', blockBack); if (history.state && history.state.focus) history.back(); }
-    function blockBack(e) { e.preventDefault(); if (confirm('强制返回将结束本次计时，下次需重新开始。确定要结束吗？')) { endTiming(currentTimingId); hideFocusMode(); } else { history.pushState({ focus: true }, '', window.location.href); } }
-    document.getElementById('btnEndFocus').addEventListener('click', () => { if (currentTimingId) { endTiming(currentTimingId); hideFocusMode(); } });
+            function showReflectionModal(task, totalDuration) { if (!isTodayView) return; let qHtml = ''; questionSet.forEach(q => { qHtml += `<div class="question-block"><div class="question-text">${q.text}</div><div class="options-row" id="${q.id}">${q.options.map((opt,i) => `<button class="opt-btn" data-weight="${q.weights[i]}" data-opt="${i}">${opt}</button>`).join('')}</div></div>`; }); const firstRecord = (task.records && task.records.length > 0) ? task.records[0] : null; const lastRecord = (task.records && task.records.length > 0) ? task.records[task.records.length - 1] : null; const actualStartStr = firstRecord ? formatTimeFromISO(firstRecord.start) : (task.activeTimingStart ? formatTimeFromISO(task.activeTimingStart) : '无记录'); const actualEndStr = lastRecord ? formatTimeFromISO(lastRecord.end) : '无记录'; const html = `<div class="modal-dialog"><button class="modal-close-x" id="btnCloseRefl">×</button><h3>任务完成复盘</h3><div class="modal-field"><label>计划开始</label><input type="time" id="rStart" value="${task.startTime}"></div><div class="modal-field"><label>计划截止</label><input type="time" id="rEnd" value="${task.endTime}"></div><div class="modal-field"><label>地点</label><input id="rPlace" value="${escapeHTML(task.place)}"></div><div class="modal-field"><label>人物</label><input id="rPeople" value="${escapeHTML(task.people)}"></div><div class="modal-field"><label>类别</label><input id="rCat" value="${escapeHTML(task.category)}"></div><div class="modal-field"><label>工具</label><input id="rTool" value="${escapeHTML(task.tool||'')}"></div><div class="modal-field"><label>任务</label><input id="rTitle" value="${escapeHTML(task.title)}"></div><div class="modal-field"><label>首次计时开始</label><div class="readonly-field">${actualStartStr}</div></div><div class="modal-field"><label>最后计时结束</label><div class="readonly-field">${actualEndStr}</div></div><div class="modal-field"><label>累计时长</label><div class="readonly-field">${formatDurationFull(totalDuration)}（共${(task.records||[]).length}次计时）</div></div>${qHtml}<div class="score-preview">当前综合评分：<span id="scoreDisplay">0.00</span> / 5.00</div><div class="modal-field"><label>复盘笔记</label><textarea id="rText" placeholder="这件事我做得如何？遇到了什么障碍？" rows="2"></textarea></div><div class="modal-field"><label>微小收获</label><input id="rTakeaway" placeholder="通过这次行动，我学到了……"></div><div class="modal-actions"><button class="btn-modal-secondary" id="btnCancelRefl">取消</button><button class="btn-modal-primary" id="btnSaveRefl">保存复盘</button></div></div>`; openModal(html); const selected = {}; const updateScore = () => { let total = 0; questionSet.forEach(q => { if (selected[q.id] !== undefined) total += selected[q.id]; }); document.getElementById('scoreDisplay').textContent = total.toFixed(2); return total; }; questionSet.forEach(q => { const c = document.getElementById(q.id); c.querySelectorAll('.opt-btn').forEach(b => b.addEventListener('click', () => { c.querySelectorAll('.opt-btn').forEach(x => x.classList.remove('selected')); b.classList.add('selected'); selected[q.id] = parseFloat(b.dataset.weight); updateScore(); })); }); const close = () => { closeModal(); renderTasks(getDayData(currentViewDate).tasks); updateTotalDurationDisplay(); }; document.getElementById('btnCloseRefl').onclick = close; document.getElementById('btnCancelRefl').onclick = close; document.getElementById('btnSaveRefl').onclick = () => { const start = document.getElementById('rStart').value, end = document.getElementById('rEnd').value; const place = document.getElementById('rPlace').value.trim(), people = document.getElementById('rPeople').value.trim(); const cat = document.getElementById('rCat').value.trim(), tool = document.getElementById('rTool').value.trim(); const title = document.getElementById('rTitle').value.trim(); if (!start || !end || !place || !people || !cat || !title) { showToast('请填写所有必填字段'); return; } if (!questionSet.every(q => selected[q.id] !== undefined)) { showToast('请回答所有问题'); return; } const score = updateScore(); const dayData = getDayData(currentViewDate); const t = dayData.tasks.find(x => x.id === task.id); if (!t) return; Object.assign(t, { startTime: start, endTime: end, place, people, category: cat, tool, title }); t.reflection = { actualDuration: totalDuration, rating: score, answers: { ...selected }, text: document.getElementById('rText').value.trim(), takeaway: document.getElementById('rTakeaway').value.trim(), firstRecordStart: firstRecord ? firstRecord.start : null, lastRecordEnd: lastRecord ? lastRecord.end : null, recordCount: (t.records || []).length }; t.completed = true; t.activeTimingStart = null; addVersion(t, 'completed', false); dayData.stats.modificationCount = (dayData.stats.modificationCount || 0) + 1; saveDayData(currentViewDate, dayData); close(); renderTasks(dayData.tasks); updateTotalDurationDisplay(); updateDailyBadge(dayData); showToast('复盘已保存'); }; addEscListener(close); }
 
-    const questionSet = [
-        { id:'q1', text:'① 完成这件事时，我感觉难度如何？', options:['太简单','刚刚好','有点难','太难了'], weights:[0.33,1.0,0.67,0.0] },
-        { id:'q2', text:'② 我做这件事是发自内心的“我想做”。', options:['完全不是','有一点','比较符合','非常符合'], weights:[0.0,0.33,0.67,1.0] },
-        { id:'q3', text:'③ 我相信自己有能力做好它。', options:['完全不信','有一点信心','比较自信','完全自信'], weights:[0.0,0.33,0.67,1.0] },
-        { id:'q4', text:'④ 我清楚地知道自己的进展如何。', options:['非常模糊','有点模糊','比较清楚','非常清楚'], weights:[0.0,0.33,0.67,1.0] },
-        { id:'q5', text:'⑤ 通过这件事，我和他人产生了连接。', options:['完全没有','间接相关','有一定连接','连接很深'], weights:[0.0,0.33,0.67,1.0] }
-    ];
+            function showViewReflection(task) { if (!task.reflection) return; const r = task.reflection; let detailHtml = ''; if (r.answers && Object.keys(r.answers).length > 0) { detailHtml += '<div style="margin-top:10px;font-size:0.88rem;color:var(--text-secondary);font-weight:600;">各项得分详情</div>'; questionSet.forEach(q => { const weightVal = r.answers[q.id]; let optText = '未作答', fillClass = 'low', fillPercent = 0; if (weightVal !== undefined) { const idx = q.weights.indexOf(weightVal); if (idx >= 0) optText = q.options[idx]; fillPercent = Math.round((weightVal / 1.0) * 100); if (fillPercent >= 70) fillClass = 'high'; else if (fillPercent >= 35) fillClass = 'mid'; else fillClass = 'low'; } detailHtml += `<div class="score-detail-row"><span class="score-detail-label">${q.text.replace(/^[①②③④⑤]\s*/, '')}</span><div class="score-detail-bar"><div class="score-detail-fill ${fillClass}" style="width:${fillPercent}%;"></div></div><span class="score-detail-value">${optText} (${weightVal !== undefined ? weightVal.toFixed(2) : '?'})</span></div>`; }); } const firstRecordStartStr = r.firstRecordStart ? formatTimeFromISO(r.firstRecordStart) : '无记录'; const lastRecordEndStr = r.lastRecordEnd ? formatTimeFromISO(r.lastRecordEnd) : '无记录'; const html = `<div class="modal-dialog"><button class="modal-close-x" id="btnCloseView">×</button><h3>复盘记录</h3><div class="readonly-field">${buildNarrativeHTML(task)}</div><div class="modal-field"><label>首次计时开始</label><div class="readonly-field">${firstRecordStartStr}</div></div><div class="modal-field"><label>最后计时结束</label><div class="readonly-field">${lastRecordEndStr}</div></div><div class="modal-field"><label>累计时长</label><div class="readonly-field">${formatDurationFull(r.actualDuration)}（共${r.recordCount||0}次计时）</div></div><div class="modal-field"><label>综合评分</label><div class="readonly-field" style="font-weight:600;color:var(--accent-green);">${r.rating.toFixed(2)} / 5.00</div></div>${detailHtml}<div class="modal-field"><label>笔记</label><div class="readonly-field">${escapeHTML(r.text || '无')}</div></div><div class="modal-field"><label>收获</label><div class="readonly-field">${escapeHTML(r.takeaway || '无')}</div></div><div class="modal-actions"><button class="btn-modal-primary" id="btnCloseViewBtn">关闭</button></div></div>`; openModal(html); const close = () => closeModal(); document.getElementById('btnCloseView').onclick = close; document.getElementById('btnCloseViewBtn').onclick = close; addEscListener(close); }
 
-    function showCompletionModal(task, dur) {
-        const html = `<div class="modal-dialog"><button class="modal-close-x" id="btnCloseComp">×</button><h3>计时结束</h3>
-        <p style="text-align:center; margin-bottom:20px;">本次计时 ${formatDurationFull(dur)}</p>
-        <div class="modal-actions" style="justify-content:center;">
-            <button class="btn-modal-primary" id="btnMarkCompleted">✅ 已完成，填写复盘</button>
-            <button class="btn-modal-secondary" id="btnMarkPaused">⏸ 未完成，稍后继续</button>
-        </div></div>`;
-        openModal(html);
-        document.getElementById('btnCloseComp').onclick = closeModal;
-        document.getElementById('btnMarkCompleted').onclick = () => {
-            closeModal();
-            showReflectionModal(task, dur);
-        };
-        document.getElementById('btnMarkPaused').onclick = () => {
-            closeModal();
-            const dayData = getDayData(currentViewDate);
-            const t = dayData.tasks.find(x => x.id === task.id);
-            if (t) { t.activeTimingStart = null; saveDayData(currentViewDate, dayData); }
-            renderTasks(dayData.tasks);
-            showToast('计时已保存，任务未完成');
-        };
-        addEscListener(closeModal);
-    }
+            function showEditModal(task) { const html = `<div class="modal-dialog"><button class="modal-close-x" id="btnCloseEdit">×</button><h3>编辑任务信息</h3><div class="modal-field"><label>计划开始</label><input type="time" id="eStart" value="${task.startTime}"></div><div class="modal-field"><label>计划截止</label><input type="time" id="eEnd" value="${task.endTime}"></div><div class="modal-field"><label>地点</label><input id="ePlace" value="${escapeHTML(task.place)}"></div><div class="modal-field"><label>人物</label><input id="ePeople" value="${escapeHTML(task.people)}"></div><div class="modal-field"><label>类别</label><input id="eCat" value="${escapeHTML(task.category)}"></div><div class="modal-field"><label>工具</label><input id="eTool" value="${escapeHTML(task.tool||'')}"></div><div class="modal-field"><label>任务</label><input id="eTitle" value="${escapeHTML(task.title)}"></div><div class="modal-actions"><button class="btn-modal-secondary" id="btnCancelEdit">取消</button><button class="btn-modal-primary" id="btnSaveEdit">保存修改</button></div></div>`; openModal(html); const close = () => closeModal(); document.getElementById('btnCloseEdit').onclick = close; document.getElementById('btnCancelEdit').onclick = close; document.getElementById('btnSaveEdit').onclick = () => { const start = document.getElementById('eStart').value, end = document.getElementById('eEnd').value; const place = document.getElementById('ePlace').value.trim(), people = document.getElementById('ePeople').value.trim(); const cat = document.getElementById('eCat').value.trim(), tool = document.getElementById('eTool').value.trim(); const title = document.getElementById('eTitle').value.trim(); if (!start || !end || !place || !people || !cat || !title) { showToast('请填写所有必填字段'); return; } const dayData = getDayData(currentViewDate); const t = dayData.tasks.find(x => x.id === task.id); if (!t) { close(); return; } Object.assign(t, { startTime: start, endTime: end, place, people, category: cat, tool, title }); addVersion(t, 'modified', false); dayData.stats.modificationCount = (dayData.stats.modificationCount || 0) + 1; saveDayData(currentViewDate, dayData); close(); renderTasks(dayData.tasks); updateStatsDisplay(dayData); updateTotalDurationDisplay(); showToast('任务已更新'); }; addEscListener(close); }
 
-    function showReflectionModal(task, dur) {
-        if (!isTodayView) return;
-        let qHtml = '';
-        questionSet.forEach(q => { qHtml += `<div class="question-block"><div class="question-text">${q.text}</div><div class="options-row" id="${q.id}">${q.options.map((opt,i) => `<button class="opt-btn" data-weight="${q.weights[i]}" data-opt="${i}">${opt}</button>`).join('')}</div></div>`; });
-        const html = `<div class="modal-dialog"><button class="modal-close-x" id="btnCloseRefl">×</button><h3>任务完成复盘</h3>
-        <div class="modal-field"><label>⏰ 计划开始</label><input type="time" id="rStart" value="${task.startTime}"></div>
-        <div class="modal-field"><label>⏰ 计划截止</label><input type="time" id="rEnd" value="${task.endTime}"></div>
-        <div class="modal-field"><label>📍 地点</label><input id="rPlace" value="${escapeHTML(task.place)}"></div>
-        <div class="modal-field"><label>👤 人物</label><input id="rPeople" value="${escapeHTML(task.people)}" list="pList2"><datalist id="pList2"><option value="独自"><option value="和室友"><option value="和朋友"><option value="和同事"><option value="和家人"><option value="和伴侣"><option value="和父母"></datalist></div>
-        <div class="modal-field"><label>🏷️ 类别</label><input id="rCat" value="${escapeHTML(task.category)}" list="cList2"><datalist id="cList2"><option value="学习"><option value="工作"><option value="健身"><option value="社交"><option value="阅读"><option value="创作"><option value="休息"><option value="家务"><option value="交通"><option value="其他"></datalist></div>
-        <div class="modal-field"><label>🔧 工具</label><input id="rTool" value="${escapeHTML(task.tool||'')}" list="tList2"><datalist id="tList2"><option value="电脑"><option value="手机"><option value="纸笔"><option value="iPad"><option value="Kindle"><option value="VS Code"><option value="Excel"><option value="Python"><option value="相机"><option value="其他"></datalist></div>
-        <div class="modal-field"><label>📋 任务</label><input id="rTitle" value="${escapeHTML(task.title)}"></div>
-        <div class="modal-field"><label>⏱ 实际时长（秒）</label><input type="number" id="rDuration" value="${dur}" min="0"> ≈ ${formatDurationFull(dur)}</div>
-        ${qHtml}
-        <div class="score-preview">当前综合评分：<span id="scoreDisplay">0.00</span> / 5.00</div>
-        <div class="modal-field"><label>💭 复盘笔记</label><textarea id="rText" placeholder="这件事我做得如何？遇到了什么障碍？" rows="2"></textarea></div>
-        <div class="modal-field"><label>🌱 微小收获</label><input id="rTakeaway" placeholder="通过这次行动，我学到了……"></div>
-        <div class="modal-actions"><button class="btn-modal-secondary" id="btnCancelRefl">取消</button><button class="btn-modal-primary" id="btnSaveRefl">保存复盘</button></div></div>`;
-        openModal(html); const selected = {}; const updateScore = () => { let total = 0; questionSet.forEach(q => { if (selected[q.id] !== undefined) total += selected[q.id]; }); document.getElementById('scoreDisplay').textContent = total.toFixed(2); return total; };
-        questionSet.forEach(q => { const c = document.getElementById(q.id); c.querySelectorAll('.opt-btn').forEach(b => b.addEventListener('click', () => { c.querySelectorAll('.opt-btn').forEach(x => x.classList.remove('selected')); b.classList.add('selected'); selected[q.id] = parseFloat(b.dataset.weight); updateScore(); })); });
-        const close = () => { closeModal(); renderTasks(getDayData(currentViewDate).tasks); }; document.getElementById('btnCloseRefl').onclick = close; document.getElementById('btnCancelRefl').onclick = close;
-        document.getElementById('btnSaveRefl').onclick = () => {
-            const start = document.getElementById('rStart').value, end = document.getElementById('rEnd').value; const place = document.getElementById('rPlace').value.trim(), people = document.getElementById('rPeople').value.trim();
-            const cat = document.getElementById('rCat').value.trim(), tool = document.getElementById('rTool').value.trim(); const title = document.getElementById('rTitle').value.trim();
-            if (!start || !end || !place || !people || !cat || !title) { showToast('请填写所有必填字段'); return; }
-            if (!questionSet.every(q => selected[q.id] !== undefined)) { showToast('请回答所有问题'); return; }
-            const score = updateScore(); const dayData = getDayData(currentViewDate); const t = dayData.tasks.find(x => x.id === task.id); if (!t) return;
-            Object.assign(t, { startTime: start, endTime: end, place, people, category: cat, tool, title });
-            if (t.records?.length) t.records[t.records.length - 1].duration = parseInt(document.getElementById('rDuration').value) || 0;
-            t.reflection = { actualDuration: parseInt(document.getElementById('rDuration').value) || 0, rating: score, answers: { ...selected }, text: document.getElementById('rText').value.trim(), takeaway: document.getElementById('rTakeaway').value.trim() };
-            t.completed = true; t.activeTimingStart = null; addVersion(t, 'completed'); saveDayData(currentViewDate, dayData); close(); renderTasks(dayData.tasks); showToast('✅ 复盘已保存');
-        }; addEscListener(close);
-    }
+            function showStartModal(task) { if (!isTodayView) return; if (currentTimingId && currentTimingId !== task.id) { showToast('请先结束当前计时'); return; } const html = `<div class="modal-dialog"><button class="modal-close-x" id="btnCloseStart">×</button><h3>确认实际任务信息</h3><div class="modal-field"><label>计划开始</label><input type="time" id="mStart" value="${task.startTime}"></div><div class="modal-field"><label>计划截止</label><input type="time" id="mEnd" value="${task.endTime}"></div><div class="modal-field"><label>地点</label><input id="mPlace" value="${escapeHTML(task.place)}"></div><div class="modal-field"><label>人物</label><input id="mPeople" value="${escapeHTML(task.people)}"></div><div class="modal-field"><label>类别</label><input id="mCat" value="${escapeHTML(task.category)}"></div><div class="modal-field"><label>工具</label><input id="mTool" value="${escapeHTML(task.tool||'')}"></div><div class="modal-field"><label>任务</label><input id="mTitle" value="${escapeHTML(task.title)}"></div><div class="modal-actions"><button class="btn-modal-danger" id="btnDeleteTask">删除任务</button><button class="btn-modal-secondary" id="btnCancelStart">取消</button><button class="btn-modal-primary" id="btnConfirmStart">确认并开始计时</button></div></div>`; openModal(html); const close = () => closeModal(); document.getElementById('btnCloseStart').onclick = close; document.getElementById('btnCancelStart').onclick = close; document.getElementById('btnDeleteTask').onclick = () => { if (confirm('确认删除该任务吗？此操作不可撤销。')) { deleteTaskById(task.id); closeModal(); } }; document.getElementById('btnConfirmStart').onclick = () => { const start = document.getElementById('mStart').value, end = document.getElementById('mEnd').value; const place = document.getElementById('mPlace').value.trim(), people = document.getElementById('mPeople').value.trim(); const cat = document.getElementById('mCat').value.trim(), tool = document.getElementById('mTool').value.trim(); const title = document.getElementById('mTitle').value.trim(); if (!start || !end || !place || !people || !cat || !title) { showToast('请填写所有必填字段'); return; } const dayData = getDayData(currentViewDate); const t = dayData.tasks.find(x => x.id === task.id); if (!t) { close(); return; } Object.assign(t, { startTime: start, endTime: end, place, people, category: cat, tool, title }); t.activeTimingStart = new Date().toISOString(); addVersion(t, 'started', false); dayData.stats.modificationCount = (dayData.stats.modificationCount || 0) + 1; saveDayData(currentViewDate, dayData); currentTimingId = task.id; timingStart = t.activeTimingStart; startInterval(task.id); close(); renderTasks(dayData.tasks); updateTotalDurationDisplay(); showToast('计时已开始'); showFocusMode(t); }; addEscListener(close); }
 
-    function showViewReflection(task) { if (!task.reflection) return; const r = task.reflection;
-        const html = `<div class="modal-dialog"><button class="modal-close-x" id="btnCloseView">×</button><h3>复盘记录</h3><div class="readonly-field">${buildNarrativeHTML(task)}</div><div class="modal-field"><label>⏱ 时长</label><div class="readonly-field">${formatDurationFull(r.actualDuration)}</div></div><div class="modal-field"><label>⭐ 评分</label><div class="readonly-field">${r.rating.toFixed(2)} / 5.00</div></div><div class="modal-field"><label>💭 笔记</label><div class="readonly-field">${escapeHTML(r.text || '无')}</div></div><div class="modal-field"><label>🌱 收获</label><div class="readonly-field">${escapeHTML(r.takeaway || '无')}</div></div><div class="modal-actions"><button class="btn-modal-primary" id="btnCloseViewBtn">关闭</button></div></div>`;
-        openModal(html); const close = () => closeModal(); document.getElementById('btnCloseView').onclick = close; document.getElementById('btnCloseViewBtn').onclick = close; addEscListener(close);
-    }
+            function computeWeightedScore() { const dayData = getDayData(currentViewDate); const completed = dayData.tasks.filter(t => t.completed && t.reflection); if (completed.length === 0) return null; let totalWeight = 0, weightedSum = 0; completed.forEach(t => { const dur = t.reflection.actualDuration || 0; const rating = t.reflection.rating || 0; weightedSum += rating * dur; totalWeight += dur; }); return totalWeight > 0 ? weightedSum / totalWeight : (completed.reduce((s, t) => s + (t.reflection.rating || 0), 0) / completed.length); }
+            function hasIncompleteTasks() { const dayData = getDayData(currentViewDate); if (!dayData.tasks || dayData.tasks.length === 0) return false; return dayData.tasks.some(t => !t.completed); }
 
-    function showEditModal(task) {
-        const html = `<div class="modal-dialog"><button class="modal-close-x" id="btnCloseEdit">×</button><h3>编辑任务信息</h3>
-        <div class="modal-field"><label>⏰ 计划开始</label><input type="time" id="eStart" value="${task.startTime}"></div>
-        <div class="modal-field"><label>⏰ 计划截止</label><input type="time" id="eEnd" value="${task.endTime}"></div>
-        <div class="modal-field"><label>📍 地点</label><input id="ePlace" value="${escapeHTML(task.place)}"></div>
-        <div class="modal-field"><label>👤 人物</label><input id="ePeople" value="${escapeHTML(task.people)}" list="pListE"><datalist id="pListE"><option value="独自"><option value="和室友"><option value="和朋友"><option value="和同事"><option value="和家人"><option value="和伴侣"><option value="和父母"></datalist></div>
-        <div class="modal-field"><label>🏷️ 类别</label><input id="eCat" value="${escapeHTML(task.category)}" list="cListE"><datalist id="cListE"><option value="学习"><option value="工作"><option value="健身"><option value="社交"><option value="阅读"><option value="创作"><option value="休息"><option value="家务"><option value="交通"><option value="其他"></datalist></div>
-        <div class="modal-field"><label>🔧 工具</label><input id="eTool" value="${escapeHTML(task.tool||'')}" list="tListE"><datalist id="tListE"><option value="电脑"><option value="手机"><option value="纸笔"><option value="iPad"><option value="Kindle"><option value="VS Code"><option value="Excel"><option value="Python"><option value="相机"><option value="其他"></datalist></div>
-        <div class="modal-field"><label>📋 任务</label><input id="eTitle" value="${escapeHTML(task.title)}"></div>
-        <div class="modal-actions"><button class="btn-modal-secondary" id="btnCancelEdit">取消</button><button class="btn-modal-primary" id="btnSaveEdit">保存修改</button></div></div>`;
-        openModal(html);
-        const close = () => closeModal();
-        document.getElementById('btnCloseEdit').onclick = close; document.getElementById('btnCancelEdit').onclick = close;
-        document.getElementById('btnSaveEdit').onclick = () => {
-            const start = document.getElementById('eStart').value, end = document.getElementById('eEnd').value;
-            const place = document.getElementById('ePlace').value.trim(), people = document.getElementById('ePeople').value.trim();
-            const cat = document.getElementById('eCat').value.trim(), tool = document.getElementById('eTool').value.trim();
-            const title = document.getElementById('eTitle').value.trim();
-            if (!start || !end || !place || !people || !cat || !title) { showToast('请填写所有必填字段'); return; }
-            const dayData = getDayData(currentViewDate);
-            const t = dayData.tasks.find(x => x.id === task.id);
-            if (!t) { close(); return; }
-            Object.assign(t, { startTime: start, endTime: end, place, people, category: cat, tool, title });
-            addVersion(t, 'modified');
-            saveDayData(currentViewDate, dayData);
-            close(); renderTasks(dayData.tasks); showToast('✅ 任务已更新');
-        }; addEscListener(close);
-    }
+            function openDailyReviewModal(isEdit = false) { if (!isTodayView) return; const dayData = getDayData(currentViewDate); if (hasIncompleteTasks()) { showToast('请先完成或处理所有未完成的任务，再进行每日复盘。'); return; } const existing = dayData.dailyReflection; const autoScore = computeWeightedScore(); const autoScoreText = autoScore !== null ? `${autoScore.toFixed(2)} / 5.00` : '暂无（今日无已完成任务）'; const existingAnswers = existing?.answers || {}; const existingIdentity = existing?.identityPractice || ''; const existingAction = existing?.tomorrowAction || ''; const titleText = isEdit ? '查看/修改今日复盘' : '结束今天'; const html = `<div class="modal-dialog"><button class="modal-close-x" id="btnCloseDaily">×</button><h3>${titleText}</h3><div style="text-align:center; margin-bottom:18px;"><div style="font-size:0.95rem; color:var(--text-secondary);">今日任务综合评分（加权）</div><div style="font-size:1.9rem; font-weight:600; color:var(--accent-green);">${autoScoreText}</div></div><p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:16px; text-align:center;">以下反思基于自我决定理论，帮助洞察今日心理需求满足状况。</p><div class="question-block"><div class="question-text">① 今天我体验到了自主选择的感觉（Autonomy）？</div><div class="options-row" id="dq1"><button class="opt-btn" data-val="yes">是</button><button class="opt-btn" data-val="no">否</button></div></div><div class="question-block"><div class="question-text">② 今天我感受到了有效完成任务的胜任感（Competence）？</div><div class="options-row" id="dq2"><button class="opt-btn" data-val="yes">是</button><button class="opt-btn" data-val="no">否</button></div></div><div class="question-block"><div class="question-text">③ 今天我与他人建立了有意义的连接或贡献（Relatedness）？</div><div class="options-row" id="dq3"><button class="opt-btn" data-val="yes">是</button><button class="opt-btn" data-val="no">否</button></div></div><div class="modal-field"><label>身份践行反思</label><textarea id="dailyIdentity" placeholder="今天的我，在多大程度上成为了早上想成为的那种人？" rows="2">${escapeHTML(existingIdentity)}</textarea></div><div class="modal-field"><label>明天关键行动</label><input id="dailyAction" placeholder="明天，我要优先固化哪一个微小的动作？" value="${escapeHTML(existingAction)}"></div><div class="modal-actions"><button class="btn-modal-secondary" id="btnCancelDaily">取消</button><button class="btn-modal-primary" id="btnSaveDaily">${isEdit ? '更新复盘' : '保存复盘'}</button></div></div>`; openModal(html); const answers = { dq1: existingAnswers.dq1 || null, dq2: existingAnswers.dq2 || null, dq3: existingAnswers.dq3 || null }; document.querySelectorAll('.options-row').forEach(row => { row.querySelectorAll('.opt-btn').forEach(b => { b.addEventListener('click', () => { row.querySelectorAll('.opt-btn').forEach(x => x.classList.remove('selected')); b.classList.add('selected'); answers[row.id] = b.dataset.val; }); if (b.dataset.val === answers[row.id]) b.classList.add('selected'); }); }); const close = () => closeModal(); document.getElementById('btnCloseDaily').onclick = close; document.getElementById('btnCancelDaily').onclick = close; document.getElementById('btnSaveDaily').onclick = () => { const dayData2 = getDayData(currentViewDate); dayData2.dailyReflection = { satisfaction: autoScore !== null ? autoScore : 0, autoScore: autoScore, answers: { ...answers }, identityPractice: document.getElementById('dailyIdentity').value.trim(), tomorrowAction: document.getElementById('dailyAction').value.trim(), completedAt: new Date().toISOString() }; saveDayData(currentViewDate, dayData2); close(); updateDailyBadge(dayData2); showToast(isEdit ? '今日复盘已更新' : '今日复盘已保存'); }; addEscListener(close); }
 
-    function showStartModal(task) {
-        if (!isTodayView) return;
-        if (currentTimingId && currentTimingId !== task.id) { showToast('请先结束当前计时'); return; }
-        const html = `<div class="modal-dialog"><button class="modal-close-x" id="btnCloseStart">×</button><h3>确认实际任务信息</h3>
-        <div class="modal-field"><label>⏰ 计划开始</label><input type="time" id="mStart" value="${task.startTime}"></div>
-        <div class="modal-field"><label>⏰ 计划截止</label><input type="time" id="mEnd" value="${task.endTime}"></div>
-        <div class="modal-field"><label>📍 地点</label><input id="mPlace" value="${escapeHTML(task.place)}"></div>
-        <div class="modal-field"><label>👤 人物</label><input id="mPeople" value="${escapeHTML(task.people)}" list="pList"><datalist id="pList"><option value="独自"><option value="和室友"><option value="和朋友"><option value="和同事"><option value="和家人"><option value="和伴侣"><option value="和父母"></datalist></div>
-        <div class="modal-field"><label>🏷️ 类别</label><input id="mCat" value="${escapeHTML(task.category)}" list="cList"><datalist id="cList"><option value="学习"><option value="工作"><option value="健身"><option value="社交"><option value="阅读"><option value="创作"><option value="休息"><option value="家务"><option value="交通"><option value="其他"></datalist></div>
-        <div class="modal-field"><label>🔧 工具</label><input id="mTool" value="${escapeHTML(task.tool||'')}" list="tList"><datalist id="tList"><option value="电脑"><option value="手机"><option value="纸笔"><option value="iPad"><option value="Kindle"><option value="VS Code"><option value="Excel"><option value="Python"><option value="相机"><option value="其他"></datalist></div>
-        <div class="modal-field"><label>📋 任务</label><input id="mTitle" value="${escapeHTML(task.title)}"></div>
-        <div class="modal-actions"><button class="btn-modal-danger" id="btnDeleteTask">🗑 删除任务</button><button class="btn-modal-secondary" id="btnCancelStart">取消</button><button class="btn-modal-primary" id="btnConfirmStart">确认并开始计时</button></div></div>`;
-        openModal(html); const close = () => closeModal();
-        document.getElementById('btnCloseStart').onclick = close; document.getElementById('btnCancelStart').onclick = close;
-        document.getElementById('btnDeleteTask').onclick = () => { if (confirm('确认删除该任务吗？此操作不可撤销。')) { const dayData = getDayData(currentViewDate); dayData.tasks = dayData.tasks.filter(t => t.id !== task.id); if (currentTimingId === task.id) { if (timingInterval) { clearInterval(timingInterval); timingInterval = null; } currentTimingId = null; timingStart = null; } dayData.stats.deletedCount = (dayData.stats.deletedCount || 0) + 1; dayData.deletedTasks.push({ ...task, deletedAt: new Date().toISOString() }); saveDayData(currentViewDate, dayData); closeModal(); renderTasks(dayData.tasks); updateStatsDisplay(dayData.stats); showToast('🗑 任务已删除'); } };
-        document.getElementById('btnConfirmStart').onclick = () => {
-            const start = document.getElementById('mStart').value, end = document.getElementById('mEnd').value; const place = document.getElementById('mPlace').value.trim(), people = document.getElementById('mPeople').value.trim();
-            const cat = document.getElementById('mCat').value.trim(), tool = document.getElementById('mTool').value.trim(); const title = document.getElementById('mTitle').value.trim();
-            if (!start || !end || !place || !people || !cat || !title) { showToast('请填写所有必填字段'); return; }
-            const dayData = getDayData(currentViewDate); const t = dayData.tasks.find(x => x.id === task.id); if (!t) { close(); return; }
-            Object.assign(t, { startTime: start, endTime: end, place, people, category: cat, tool, title }); t.activeTimingStart = new Date().toISOString(); addVersion(t, 'started'); saveDayData(currentViewDate, dayData);
-            currentTimingId = task.id; timingStart = t.activeTimingStart; startInterval(task.id); close(); renderTasks(dayData.tasks); showToast('▶ 计时已开始'); showFocusMode(t);
-        }; addEscListener(close);
-    }
+            btnDailyReview.addEventListener('click', () => { if (!isTodayView) return; const dayData = getDayData(currentViewDate); if (hasIncompleteTasks()) { showToast('请先完成或处理所有未完成的任务，再进行每日复盘。'); return; } const isDone = !!dayData.dailyReflection?.completedAt; openDailyReviewModal(isDone); });
 
-    btnToggleSelect.addEventListener('click', () => { if (!isTodayView && !isFutureView) return; isSelectMode = !isSelectMode; if (isSelectMode) { btnToggleSelect.classList.add('active'); btnToggleSelect.textContent = '☑ 取消选择'; btnDeleteSelected.classList.add('visible'); } else { btnToggleSelect.classList.remove('active'); btnToggleSelect.textContent = '☑ 选择任务'; btnDeleteSelected.classList.remove('visible'); } renderTasks(getDayData(currentViewDate).tasks); });
-    btnDeleteSelected.addEventListener('click', () => { if (!isTodayView && !isFutureView) return; const checkboxes = document.querySelectorAll('.task-checkbox input:checked'); if (checkboxes.length === 0) { showToast('请至少选择一个任务'); return; } if (confirm(`确认删除选中的 ${checkboxes.length} 个任务吗？此操作不可撤销。`)) { const idsToDelete = Array.from(checkboxes).map(cb => cb.dataset.taskId); const dayData = getDayData(currentViewDate); dayData.tasks = dayData.tasks.filter(t => !idsToDelete.includes(t.id)); if (currentTimingId && idsToDelete.includes(currentTimingId)) { if (timingInterval) { clearInterval(timingInterval); timingInterval = null; } currentTimingId = null; timingStart = null; } dayData.stats.deletedCount = (dayData.stats.deletedCount || 0) + idsToDelete.length; idsToDelete.forEach(id => { const task = dayData.tasks.find(t => t.id === id) || dayData.deletedTasks.find(t => t.id === id); if (task) dayData.deletedTasks.push({ ...task, deletedAt: new Date().toISOString() }); }); saveDayData(currentViewDate, dayData); isSelectMode = false; btnToggleSelect.classList.remove('active'); btnToggleSelect.textContent = '☑ 选择任务'; btnDeleteSelected.classList.remove('visible'); renderTasks(dayData.tasks); updateStatsDisplay(dayData.stats); showToast(`✅ 已删除 ${idsToDelete.length} 个任务`); } });
-    btnSave.addEventListener('click', () => { if (!isTodayView && !isFutureView) return; const start = inputStartTime.value, end = inputEndTime.value; const place = inputPlace.value.trim(), people = inputPeople.value.trim(); const category = inputCategory.value.trim(), tool = inputTool.value.trim(); const title = inputTitle.value.trim(); if (!start || !end || !place || !people || !category || !title) { showToast('请填写所有必填字段'); return; } const dayData = getDayData(currentViewDate); const task = { id: uuid(), startTime: start, endTime: end, place, people, category, tool, title, records: [], reflection: null, completed: false, activeTimingStart: null, createdAt: new Date().toISOString(), versions: [] }; addVersion(task, 'created'); dayData.tasks.push(task); dayData.stats.createdCount = (dayData.stats.createdCount || 0) + 1; saveDayData(currentViewDate, dayData); inputStartTime.value = '09:00'; inputEndTime.value = '10:00'; inputPlace.value = inputPeople.value = inputCategory.value = inputTool.value = inputTitle.value = ''; createForm.classList.remove('active'); renderTasks(dayData.tasks); updateStatsDisplay(dayData.stats); showToast('✅ 任务已添加'); });
-    btnToggle.addEventListener('click', () => { if (isTodayView || isFutureView) createForm.classList.toggle('active'); });
+            function showViewDataModal() { const allData = loadAll(); const dateKeys = Object.keys(allData).sort(); let summaryHtml = ''; dateKeys.forEach(dk => { const dd = allData[dk]; const taskCount = (dd.tasks || []).length; const completedCount = (dd.tasks || []).filter(t => t.completed).length; const hasReflection = dd.dailyReflection?.completedAt ? '是' : '否'; summaryHtml += `<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border-light);font-size:0.9rem;"><span><strong>${dk}</strong> ${getWeekdayCN(dk)}</span><span>任务 ${taskCount} | 完成 ${completedCount} | 复盘 ${hasReflection}</span></div>`; }); if (!summaryHtml) summaryHtml = '<p style="text-align:center;color:var(--text-muted);">暂无数据</p>'; const html = `<div class="modal-dialog" style="max-width:600px;"><button class="modal-close-x" id="btnCloseData">×</button><h3>数据概览</h3><div style="max-height:300px;overflow-y:auto;margin-bottom:16px;">${summaryHtml}</div><p style="font-size:0.85rem;color:var(--text-muted);text-align:center;">共 ${dateKeys.length} 天记录</p><div class="modal-actions" style="justify-content:center;gap:12px;"><button class="btn-modal-secondary" id="btnViewRawJSON">查看原始JSON</button><button class="btn-modal-secondary" id="btnExportJSON">导出JSON数据</button></div></div>`; openModal(html); document.getElementById('btnCloseData').onclick = closeModal; document.getElementById('btnViewRawJSON').onclick = () => { const jsonStr = JSON.stringify(allData, null, 2); const html2 = `<div class="modal-dialog" style="max-width:620px;max-height:80vh;"><button class="modal-close-x" id="btnCloseRaw">×</button><h3>原始JSON数据</h3><pre style="background:var(--bg);padding:16px;border-radius:var(--radius-sm);overflow:auto;max-height:50vh;font-size:0.8rem;font-family:var(--font-mono);white-space:pre-wrap;word-break:break-all;">${escapeHTML(jsonStr)}</pre><div class="modal-actions"><button class="btn-modal-primary" id="btnCloseRawBtn">关闭</button></div></div>`; openModal(html2); document.getElementById('btnCloseRaw').onclick = closeModal; document.getElementById('btnCloseRawBtn').onclick = closeModal; addEscListener(closeModal); }; document.getElementById('btnExportJSON').onclick = () => { const blob = new Blob([JSON.stringify(allData, null, 2)], { type: 'application/json' }); const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `一日叙事_数据导出_${getTodayKey()}.json`; a.click(); showToast('数据已导出'); }; addEscListener(closeModal); }
 
-    function computeWeightedScore() { const dayData = getDayData(currentViewDate); const completed = dayData.tasks.filter(t => t.completed && t.reflection); if (completed.length === 0) return null; let totalWeight = 0, weightedSum = 0; completed.forEach(t => { const dur = t.reflection.actualDuration || 0; const rating = t.reflection.rating || 0; weightedSum += rating * dur; totalWeight += dur; }); return totalWeight > 0 ? weightedSum / totalWeight : (completed.reduce((s, t) => s + (t.reflection.rating || 0), 0) / completed.length); }
+            function showBehaviorDataModal() { const allData = loadAll(); const dateKeys = Object.keys(allData).sort(); let totalTasks = 0, totalCompleted = 0, totalDurationSec = 0, totalReflections = 0; const categoryStats = {}; const dailyStats = []; dateKeys.forEach(dk => { const dd = allData[dk]; const tasks = dd.tasks || []; totalTasks += tasks.length; const completed = tasks.filter(t => t.completed); totalCompleted += completed.length; if (dd.dailyReflection?.completedAt) totalReflections++; tasks.forEach(t => { if (t.records) { t.records.forEach(r => { totalDurationSec += (r.duration || 0); }); } if (t.category) { const cat = t.category.trim(); if (!categoryStats[cat]) categoryStats[cat] = { count: 0, duration: 0 }; categoryStats[cat].count++; if (t.records) { t.records.forEach(r => { categoryStats[cat].duration += (r.duration || 0); }); } } }); dailyStats.push({ date: dk, total: tasks.length, completed: completed.length, duration: tasks.reduce((s, t) => s + (t.records || []).reduce((ss, r) => ss + (r.duration || 0), 0), 0) }); }); const completionRate = totalTasks > 0 ? Math.round((totalCompleted / totalTasks) * 100) : 0; const avgTasksPerDay = dateKeys.length > 0 ? (totalTasks / dateKeys.length).toFixed(1) : '0'; let categoryHtml = ''; const catEntries = Object.entries(categoryStats).sort((a, b) => b[1].duration - a[1].duration); catEntries.slice(0, 10).forEach(([cat, stat]) => { categoryHtml += `<tr><td>${escapeHTML(cat)}</td><td>${stat.count}次</td><td>${formatDurationFull(stat.duration)}</td></tr>`; }); if (!categoryHtml) categoryHtml = '<tr><td colspan="3" style="text-align:center;color:var(--text-muted);">暂无分类数据</td></tr>'; let recentHtml = ''; dailyStats.slice(-7).reverse().forEach(ds => { recentHtml += `<tr><td>${ds.date} ${getWeekdayCN(ds.date)}</td><td>${ds.total}</td><td>${ds.completed}</td><td>${formatDurationFull(ds.duration)}</td></tr>`; }); if (!recentHtml) recentHtml = '<tr><td colspan="4" style="text-align:center;color:var(--text-muted);">暂无数据</td></tr>'; const html = `<div class="modal-dialog" style="max-width:640px;max-height:80vh;"><button class="modal-close-x" id="btnCloseBehavior">×</button><h3>行为数据</h3><div class="behavior-highlight"><strong>总览：</strong>共记录 <strong>${dateKeys.length}</strong> 天 | 总任务 <strong>${totalTasks}</strong> 个 | 完成率 <strong>${completionRate}%</strong> | 总计时长 <strong>${formatDurationFull(totalDurationSec)}</strong> | 复盘 <strong>${totalReflections}</strong> 天 | 日均 <strong>${avgTasksPerDay}</strong> 个任务</div><div style="margin-top:16px;"><strong style="font-size:0.95rem;">类别统计（按时长排序）</strong><table class="behavior-summary-table"><thead><tr><th>类别</th><th>次数</th><th>累计时长</th></tr></thead><tbody>${categoryHtml}</tbody></table></div><div style="margin-top:16px;"><strong style="font-size:0.95rem;">最近7天趋势</strong><table class="behavior-summary-table"><thead><tr><th>日期</th><th>任务数</th><th>完成</th><th>时长</th></tr></thead><tbody>${recentHtml}</tbody></table></div><div class="modal-actions"><button class="btn-modal-primary" id="btnCloseBehaviorBtn">关闭</button></div></div>`; openModal(html); document.getElementById('btnCloseBehavior').onclick = closeModal; document.getElementById('btnCloseBehaviorBtn').onclick = closeModal; addEscListener(closeModal); }
 
-    btnDailyReview.addEventListener('click', () => { if (!isTodayView) return; const dayData = getDayData(currentViewDate); if (dayData.dailyReflection?.completedAt) { showToast('今日复盘已完成'); return; } const autoScore = computeWeightedScore(); const autoScoreText = autoScore !== null ? `${autoScore.toFixed(2)} / 5.00` : '暂无（今日无已完成任务）'; const html = `<div class="modal-dialog"><button class="modal-close-x" id="btnCloseDaily">×</button><h3>结束今天</h3><div style="text-align:center; margin-bottom:18px;"><div style="font-size:0.9rem; color:var(--text-secondary);">今日任务综合评分（加权）</div><div style="font-size:1.8rem; font-weight:600; color:var(--accent-green);">${autoScoreText}</div></div><p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:16px; text-align:center;">以下反思基于自我决定理论，帮助洞察今日心理需求满足状况。</p><div class="question-block"><div class="question-text">① 今天我体验到了自主选择的感觉（Autonomy）？</div><div class="options-row" id="dq1"><button class="opt-btn" data-val="yes">是</button><button class="opt-btn" data-val="no">否</button></div></div><div class="question-block"><div class="question-text">② 今天我感受到了有效完成任务的胜任感（Competence）？</div><div class="options-row" id="dq2"><button class="opt-btn" data-val="yes">是</button><button class="opt-btn" data-val="no">否</button></div></div><div class="question-block"><div class="question-text">③ 今天我与他人建立了有意义的连接或贡献（Relatedness）？</div><div class="options-row" id="dq3"><button class="opt-btn" data-val="yes">是</button><button class="opt-btn" data-val="no">否</button></div></div><div class="modal-field"><label>🪞 身份践行反思</label><textarea id="dailyIdentity" placeholder="今天的我，在多大程度上成为了早上想成为的那种人？" rows="2"></textarea></div><div class="modal-field"><label>🎯 明天关键行动</label><input id="dailyAction" placeholder="明天，我要优先固化哪一个微小的动作？"></div><div class="modal-actions"><button class="btn-modal-secondary" id="btnCancelDaily">取消</button><button class="btn-modal-primary" id="btnSaveDaily">保存复盘</button></div></div>`;
-        openModal(html); const answers = { dq1: null, dq2: null, dq3: null }; document.querySelectorAll('.options-row').forEach(row => { row.querySelectorAll('.opt-btn').forEach(b => b.addEventListener('click', () => { row.querySelectorAll('.opt-btn').forEach(x => x.classList.remove('selected')); b.classList.add('selected'); answers[row.id] = b.dataset.val; })); }); const close = () => closeModal(); document.getElementById('btnCloseDaily').onclick = close; document.getElementById('btnCancelDaily').onclick = close;
-        document.getElementById('btnSaveDaily').onclick = () => { const dayData = getDayData(currentViewDate); dayData.dailyReflection = { satisfaction: autoScore !== null ? autoScore : 0, autoScore: autoScore, answers: { ...answers }, identityPractice: document.getElementById('dailyIdentity').value.trim(), tomorrowAction: document.getElementById('dailyAction').value.trim(), completedAt: new Date().toISOString() }; saveDayData(currentViewDate, dayData); close(); updateDailyBadge(dayData); showToast('🌙 今日复盘已保存'); }; addEscListener(close); });
+            menuFab.addEventListener('click', () => { const isActive = menuPopup.classList.contains('active'); if (isActive) { menuPopup.classList.remove('active'); menuBackdrop.classList.remove('active'); } else { menuPopup.classList.add('active'); menuBackdrop.classList.add('active'); } });
+            menuBackdrop.addEventListener('click', () => { menuPopup.classList.remove('active'); menuBackdrop.classList.remove('active'); });
+            document.getElementById('menuViewData').addEventListener('click', () => { menuPopup.classList.remove('active'); menuBackdrop.classList.remove('active'); showViewDataModal(); });
+            document.getElementById('menuBehaviorData').addEventListener('click', () => { menuPopup.classList.remove('active'); menuBackdrop.classList.remove('active'); showBehaviorDataModal(); });
 
-    btnExport.addEventListener('click', () => { const blob = new Blob([JSON.stringify(loadAll(), null, 2)], { type: 'application/json' }); const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `一日叙事_导出_${currentViewDate}.json`; a.click(); showToast('📥 数据已导出'); });
+            btnSave.addEventListener('click', () => { if (!isTodayView && !isFutureView) return; const start = inputStartTime.value, end = inputEndTime.value; const place = inputPlace.value.trim(), people = inputPeople.value.trim(); const category = inputCategory.value.trim(), tool = inputTool.value.trim(); const title = inputTitle.value.trim(); if (!start || !end || !place || !people || !category || !title) { showToast('请填写所有必填字段'); return; } const dayData = getDayData(currentViewDate); const task = { id: uuid(), startTime: start, endTime: end, place, people, category, tool, title, records: [], reflection: null, completed: false, activeTimingStart: null, createdAt: new Date().toISOString(), versions: [] }; addVersion(task, 'created', false); dayData.tasks.push(task); dayData.stats.createdCount = (dayData.stats.createdCount || 0) + 1; saveDayData(currentViewDate, dayData); inputStartTime.value = '09:00'; inputEndTime.value = '10:00'; inputPlace.value = inputPeople.value = inputCategory.value = inputTool.value = inputTitle.value = ''; createForm.classList.remove('active'); renderTasks(dayData.tasks); updateStatsDisplay(dayData); updateTotalDurationDisplay(); showToast('任务已添加'); });
+            btnToggle.addEventListener('click', () => { if (isTodayView || isFutureView) { createForm.classList.toggle('active'); if (createForm.classList.contains('active')) setTimeout(adjustAllInlineInputs, 50); } });
 
-    dateNavInput.max = getTomorrowKey(); dateNavInput.value = currentViewDate; dateNavInput.addEventListener('change', () => { if (dateNavInput.value > getTomorrowKey()) { showToast('仅可查看今天或明天'); dateNavInput.value = currentViewDate; return; } currentViewDate = dateNavInput.value; updateUIMode(); }); btnToday.addEventListener('click', () => { currentViewDate = getTodayKey(); updateUIMode(); });
+            btnBackToday.addEventListener('click', () => { currentViewDate = getTodayKey(); updateUIMode(); });
 
-    // 备忘录
-    document.getElementById('memoIcon').addEventListener('click', () => {
-        let memos = JSON.parse(localStorage.getItem(MEMO_KEY) || '[]');
-        let memoHtml = memos.map((m, i) => `<div style="display:flex; gap:8px; margin-bottom:8px;"><span style="flex:1; padding:8px; background:var(--bg); border-radius:8px;">${escapeHTML(m)}</span><button class="btn-sm" style="padding:4px 10px; color:#c44d34;" data-idx="${i}">✕</button></div>`).join('');
-        const html = `<div class="modal-dialog" style="max-width:400px;"><button class="modal-close-x" id="btnCloseMemo">×</button><h3>📝 未来待办</h3><div id="memoList">${memoHtml || '<p style="color:var(--text-muted);text-align:center;">暂无待办</p>'}</div><div style="display:flex; gap:8px; margin-top:16px;"><input id="newMemo" placeholder="添加待办..." style="flex:1; padding:10px; border:1px solid var(--border); border-radius:20px;"><button class="btn-modal-primary" id="btnAddMemo">添加</button></div></div>`;
-        openModal(html);
-        document.getElementById('btnCloseMemo').onclick = closeModal;
-        document.getElementById('btnAddMemo').addEventListener('click', () => {
-            const input = document.getElementById('newMemo');
-            const val = input.value.trim();
-            if (!val) return;
-            memos.push(val);
-            localStorage.setItem(MEMO_KEY, JSON.stringify(memos));
-            closeModal();
-            document.getElementById('memoIcon').click();
-        });
-        document.querySelectorAll('#memoList button').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                const idx = parseInt(btn.dataset.idx);
-                memos.splice(idx, 1);
-                localStorage.setItem(MEMO_KEY, JSON.stringify(memos));
-                closeModal();
-                document.getElementById('memoIcon').click();
+            dateNavInput.max = getTomorrowKey(); dateNavInput.value = currentViewDate;
+            dateNavInput.addEventListener('change', () => { if (dateNavInput.value > getTomorrowKey()) { showToast('仅可查看今天或明天'); dateNavInput.value = currentViewDate; return; } currentViewDate = dateNavInput.value; updateUIMode(); });
+
+            function openModal(html) { modalOverlay.innerHTML = html; modalOverlay.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
+            function closeModal() { modalOverlay.innerHTML = ''; modalOverlay.style.display = 'none'; document.body.style.overflow = ''; if (window._escHandler) { document.removeEventListener('keydown', window._escHandler); window._escHandler = null; } }
+            function addEscListener(fn) { if (window._escHandler) document.removeEventListener('keydown', window._escHandler); const h = e => { if (e.key === 'Escape') { fn(); document.removeEventListener('keydown', h); window._escHandler = null; } }; window._escHandler = h; document.addEventListener('keydown', h); }
+
+            let intentionTimer;
+            [throughEl, becomeEl].forEach(el => { el.addEventListener('input', () => { clearTimeout(intentionTimer); intentionTimer = setTimeout(saveCurrentIntention, 500); }); el.addEventListener('blur', saveCurrentIntention); });
+
+            updateUIMode(); if (isTodayView) restoreTiming(); let lastDateCheck = getTodayKey();
+            setInterval(() => { if (getTodayKey() !== lastDateCheck) { lastDateCheck = getTodayKey(); if (isTodayView) { currentViewDate = getTodayKey(); updateUIMode(); restoreTiming(); } showToast('新的一天'); } updateTotalDurationDisplay(); }, 30000);
+        })();
+    </script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('Service Worker 注册成功'))
+                    .catch(err => console.log('Service Worker 注册失败', err));
             });
-        });
-        addEscListener(closeModal);
-    });
-
-    document.getElementById('philosophyIcon').addEventListener('click', () => { const content = `<div class="modal-dialog" style="max-width:560px; text-align:left;"><button class="modal-close-x" id="btnClosePhilosophy">×</button><h3 style="text-align:center;">关于《一日叙事》</h3><div style="font-size:0.92rem;line-height:1.7;color:var(--text);"><p><strong>我们只能活在当下。</strong> 阿德勒个体心理学认为，人生是连续的刹那。这个工具不要求长期目标，只关注今天你如何行动。</p><p>基于执行意图与心流、自我决定等理论，它通过结构化叙事与科学问卷帮你记录真实行动，观察行为偏离与适应。历史记录可回溯，明天计划可编辑但不可计时。</p><h4>使用方法</h4><p>填写身份意图 → 添加任务 → 开始前修正 → 专注计时 → 完成问卷复盘 → 每日总结。导出JSON可进一步分析。</p><p>“重要的不是被给予了什么，而是如何利用被给予的东西。”</p></div><div class="modal-actions"><button class="btn-modal-primary" id="btnClosePhilosophyBtn">我明白了</button></div></div>`; openModal(content); document.getElementById('btnClosePhilosophy').onclick = closeModal; document.getElementById('btnClosePhilosophyBtn').onclick = closeModal; addEscListener(closeModal); });
-
-    function openModal(html) { modalOverlay.innerHTML = html; modalOverlay.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
-    function closeModal() { modalOverlay.innerHTML = ''; modalOverlay.style.display = 'none'; document.body.style.overflow = ''; if (window._escHandler) { document.removeEventListener('keydown', window._escHandler); window._escHandler = null; } }
-    function addEscListener(fn) { if (window._escHandler) document.removeEventListener('keydown', window._escHandler); const h = e => { if (e.key === 'Escape') { fn(); document.removeEventListener('keydown', h); window._escHandler = null; } }; window._escHandler = h; document.addEventListener('keydown', h); }
-
-    let intentionTimer; [throughEl, becomeEl].forEach(el => { el.addEventListener('input', () => { clearTimeout(intentionTimer); intentionTimer = setTimeout(saveCurrentIntention, 500); }); el.addEventListener('blur', saveCurrentIntention); });
-    document.addEventListener('keydown', e => { if ((e.ctrlKey || e.metaKey) && e.key === 'n') { e.preventDefault(); if ((isTodayView || isFutureView) && !createForm.classList.contains('active')) btnToggle.click(); if (isTodayView || isFutureView) inputStartTime.focus(); } });
-
-    document.addEventListener('touchstart', function(){}, {passive: true});
-
-    updateUIMode(); if (isTodayView) restoreTiming();
-    let lastDateCheck = getTodayKey(); setInterval(() => { if (getTodayKey() !== lastDateCheck) { lastDateCheck = getTodayKey(); if (isTodayView) { currentViewDate = getTodayKey(); updateUIMode(); restoreTiming(); } showToast('🔄 新的一天'); } }, 30000);
-})();
-</script>
-<script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
-      .then(reg => console.log('Service Worker 注册成功'))
-      .catch(err => console.log('Service Worker 注册失败', err));
-  });
-}
-</script>
+        }
+    </script>
 </body>
 </html>
